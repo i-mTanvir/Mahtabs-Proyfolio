@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -243,12 +243,48 @@ nav.scrolled{
 /* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #hero{
   position:relative;height:100vh;
-  display:flex;align-items:center;
+  display:grid;grid-template-columns:1.2fr 0.8fr;
+  align-items:center;
   padding:0 5vw;overflow:hidden;
+  gap:2rem;
 }
 .hero-content{
   position:relative;z-index:10;
   max-width:900px;
+}
+.hero-profile {
+  position:relative;
+  z-index:10;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  perspective:1000px;
+}
+.profile-frame {
+  position:relative;
+  width:220px;
+  height:220px;
+  border-radius:24px;
+  padding:5px;
+  background:linear-gradient(135deg,rgba(79,142,247,.08),rgba(0,212,255,.04));
+  border:0.75px solid rgba(79,142,247,.15);
+  box-shadow:0 20px 48px rgba(79,142,247,.08),
+             inset 0 0 16px rgba(79,142,247,.05);
+  backdrop-filter:blur(10px);
+  overflow:hidden;
+  transition:border-color .3s ease,box-shadow .3s ease;
+}
+.profile-frame:hover {
+  border-color:var(--blue);
+  box-shadow:0 24px 60px rgba(79,142,247,.18),
+             inset 0 0 20px rgba(79,142,247,.12);
+}
+.profile-img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:19px;
+  border:0.75px solid rgba(79,142,247,.1);
 }
 .hero-status{
   display:inline-flex;align-items:center;gap:.6rem;
@@ -859,6 +895,23 @@ footer{
 .foot-note{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 .foot-note span{color:var(--blue)}
 
+@media(max-width:992px){
+  #hero{
+    grid-template-columns:1fr;
+    padding-top:7rem;
+    height:auto;
+    min-height:100vh;
+    gap:3rem;
+  }
+  .hero-profile{
+    order:-1;
+    margin:2rem auto 0;
+  }
+  .profile-frame{
+    width:200px;
+    height:200px;
+  }
+}
 @media(max-width:768px){
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .stats-row{grid-template-columns:1fr}
@@ -943,6 +996,12 @@ footer{
       <a class="c-link" href="#" target="_blank" rel="noreferrer"><span class="c-link-icon">&#8997;</span> github</a>
       <a class="c-link" href="#" target="_blank" rel="noreferrer"><span class="c-link-icon">&#11041;</span> linkedin</a>
       <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download><span class="c-link-icon">&#8595;</span> resume</a>
+    </div>
+  </div>
+
+  <div class="hero-profile" id="heroProfileContainer">
+    <div class="profile-frame" id="heroProfileFrame">
+      <img src="Profile.png" alt="Md Shahriar Mannan Prottoy" class="profile-img" />
     </div>
   </div>
 
@@ -1384,9 +1443,9 @@ footer{
 </footer>
 
 <script>
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // GSAP + PLUGINS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const themeToggle = document.getElementById('themeToggle');
@@ -1462,9 +1521,9 @@ function hexToRgba(hex, alpha) {
   return `rgba(${r},${g},${b},${alpha})`;
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // CUSTOM CURSOR
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 const dot  = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
 let mouseX = 0, mouseY = 0;
@@ -1484,9 +1543,9 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(animateRing);
 })();
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // BINARY RAIN CANVAS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 (function binaryRain() {
   const canvas = document.getElementById('binaryCanvas');
   const ctx = canvas.getContext('2d');
@@ -1520,9 +1579,9 @@ document.addEventListener('mousemove', e => {
   setInterval(draw, 60);
 })();
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // THREE.JS â€” PARTICLE NETWORK (HERO)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 (function heroParticles() {
   const canvas = document.getElementById('heroCanvas');
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -1600,13 +1659,15 @@ document.addEventListener('mousemove', e => {
   animate();
 })();
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// HERO ENTRANCE â€” GSAP TIMELINE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════════════════════
+// HERO ENTRANCE ─ GSAP TIMELINE
+// ════════════════════════════════════════════════════════════════════════════════
 gsap.set(['.hero-status','.hero-role-line','.hero-ctas','#heroCode','#scrollInd'], 
   { opacity: 0, y: 20 });
 gsap.set('#heroName', { opacity: 0, y: 60, skewY: 4 });
 gsap.set('.blue-word', { opacity: 0, y: 60, skewY: 4 });
+// Entrance timeline runs with a clean fade/scale entry for the image frame
+gsap.set('#heroProfileFrame', { opacity: 0, scale: 0.85, y: 30 });
 
 const blueWordEl = document.getElementById('blueWord');
 if (blueWordEl) {
@@ -1618,19 +1679,18 @@ if (blueWordEl) {
 
 const heroTl = gsap.timeline({ delay: 0.2 });
 heroTl
-  .to('.hero-status',   { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-  .to('#heroName',      { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.2')
-  .to('.blue-word',     { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.65')
-  .to('.hero-role-line',{ opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.4')
-  .to('.hero-ctas',     { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-  .to('#heroCode',      { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4')
-  .to('#scrollInd',     { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3');
+  .to('.hero-status',       { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+  .to('#heroName',          { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.2')
+  .to('.blue-word',         { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.65')
+  .to('#heroProfileFrame',  { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'back.out(1.2)' }, '-=0.8')
+  .to('.hero-role-line',    { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.6')
+  .to('.hero-ctas',         { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('#heroCode',          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4')
+  .to('#scrollInd',         { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3');
 
-// Glitch is CSS hover-only â€” no JS needed for it
-
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // TYPEWRITER â€” hero role
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 const roles = [
   'Research-Oriented CSE Undergraduate',
   'Vice President, Research & Innovation',
@@ -1660,9 +1720,9 @@ function eraseRole() {
 }
 gsap.delayedCall(1.6, typeNext);
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // TERMINAL TYPING (about section)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 const termEl = document.getElementById('termTyping');
 const termCmds = ['ls publications/2025','python thesis_train.py --epochs 100','cat achievements.md'];
 let tIdx = 0;
@@ -1694,9 +1754,9 @@ ScrollTrigger.create({
   }
 });
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // NAV SCROLL
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 ScrollTrigger.create({
   start: 80,
   onEnter:     () => document.getElementById('mainNav').classList.add('scrolled'),
@@ -1867,6 +1927,17 @@ gsap.utils.toArray('.proj-card').forEach((card, i) => {
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 gsap.to('.hero-content', {
   y: -64,
+  ease: 'none',
+  force3D: true,
+  scrollTrigger: {
+    trigger: '#hero',
+    start: 'top top',
+    end: 'bottom 35%',
+    scrub: 0.3,
+  }
+});
+gsap.to('#heroProfileContainer', {
+  y: -80,
   ease: 'none',
   force3D: true,
   scrollTrigger: {
