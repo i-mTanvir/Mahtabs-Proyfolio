@@ -256,23 +256,24 @@ nav.scrolled{
   position:relative;
   z-index:10;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
   align-items:center;
-  perspective:1000px;
+  padding-right:2vw;
 }
 .profile-frame {
   position:relative;
   width:220px;
   height:220px;
   border-radius:24px;
-  padding:5px;
+  padding:4px;
   background:linear-gradient(135deg,rgba(79,142,247,.08),rgba(0,212,255,.04));
   border:0.75px solid rgba(79,142,247,.15);
   box-shadow:0 20px 48px rgba(79,142,247,.08),
              inset 0 0 16px rgba(79,142,247,.05);
   backdrop-filter:blur(10px);
   overflow:hidden;
-  transition:border-color .3s ease,box-shadow .3s ease;
+  transition:border-color .4s cubic-bezier(0.25,1,0.5,1),
+             box-shadow .4s cubic-bezier(0.25,1,0.5,1);
 }
 .profile-frame:hover {
   border-color:var(--blue);
@@ -283,8 +284,14 @@ nav.scrolled{
   width:100%;
   height:100%;
   object-fit:cover;
-  border-radius:19px;
-  border:0.75px solid rgba(79,142,247,.1);
+  border-radius:20px;
+  border:1px solid rgba(79,142,247,.3);
+  transform:scale(1.00);
+  transition:transform 0.5s cubic-bezier(0.25,1,0.5,1), border-color 0.4s ease;
+}
+.profile-frame:hover .profile-img {
+  transform:scale(0.94) translateY(-2px);
+  border-color:var(--blue);
 }
 .hero-status{
   display:inline-flex;align-items:center;gap:.6rem;
@@ -842,23 +849,67 @@ body.light-theme .proj-thumb-code{
 
 /* â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #contact{text-align:center;overflow:hidden}
-.contact-inner{max-width:620px;margin:0 auto}
+.contact-inner{max-width:800px;margin:0 auto;width:100%}
 .contact-big{
   font-family:var(--display);
   font-size:clamp(1.8rem,4.8vw,4.2rem);
   font-weight:700;letter-spacing:-.03em;
   line-height:1.05;margin-bottom:1.2rem;
-  display:inline-block;
+  display:block;
+  text-align:center;
   white-space:nowrap;
-  max-width:100%;
+  width:100%;
 }
 .contact-big .outline{
   color:transparent;
   -webkit-text-stroke:1px var(--blue);
 }
-.contact-sub{
-  font-size:.88rem;color:var(--muted2);
-  line-height:1.85;margin-bottom:3rem;
+.contact-form{
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  max-width:800px;
+  margin:0 auto 3rem;
+  width:100%;
+}
+.form-input{
+  flex:1;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  color:var(--white);
+  padding:0.9rem 1.2rem;
+  font-family:var(--body);
+  font-size:0.82rem;
+  border-radius:4px;
+  outline:none;
+  transition:border-color .3s ease,background-color .45s ease,color .45s ease;
+}
+.form-input::placeholder{
+  color:var(--muted2);
+}
+.form-input:focus{
+  border-color:var(--blue);
+}
+.form-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0.9rem 1.8rem;
+  background:var(--blue);
+  color:#fff;
+  border:1px solid var(--blue);
+  border-radius:4px;
+  font-family:var(--mono);
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  font-weight:500;
+  cursor:none;
+  transition:all .2s ease;
+}
+.form-btn:hover{
+  background:var(--blue2);
+  border-color:var(--blue2);
+  transform:translateY(-2px);
 }
 .contact-links{
   display:flex;justify-content:center;
@@ -890,7 +941,7 @@ body::after{
 footer{
   padding:2rem 5vw;
   border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:center;align-items:center;
 }
 .foot-note{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
 .foot-note span{color:var(--blue)}
@@ -906,6 +957,8 @@ footer{
   .hero-profile{
     order:-1;
     margin:2rem auto 0;
+    justify-content:center;
+    padding-right:0;
   }
   .profile-frame{
     width:200px;
@@ -913,6 +966,37 @@ footer{
   }
 }
 @media(max-width:768px){
+  .hero-status,
+  #heroCode,
+  #scrollInd{display:none !important}
+  .hero-content{
+    text-align:center;
+  }
+  .hero-desc{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .hero-ctas{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.8rem;
+    max-width:320px;
+    margin:2.5rem auto 0;
+  }
+  .hero-ctas .c-link{
+    justify-content:center;
+  }
+  .contact-big{
+    white-space:normal !important;
+  }
+  .contact-form{
+    flex-direction:column;
+    gap:0.8rem;
+  }
+  .form-input,
+  .form-btn{
+    width:100%;
+  }
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .stats-row{grid-template-columns:1fr}
   .logo-marquee::before,.logo-marquee::after{width:4rem}
@@ -1407,11 +1491,15 @@ footer{
   <div class="section-flow">
     <div class="contact-inner">
       <div class="sec-eyebrow reveal" style="justify-content:center">contact.init()</div>
-      <h2 class="contact-big reveal">Let's connect for <span class="outline">research.</span></h2>
-      <p class="contact-sub reveal">
-        Open to research collaborations, academic opportunities, internships, and meaningful technical work.
-        Based in Daffodil Smart City, Savar, Dhaka. References available upon request.
-      </p>
+      <h2 class="contact-big reveal">Let's connect for <span class="outline">research</span></h2>
+      <form class="contact-form reveal" id="contactForm">
+        <input type="email" placeholder="Email" required class="form-input" id="formEmail" />
+        <input type="text" placeholder="Subject" required class="form-input" id="formSubject" />
+        <input type="text" placeholder="Message" required class="form-input" id="formMessage" />
+        <button type="submit" class="form-btn" id="formSubmitBtn">
+          Send
+        </button>
+      </form>
       <div class="contact-links reveal">
         <a class="c-link" href="mailto:prottoy2205101490@diu.edu.bd">
           <span class="c-link-icon">&#9993;</span> email
@@ -1419,11 +1507,11 @@ footer{
         <a class="c-link" href="tel:+8801621968792">
           <span class="c-link-icon">&#9742;</span> phone
         </a>
-        <a class="c-link" href="https://www.google.com/maps/search/?api=1&query=Daffodil+Smart+City+Birulia+Savar+Dhaka+1216" target="_blank" rel="noreferrer">
-          <span class="c-link-icon">&#8982;</span> location
+        <a class="c-link" href="#" target="_blank" rel="noreferrer">
+          <span class="c-link-icon">&#8997;</span> github
         </a>
         <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download>
-          <span class="c-link-icon">&#8595;</span> cv.pdf
+          <span class="c-link-icon">&#8595;</span> resume
         </a>
       </div>
     </div>
@@ -1438,8 +1526,7 @@ footer{
 </button>
 
 <footer>
-  <div class="foot-note">&copy; 2025 <span>Md Shahriar Mannan Prottoy</span> - research portfolio.</div>
-  <div class="foot-note">Daffodil International University - Savar, Dhaka, Bangladesh</div>
+  <div class="foot-note">&copy; 2026 <span>Md Shahriar Mannan Prottoy</span> - research portfolio.</div>
 </footer>
 
 <script>
@@ -2116,6 +2203,19 @@ function initSkillsMarquee() {
     });
 
     marqueeTweens.push(tween);
+  });
+}
+
+// Contact Form Submission Handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('formEmail').value;
+    const subject = document.getElementById('formSubject').value;
+    const message = document.getElementById('formMessage').value;
+    const mailtoUrl = `mailto:prottoy2205101490@diu.edu.bd?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + email + "\n\n" + message)}`;
+    window.location.href = mailtoUrl;
   });
 }
 
