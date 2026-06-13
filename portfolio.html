@@ -641,13 +641,33 @@ nav.scrolled{
   margin-top:3.5rem;
 }
 .pub-card{
+  display:block;
+  text-align:left;
   background:var(--surface2);
   border:1px solid var(--border);
   border-radius:10px;
   padding:1.4rem;
-  transition:border-color .25s,transform .25s;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
 }
-.pub-card:hover{border-color:rgba(79,142,247,.4);transform:translateY(-4px)}
+.pub-card:hover{
+  border-color:rgba(79,142,247,.4);
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(79,142,247,.06);
+}
+.pub-card:hover .pub-title{
+  color:var(--blue);
+}
+.pub-link-icon{
+  display:inline-block;
+  font-size:0.82em;
+  margin-left:0.35rem;
+  color:var(--muted2);
+  transition:transform .25s ease,color .25s ease;
+}
+.pub-card:hover .pub-link-icon{
+  transform:translate(2px,-2px);
+  color:var(--blue);
+}
 .pub-year{
   font-family:var(--mono);
   font-size:.65rem;
@@ -998,7 +1018,7 @@ footer{
     width:100%;
   }
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .stats-row{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
   .logo-marquee::before,.logo-marquee::after{width:4rem}
   .logo-chip{min-width:9rem;padding:1rem .8rem .85rem}
   .logo-chip img,.logo-chip svg{width:2.15rem;height:2.15rem}
@@ -1027,16 +1047,15 @@ footer{
 
 <!-- NAV -->
 <nav id="mainNav">
-  <div class="nav-logo">prottoy.</div>
+  <div class="nav-logo">prottoy.engineer</div>
   <div class="nav-actions">
     <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">stack</a></li>
-      <li><a href="#projects">work</a></li>
-      <li><a href="#achievements">awards</a></li>
-      <li><a href="#publications">papers</a></li>
-      <li><a href="#experience">timeline</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Education</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">
       <svg id="themeToggleIcon" viewBox="0 0 24 24" aria-hidden="true">
@@ -1235,54 +1254,60 @@ footer{
     <h2 class="sec-title reveal">Research publications and dataset work.</h2>
 
     <div class="pub-grid">
-      <div class="pub-card reveal">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2024 - Dataset</div>
-        <div class="pub-title">PMRAM: Bangladeshi Brain Cancer - MRI Dataset</div>
+        <div class="pub-title">PMRAM: Bangladeshi Brain Cancer - MRI Dataset <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">Mendeley Data, V1 - doi: 10.17632/m7w55sw88b.1</div>
         <div class="pub-desc">Published dataset work with collaborators, contributing to brain cancer MRI data availability for research in Bangladesh.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://doi.org/10.1109/ICCIT68739.2025.11491793" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - ICCIT</div>
-        <div class="pub-title">Automated Lemon Leaf Disease Detection with Convolutional Neural Networks for Smart Agriculture</div>
+        <div class="pub-title">Automated Lemon Leaf Disease Detection with Convolutional Neural Networks for Smart Agriculture <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">2025 28th International Conference on Computer and Information Technology (ICCIT)</div>
         <div class="pub-desc">Conference paper on CNN-based plant disease detection for agriculture-focused intelligent systems.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://www.researchgate.net/publication/398757970_Attention-Based_Hybrid_ViT-ResNet_Model_for_Bangladeshi_Mango_Classification" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - RTIP2R</div>
-        <div class="pub-title">Attention-Based Hybrid ViT-ResNet Model for Bangladeshi Mango Classification</div>
+        <div class="pub-title">Attention-Based Hybrid ViT-ResNet Model for Bangladeshi Mango Classification <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">8th International Conference on Recent Trends in Image Processing &amp; Pattern Recognition</div>
         <div class="pub-desc">Hybrid vision architecture work for classification in an agriculturally relevant imaging context.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://www.researchgate.net/publication/399191646_Lightweight_Convolutional_Networks_and_Explainable_AI_for_Real-Time_and_Interpretable_Tea_Leaf_Disease_Detection" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - IDAA</div>
-        <div class="pub-title">Lightweight Convolutional Networks and Explainable AI for Real-Time and Interpretable Tea Leaf Disease Detection</div>
+        <div class="pub-title">Lightweight Convolutional Networks and Explainable AI for Real-Time and Interpretable Tea Leaf Disease Detection <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
         <div class="pub-desc">Applied lightweight deep learning and explainable AI to real-time agricultural disease detection.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://doi.org/10.2991/978-94-6239-664-7_6" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - IDAA</div>
-        <div class="pub-title">CancerGuard: A Deep Learning Approach to Lung Cancer Detection</div>
+        <div class="pub-title">CancerGuard: A Deep Learning Approach to Lung Cancer Detection <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
         <div class="pub-desc">Healthcare-focused deep learning research on lung cancer detection under the CancerGuard study.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://doi.org/10.2991/978-94-6239-664-7_3" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - IDAA</div>
-        <div class="pub-title">Improving Early Alzheimer Disease Diagnosis Using Machine Learning and Deep Learning Techniques</div>
+        <div class="pub-title">Improving Early Alzheimer's Disease Diagnosis Using Machine Learning on Clinical and Demographic Data <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
         <div class="pub-desc">Co-authored study exploring early diagnosis workflows with machine learning and deep learning methods.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://www.researchgate.net/publication/398780635_Improving_Early_Alzheimer's_Disease_Diagnosis_Using_Machine_Learning_on_Clinical_and_Demographic_Data" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
+        <div class="pub-year">2025 - ResearchGate</div>
+        <div class="pub-title">Improving Early Alzheimer's Disease Diagnosis Using Machine Learning on Clinical and Demographic Data <span class="pub-link-icon">&#8599;</span></div>
+        <div class="pub-meta">ResearchGate Preprint / Publication</div>
+        <div class="pub-desc">Co-authored study analyzing clinical and demographic metrics to optimize diagnostic accuracy for early-stage Alzheimer's disease.</div>
+      </a>
+      <a href="https://www.researchgate.net/publication/400898883_Predicting_Cardiovascular_Disease_Risk_Using_Machine_Learning_Models_A_Comprehensive_Evaluation_of_Clinical_and_ECG_Data" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - IDAA</div>
-        <div class="pub-title">Predicting Cardiovascular Disease Risk Using Machine Learning Models</div>
+        <div class="pub-title">Predicting Cardiovascular Disease Risk Using Machine Learning Models: A Comprehensive Evaluation of Clinical and ECG Data <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
         <div class="pub-desc">Comparative evaluation of clinical and ECG-informed machine learning approaches for cardiovascular risk prediction.</div>
-      </div>
-      <div class="pub-card reveal">
+      </a>
+      <a href="https://doi.org/10.2991/978-94-6239-664-7_44" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2025 - IDAA</div>
-        <div class="pub-title">A Comprehensive Study on Deep Learning Architectures for Robust Object Identification in UAV-based Thermal Imaging</div>
+        <div class="pub-title">A Comprehensive Study on Deep Learning Architectures for Robust Object Identification in UAV-based Thermal Imaging <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
         <div class="pub-desc">Research on deep learning architectures for robust object identification in thermal imaging scenarios.</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
