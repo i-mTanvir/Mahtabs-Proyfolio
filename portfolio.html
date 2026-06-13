@@ -111,6 +111,40 @@ body:has(button:hover) #cursor-ring{
   border-color:var(--blue);
 }
 
+.back-to-top{
+  position:fixed;
+  right:2rem;
+  bottom:2rem;
+  width:36px;
+  height:36px;
+  border:1px solid rgba(79,142,247,.5);
+  border-radius:50%;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--blue);
+  cursor:none;
+  z-index:650;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(18px) scale(.92);
+  transition:border-color .2s ease,background .2s ease,color .2s ease;
+}
+.back-to-top:hover{
+  border-color:var(--blue);
+  background:transparent;
+}
+.back-to-top svg{
+  width:14px;
+  height:14px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
 /* â”€â”€ BINARY RAIN CANVAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #binaryCanvas{
   position:fixed;inset:0;z-index:0;
@@ -830,6 +864,7 @@ footer{
   nav .nav-links{display:none}
   .nav-actions{gap:.75rem}
   .theme-toggle{width:1.9rem;height:1.9rem}
+  .back-to-top{right:1.1rem;bottom:1.1rem}
   footer{flex-direction:column;gap:.6rem;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){
@@ -1292,6 +1327,13 @@ footer{
   </div>
 </section>
 
+<button class="back-to-top" id="backToTop" type="button" aria-label="Go to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 18V6"></path>
+    <path d="M7 11l5-5 5 5"></path>
+  </svg>
+</button>
+
 <footer>
   <div class="foot-note">&copy; 2025 <span>Md Shahriar Mannan Prottoy</span> - research portfolio.</div>
   <div class="foot-note">Daffodil International University - Savar, Dhaka, Bangladesh</div>
@@ -1307,6 +1349,7 @@ const themeToggle = document.getElementById('themeToggle');
 const themeToggleLabel = document.getElementById('themeToggleLabel');
 const themeToggleIcon = document.getElementById('themeToggleIcon');
 const themeOverlay = document.getElementById('themeOverlay');
+const backToTop = document.getElementById('backToTop');
 const THEME_STORAGE_KEY = 'prottoy-portfolio-theme';
 
 function setThemeToggleVisuals(mode) {
@@ -1614,6 +1657,36 @@ ScrollTrigger.create({
   start: 80,
   onEnter:     () => document.getElementById('mainNav').classList.add('scrolled'),
   onLeaveBack: () => document.getElementById('mainNav').classList.remove('scrolled'),
+});
+
+ScrollTrigger.create({
+  trigger: '#about',
+  start: 'center center',
+  onEnter: () => {
+    gsap.to(backToTop, {
+      autoAlpha: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.32,
+      ease: 'power2.out'
+    });
+  },
+  onLeaveBack: () => {
+    gsap.to(backToTop, {
+      autoAlpha: 0,
+      y: 18,
+      scale: 0.92,
+      duration: 0.24,
+      ease: 'power2.in'
+    });
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
