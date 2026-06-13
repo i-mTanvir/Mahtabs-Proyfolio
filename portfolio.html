@@ -286,9 +286,13 @@ nav.scrolled{
 .sec-eyebrow::before{content:'//';color:var(--muted)}
 .sec-title{
   font-family:var(--display);
-  font-size:clamp(1.9rem,3.8vw,2.8rem);
+  font-size:clamp(1.45rem,3vw,2.8rem);
   font-weight:700;letter-spacing:-.025em;
   line-height:1.1;margin-bottom:1rem;
+  display:inline-block;
+  width:max-content;
+  max-width:100%;
+  white-space:nowrap;
 }
 .sec-sub{
   color:var(--muted2);font-size:.88rem;
@@ -506,9 +510,12 @@ nav.scrolled{
 .contact-inner{max-width:620px;margin:0 auto}
 .contact-big{
   font-family:var(--display);
-  font-size:clamp(2.5rem,6vw,4.8rem);
+  font-size:clamp(1.8rem,4.8vw,4.2rem);
   font-weight:700;letter-spacing:-.03em;
   line-height:1.05;margin-bottom:1.2rem;
+  display:inline-block;
+  white-space:nowrap;
+  max-width:100%;
 }
 .contact-big .outline{
   color:transparent;
@@ -637,7 +644,7 @@ footer{
 <section id="about" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">about_me.py</div>
-    <h2 class="sec-title reveal">Who compiles<br/>this code.</h2>
+    <h2 class="sec-title reveal">Who compiles this code.</h2>
 
     <div class="about-grid">
       <div>
@@ -697,7 +704,7 @@ footer{
 <section id="skills" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">tech_stack.config</div>
-    <h2 class="sec-title reveal">What runs<br/>in my environment.</h2>
+    <h2 class="sec-title reveal">What runs in my environment.</h2>
     <p class="sec-sub reveal">Built from real projects. No tutorial stack.</p>
 
     <div class="skills-grid">
@@ -872,9 +879,7 @@ footer{
   <div class="section-flow">
     <div class="contact-inner">
       <div class="sec-eyebrow reveal" style="justify-content:center">contact.init()</div>
-      <h2 class="contact-big reveal">
-        Let's build<br/>something <span class="outline">real.</span>
-      </h2>
+      <h2 class="contact-big reveal">Let's build something <span class="outline">real.</span></h2>
       <p class="contact-sub reveal">
         Open to internships, research collaborations, and full-time roles.
         If you're building something hard, I want in.
