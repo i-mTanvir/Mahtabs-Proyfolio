@@ -96,7 +96,7 @@ nav.scrolled{
 .nav-logo::before{
   content:'>';color:var(--cyan);
 }
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap;justify-content:flex-end}
 .nav-links a{
   font-family:var(--mono);font-size:.72rem;
   color:var(--muted2);letter-spacing:.1em;
@@ -372,6 +372,49 @@ nav.scrolled{
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:1.2rem;margin-top:3.5rem;
 }
+#achievements{background:var(--surface)}
+#achievements .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;margin-top:3.5rem}
+.pub-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.2rem;
+  margin-top:3.5rem;
+}
+.pub-card{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.4rem;
+  transition:border-color .25s,transform .25s;
+}
+.pub-card:hover{border-color:rgba(79,142,247,.4);transform:translateY(-4px)}
+.pub-year{
+  font-family:var(--mono);
+  font-size:.65rem;
+  color:var(--blue);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:.7rem;
+}
+.pub-title{
+  font-family:var(--display);
+  font-size:1rem;
+  font-weight:600;
+  line-height:1.4;
+  margin-bottom:.6rem;
+}
+.pub-meta{
+  font-family:var(--mono);
+  font-size:.66rem;
+  color:var(--muted2);
+  line-height:1.7;
+  margin-bottom:.75rem;
+}
+.pub-desc{
+  font-size:.78rem;
+  color:var(--muted2);
+  line-height:1.75;
+}
 .skill-card{
   background:var(--surface2);
   border:1px solid var(--border);
@@ -587,6 +630,8 @@ footer{
     <li><a href="#about">about</a></li>
     <li><a href="#skills">stack</a></li>
     <li><a href="#projects">work</a></li>
+    <li><a href="#achievements">awards</a></li>
+    <li><a href="#publications">papers</a></li>
     <li><a href="#experience">timeline</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
@@ -599,7 +644,7 @@ footer{
   <div class="hero-content">
     <div class="hero-status">
       <span class="hero-status-dot"></span>
-      <span>AVAILABLE FOR OPPORTUNITIES — DHAKA, BD</span>
+      <span>OPEN TO RESEARCH &amp; ACADEMIC OPPORTUNITIES - DHAKA, BANGLADESH</span>
     </div>
 
     <div class="hero-name-wrap">
@@ -619,19 +664,19 @@ footer{
 
 
     <div class="hero-ctas">
-      <a class="c-link" href="mailto:tanvir@example.com"><span class="c-link-icon">✉</span> email</a>
-      <a class="c-link" href="https://github.com/" target="_blank"><span class="c-link-icon">⌥</span> github</a>
-      <a class="c-link" href="https://linkedin.com/" target="_blank"><span class="c-link-icon">⬡</span> linkedin</a>
-      <a class="c-link" href="#" download><span class="c-link-icon">↓</span> resume.pdf</a>
+      <a class="c-link" href="mailto:prottoy2205101490@diu.edu.bd"><span class="c-link-icon">&#9993;</span> email</a>
+      <a class="c-link" href="#" target="_blank" rel="noreferrer"><span class="c-link-icon">&#8997;</span> github</a>
+      <a class="c-link" href="#" target="_blank" rel="noreferrer"><span class="c-link-icon">&#11041;</span> linkedin</a>
+      <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download><span class="c-link-icon">&#8595;</span> resume</a>
     </div>
   </div>
 
   <div class="hero-corner-code" id="heroCode">
-    <span>// currently building</span><br/>
-    <em>ChestAI</em> <span>v2.1.0</span><br/>
-    <span>DenseNet121 + CXR-BERT</span><br/>
-    <span>cross_modal_attention: </span><em>enabled</em><br/>
-    <span>accuracy: </span><em>94.2%</em>
+    <span>// thesis project</span><br/>
+    <em>BrainTumorNet</em> <span>v1.0</span><br/>
+    <span>cnn_tokenized_transformer</span><br/>
+    <span>capsule_routing: </span><em>enabled</em><br/>
+    <span>cgpa: </span><em>3.95</em>
   </div>
 
   <div class="scroll-ind" id="scrollInd">
@@ -649,23 +694,23 @@ footer{
     <div class="about-grid">
       <div>
         <div class="about-text reveal">
-          <p>I'm a <strong>Computer Science & Engineering</strong> student at Daffodil International University, deep in my final year and sharper than ever. My FYDP is a <span class="highlight">multimodal AI diagnostic system</span> — DenseNet121 + CXR-BERT with cross-modal attention, detecting pneumonia and TB from chest X-rays and radiology text.</p>
-          <p>Outside research: Flutter mobile apps, React frontends, Canvas game engines, and anything that moves on a screen. I write code the way I think — <strong>precise, intentional, no noise.</strong></p>
-          <p>Supervised by <strong>Dr. Md. Zahid Hasan</strong>. Partner: <strong>Nafis Al Rahman</strong>. Ethics clearance: <span class="highlight">REC-FSIT/DIU/2025/012</span>.</p>
+          <p>I'm a <strong>research-oriented Computer Science undergraduate</strong> at Daffodil International University with a strong focus on <span class="highlight">Artificial Intelligence, Deep Learning, and Computer Vision</span>. I enjoy building practical machine learning systems that move research ideas toward real-world impact.</p>
+          <p>My current thesis is <strong>CNN-Tokenized Compact Transformer with Capsule Routing for Brain Tumor Detection</strong>. I work across healthcare research and intelligent automation, with hands-on interest in reliable, interpretable, and academically grounded AI systems.</p>
+          <p>I also serve as <strong>Vice President of Research and Innovation</strong> at the AR/VR &amp; Game Development Lab, contributing to research strategy sessions, academic development, and affordable AR implementation and evaluation in the Bangladesh context.</p>
         </div>
 
         <div class="stats-row reveal">
           <div class="stat-item">
-            <div class="stat-num" data-target="4">0</div>
-            <div class="stat-label"><strong>Years in CSE</strong><span>DIU · graduating 2025</span></div>
+            <div class="stat-num" data-target="3.95" data-decimals="2">0</div>
+            <div class="stat-label"><strong>Current CGPA</strong><span>Daffodil International University</span></div>
           </div>
           <div class="stat-item">
-            <div class="stat-num" data-target="12">0</div>
-            <div class="stat-label"><strong>Projects shipped</strong><span>web · mobile · AI · games</span></div>
+            <div class="stat-num" data-target="8">0</div>
+            <div class="stat-label"><strong>Research publications</strong><span>datasets · journals · conferences</span></div>
           </div>
           <div class="stat-item">
-            <div class="stat-num" data-target="94">0</div>
-            <div class="stat-label"><strong>% FYDP accuracy</strong><span>TB + pneumonia detection</span></div>
+            <div class="stat-num" data-target="5">0</div>
+            <div class="stat-label"><strong>Major competitions</strong><span>NASA · algorithms · AI events</span></div>
           </div>
         </div>
       </div>
@@ -675,23 +720,24 @@ footer{
           <div class="t-dot"></div>
           <div class="t-dot"></div>
           <div class="t-dot"></div>
-          <div class="terminal-title">tanvir@diu:~</div>
+          <div class="terminal-title">prottoy@diu:~</div>
         </div>
         <div class="terminal-body">
-          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat about.json</span></span>
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat academic_profile.json</span></span>
           <span class="t-line t-out blue">{</span>
           <span class="t-line t-out">&nbsp;&nbsp;"name": <span style="color:#86efac">"Md Shahriar Mannan Prottoy"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"CSE Final Year"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"AI Research Undergraduate"</span>,</span>
           <span class="t-line t-out">&nbsp;&nbsp;"university": <span style="color:#86efac">"DIU, Bangladesh"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"research": <span style="color:#86efac">"Multimodal AI Dx"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"stack": [<span style="color:#fde68a">"PyTorch","Flutter","React"</span>],</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_work"</span></span>
+          <span class="t-line t-out">&nbsp;&nbsp;"thesis": <span style="color:#86efac">"Brain Tumor Detection"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"cgpa": <span style="color:#fde68a">3.95</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"focus": [<span style="color:#fde68a">"AI","Deep Learning","Computer Vision"</span>],</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_research"</span></span>
           <span class="t-line t-out blue">}</span>
           <span class="t-line t-comment">&nbsp;</span>
-          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">python train.py --epochs 100</span></span>
-          <span class="t-line t-out green">Epoch 100/100 ━━━━━━━━━━ 100%</span>
-          <span class="t-line t-out green">val_acc: 0.9420 — val_loss: 0.087</span>
-          <span class="t-line t-out yellow">Model saved → checkpoints/best.pth</span>
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">python thesis_train.py --model ctc-transformer</span></span>
+          <span class="t-line t-out green">training_brain_tumor_model ━━━━━━━━━━ 100%</span>
+          <span class="t-line t-out green">research_focus: medical_imaging + interpretability</span>
+          <span class="t-line t-out yellow">papers_indexed → publications/2025/</span>
           <span class="t-line t-comment">&nbsp;</span>
           <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd" id="termTyping"></span><span class="type-cursor"></span></span>
         </div>
@@ -705,45 +751,45 @@ footer{
   <div class="section-flow">
     <div class="sec-eyebrow reveal">tech_stack.config</div>
     <h2 class="sec-title reveal">What runs in my environment.</h2>
-    <p class="sec-sub reveal">Built from real projects. No tutorial stack.</p>
+    <p class="sec-sub reveal">Every card here is grounded in my academic CV, research workflow, and lab project experience.</p>
 
     <div class="skills-grid">
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">🧠</span>
-      <div class="skill-name">AI / Machine Learning</div>
-      <div class="skill-desc">Deep learning pipelines, CV architectures, multimodal fusion, explainability.</div>
-      <div class="tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">DenseNet</span><span class="tag">BERT</span><span class="tag">OpenCV</span><span class="tag">Grad-CAM</span></div>
-    </div>
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">📱</span>
-      <div class="skill-name">Mobile — Flutter</div>
-      <div class="skill-desc">Cross-platform apps with real backends, real-time sync, production-ready.</div>
-      <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Supabase</span><span class="tag">Firebase</span><span class="tag">BLoC</span></div>
-    </div>
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">🌐</span>
-      <div class="skill-name">Web Frontend</div>
-      <div class="skill-desc">Pixel-accurate UIs, Canvas animations, GSAP, component architecture.</div>
-      <div class="tags"><span class="tag">React</span><span class="tag">HTML/CSS</span><span class="tag">JS</span><span class="tag">GSAP</span><span class="tag">Three.js</span></div>
-    </div>
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">⚙️</span>
-      <div class="skill-name">Backend & DevOps</div>
-      <div class="skill-desc">REST APIs, databases, Linux administration, deployment pipelines.</div>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Git</span><span class="tag">Linux</span></div>
-    </div>
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">🎮</span>
-      <div class="skill-name">Game / Canvas</div>
-      <div class="skill-desc">HTML5 Canvas game engines, physics, Web Audio API, procedural generation.</div>
-      <div class="tags"><span class="tag">Canvas 2D</span><span class="tag">WebGL</span><span class="tag">Web Audio</span><span class="tag">OpenGL</span></div>
-    </div>
-    <div class="skill-card reveal-scale">
-      <span class="skill-icon">🔬</span>
-      <div class="skill-name">Research</div>
-      <div class="skill-desc">Academic writing, IRB ethics, dataset design, methodology, literature review.</div>
-      <div class="tags"><span class="tag">LaTeX</span><span class="tag">IRB/Ethics</span><span class="tag">Methodology</span><span class="tag">DGHS Protocol</span></div>
-    </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#129504;</span>
+        <div class="skill-name">AI / Machine Learning</div>
+        <div class="skill-desc">Research-led work in deep learning and computer vision for practical, interpretable systems.</div>
+        <div class="tags"><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128187;</span>
+        <div class="skill-name">Programming Languages</div>
+        <div class="skill-desc">Solid academic and project foundation across core programming and web technologies.</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128202;</span>
+        <div class="skill-name">Research Tooling</div>
+        <div class="skill-desc">Daily workflow for experimentation, dataset work, notebooks, and structured analysis.</div>
+        <div class="tags"><span class="tag">Jupyter Notebook</span><span class="tag">Google Colab</span><span class="tag">Kaggle</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128221;</span>
+        <div class="skill-name">Academic Writing</div>
+        <div class="skill-desc">Research strategy, technical writing, paper preparation, and publication-oriented documentation.</div>
+        <div class="tags"><span class="tag">LaTeX</span><span class="tag">Research Writing</span><span class="tag">Methodology</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#127760;</span>
+        <div class="skill-name">Web & Product Foundations</div>
+        <div class="skill-desc">Built through web engineering, database, OOP, and mobile application coursework.</div>
+        <div class="tags"><span class="tag">Web Engineering</span><span class="tag">Database Systems</span><span class="tag">OOP</span><span class="tag">Mobile Apps</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#127891;</span>
+        <div class="skill-name">Languages</div>
+        <div class="skill-desc">Comfortable in multilingual academic and collaborative settings.</div>
+        <div class="tags"><span class="tag">Bengali</span><span class="tag">English IELTS 7.0</span><span class="tag">Hindi</span><span class="tag">Urdu</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -752,89 +798,194 @@ footer{
 <section id="projects" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">projects.ls</div>
-    <h2 class="sec-title reveal">Things I shipped.</h2>
+    <h2 class="sec-title reveal">Projects from coursework and research.</h2>
 
     <div class="proj-grid">
-
-    <div class="proj-card reveal">
-      <span class="proj-feat">FYDP</span>
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#060d1f,#0d1f40)">
-        <div class="proj-thumb-code">import torch<br/>from models import DenseNet121, CXRBERT<br/>from attention import CrossModalFusion<br/>x_ray = load_dicom("scan.dcm")<br/>report = tokenize(text)<br/>fused = CrossModalFusion(x_ray, report)<br/>pred = model(fused)<br/>print(f"TB: {pred[0]:.3f} PNEU: {pred[1]:.3f}")</div>
-        <span class="proj-emoji">🫁</span>
+      <div class="proj-card reveal">
+        <span class="proj-feat">THESIS</span>
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#060d1f,#0d1f40)">
+          <div class="proj-thumb-code">model = CNNTokenizedCompactTransformer()<br/>capsule = CapsuleRouting()<br/>scan = load_mri(image)<br/>features = model(scan)<br/>prediction = capsule(features)<br/>print(&quot;brain_tumor_detected&quot;)</div>
+          <span class="proj-emoji">&#129504;</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-type">Research - AI</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Brain Tumor Detection Thesis</div>
+          <div class="proj-desc">Bachelor thesis project on CNN-Tokenized Compact Transformer with Capsule Routing for brain tumor detection, aligned with my long-term work in medical imaging and interpretable AI research.</div>
+          <div class="tags"><span class="tag">Deep Learning</span><span class="tag">Computer Vision</span><span class="tag">Medical Imaging</span><span class="tag">Capsule Routing</span></div>
+        </div>
       </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">Research · AI</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">ChestAI — Multimodal Diagnostic System</div>
-        <div class="proj-desc">DenseNet121 + CXR-BERT with cross-modal attention. Detects TB and pneumonia from X-rays + radiology text. 94.2% val accuracy. IRB-approved clinical data.</div>
-        <div class="tags"><span class="tag">PyTorch</span><span class="tag">DenseNet121</span><span class="tag">BERT</span><span class="tag">Grad-CAM</span></div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#060f14,#0a2035)">
+          <div class="proj-thumb-code">POST /voice-of-bangladesh<br/>share_opinion(topic, text)<br/>render_public_issue_feed()<br/>publish_awareness_campaign()</div>
+          <span class="proj-emoji">&#127760;</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-type">Web - Lab Project</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Voice Of Bangladesh</div>
+          <div class="proj-desc">Led the development of a web-based platform for a Web Engineering Lab project to promote social awareness, public opinion, and national issue discussion through an interactive online system.</div>
+          <div class="tags"><span class="tag">Web Engineering</span><span class="tag">Social Platform</span><span class="tag">Team Lead</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#12060f,#2a0d20)">
+          <div class="proj-thumb-code">class FoodDeliveryApp {<br/>  saveOrderLocally();<br/>  persistUserData();<br/>  trackDeliveryInfo();<br/>}</div>
+          <span class="proj-emoji">&#127828;</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-type">Mobile - Flutter</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Food Delivery App</div>
+          <div class="proj-desc">Led the development of a Flutter-based mobile application for the Mobile Application Design Lab, featuring local storage integration for orders, user data, and delivery information.</div>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Local Storage</span><span class="tag">Mobile App</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#060f0a,#0a2016)">
+          <div class="proj-thumb-code">class BankSystem {<br/>  createAccount();<br/>  deposit(); withdraw();<br/>  handleTransactions();<br/>}</div>
+          <span class="proj-emoji">&#127974;</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-type">OOP - Java</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Bank Management System</div>
+          <div class="proj-desc">Led a team in designing and developing a Java-based Object-Oriented Programming project featuring account management, transaction handling, and customer banking operations.</div>
+          <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Team Lead</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0e06,#1c2408)">
+          <div class="proj-thumb-code">rooms.reserve(customer)<br/>billing.generate(invoice)<br/>records.update(guest)<br/>db.commit()</div>
+          <span class="proj-emoji">&#127976;</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top"><span class="proj-type">Database - Lab Project</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Hotel Management System</div>
+          <div class="proj-desc">Led the development of a Database Management System Lab project for handling hotel reservations, customer records, room allocation, and billing operations efficiently.</div>
+          <div class="tags"><span class="tag">DBMS</span><span class="tag">SQL</span><span class="tag">Reservations</span><span class="tag">Billing</span></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="proj-card reveal">
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#060f14,#0a2035)">
-        <div class="proj-thumb-code">class ReelsPage extends StatefulWidget {<br/>  @override _ReelsPageState createState();<br/>}<br/>final supabase = Supabase.instance.client;<br/>Stream&lt;List&lt;Video&gt;&gt; watchFeed() {<br/>  return supabase.from('reels')<br/>    .stream(primaryKey: ['id'])<br/>    .map((d) => d.map(Video.fromJson));<br/>}</div>
-        <span class="proj-emoji">📡</span>
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">achievements.md</div>
+    <h2 class="sec-title reveal">Recognition, competitions, and milestones.</h2>
+    <p class="sec-sub reveal">Academic progress, competitive participation, and recognition that reflect how I grow beyond coursework.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128640;</span>
+        <div class="skill-name">NASA Space Apps 2025</div>
+        <div class="skill-desc">Regional Champion and Global Nominee in one of the world's most visible innovation hackathons.</div>
+        <div class="tags"><span class="tag">NASA</span><span class="tag">2025</span><span class="tag">Global Nominee</span></div>
       </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">Mobile · Flutter</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">RIPO — Social Platform</div>
-        <div class="proj-desc">Flutter + Supabase social app. Reels feed with real-time sync, yt-dlp audio pipeline, messaging, user auth. Production-grade architecture.</div>
-        <div class="tags"><span class="tag">Flutter</span><span class="tag">Supabase</span><span class="tag">Dart</span><span class="tag">yt-dlp</span></div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#127942;</span>
+        <div class="skill-name">Academic Waiver</div>
+        <div class="skill-desc">Received merit-based academic waiver in all semesters for consistent academic performance at DIU.</div>
+        <div class="tags"><span class="tag">Merit</span><span class="tag">All Semesters</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#11088;</span>
+        <div class="skill-name">Honor Board Recognition</div>
+        <div class="skill-desc">Featured as "Hero of the Hall" at Yunus Khan Scholar Garden-1 for academic excellence and discipline.</div>
+        <div class="tags"><span class="tag">Honor Board</span><span class="tag">Discipline</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#9889;</span>
+        <div class="skill-name">Prompt Battle 2025</div>
+        <div class="skill-desc">Participated in a competitive AI prompting event centered on creativity, problem-solving, and prompt engineering.</div>
+        <div class="tags"><span class="tag">AI</span><span class="tag">Prompt Engineering</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#129518;</span>
+        <div class="skill-name">Unlock The Algorithm 2024</div>
+        <div class="skill-desc">Competed in an algorithmic contest focused on logical thinking, efficiency, and computational skills.</div>
+        <div class="tags"><span class="tag">Algorithms</span><span class="tag">Problem Solving</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#127756;</span>
+        <div class="skill-name">NASA Space Apps 2024</div>
+        <div class="skill-desc">Participated in the global innovation hackathon, building technology-driven solutions for space and Earth challenges.</div>
+        <div class="tags"><span class="tag">Hackathon</span><span class="tag">Innovation</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128187;</span>
+        <div class="skill-name">Take Off 2022</div>
+        <div class="skill-desc">Joined a competitive programming contest focused on C programming and structured problem-solving.</div>
+        <div class="tags"><span class="tag">C Programming</span><span class="tag">Contest</span></div>
+      </div>
+      <div class="skill-card reveal-scale">
+        <span class="skill-icon">&#128267;</span>
+        <div class="skill-name">IoT Fest 2022</div>
+        <div class="skill-desc">Participated in an IoT-centered technology festival showcasing smart systems and embedded ideas.</div>
+        <div class="tags"><span class="tag">IoT</span><span class="tag">Innovation</span></div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="proj-card reveal">
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#12060f,#2a0d20)">
-        <div class="proj-thumb-code">class LoveLaneSurfer {<br/>  constructor(canvas) {<br/>    this.ctx = canvas.getContext('2d');<br/>    this.player = new Player(80, 300);<br/>    this.obstacles = [];<br/>    this.score = 0;<br/>  }<br/>  gameLoop(ts) {<br/>    this.update(); this.render();<br/>    requestAnimationFrame(t => this.gameLoop(t));<br/>  }<br/>}</div>
-        <span class="proj-emoji">❤️</span>
-      </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">Game · Canvas</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">Love Lane Surfer</div>
-        <div class="proj-desc">HTML5 Canvas endless runner. Procedural level generation, Web Audio API sound engine, animated sprites, frame-perfect collision detection.</div>
-        <div class="tags"><span class="tag">Canvas 2D</span><span class="tag">Web Audio</span><span class="tag">Vanilla JS</span></div>
-      </div>
-    </div>
+<!-- PUBLICATIONS -->
+<section id="publications" class="section">
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">publications.bib</div>
+    <h2 class="sec-title reveal">Research publications and dataset work.</h2>
+    <p class="sec-sub reveal">A focused mix of dataset publication, conference papers, and applied AI studies across healthcare, agriculture, and imaging.</p>
 
-    <div class="proj-card reveal">
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#060f0a,#0a2016)">
-        <div class="proj-thumb-code">// NeoBank Flutter App<br/>Future&lt;void&gt; transfer({<br/>  required String toId,<br/>  required double amount,<br/>}) async {<br/>  await supabase.rpc('transfer_funds', params: {<br/>    'from_id': currentUser.id,<br/>    'to_id': toId, 'amount': amount,<br/>  });<br/>}</div>
-        <span class="proj-emoji">🏦</span>
+    <div class="pub-grid">
+      <div class="pub-card reveal">
+        <div class="pub-year">2024 - Dataset</div>
+        <div class="pub-title">PMRAM: Bangladeshi Brain Cancer - MRI Dataset</div>
+        <div class="pub-meta">Mendeley Data, V1 - doi: 10.17632/m7w55sw88b.1</div>
+        <div class="pub-desc">Published dataset work with collaborators, contributing to brain cancer MRI data availability for research in Bangladesh.</div>
       </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">Mobile · FinTech</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">NeoBank App</div>
-        <div class="proj-desc">Academic fintech Flutter project. Balance dashboard, transaction history, peer transfers, Supabase RPC for atomic fund operations.</div>
-        <div class="tags"><span class="tag">Flutter</span><span class="tag">Supabase</span><span class="tag">PostgreSQL RPC</span></div>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - ICCIT</div>
+        <div class="pub-title">Automated Lemon Leaf Disease Detection with Convolutional Neural Networks for Smart Agriculture</div>
+        <div class="pub-meta">2025 28th International Conference on Computer and Information Technology (ICCIT)</div>
+        <div class="pub-desc">Conference paper on CNN-based plant disease detection for agriculture-focused intelligent systems.</div>
       </div>
-    </div>
-
-    <div class="proj-card reveal">
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0e06,#1c2408)">
-        <div class="proj-thumb-code">// RAG pipeline for OBE alignment<br/>from langchain.vectorstores import Chroma<br/>from langchain.embeddings import HuggingFaceEmbeddings<br/>vectorstore = Chroma.from_documents(<br/>  documents=course_materials,<br/>  embedding=HuggingFaceEmbeddings()<br/>)<br/>retriever = vectorstore.as_retriever(k=5)</div>
-        <span class="proj-emoji">🎓</span>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - RTIP2R</div>
+        <div class="pub-title">Attention-Based Hybrid ViT-ResNet Model for Bangladeshi Mango Classification</div>
+        <div class="pub-meta">8th International Conference on Recent Trends in Image Processing & Pattern Recognition</div>
+        <div class="pub-desc">Hybrid vision architecture work for classification in an agriculturally relevant imaging context.</div>
       </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">AI · EdTech</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">Blended AI — OBE Learning System</div>
-        <div class="proj-desc">Competition proposal for DIU AI 2026. RAG-powered LLM tutor aligned to OBE outcomes. Personalized study paths, real-time knowledge gaps detection.</div>
-        <div class="tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">OBE</span><span class="tag">LLM</span></div>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - IDAA</div>
+        <div class="pub-title">Lightweight Convolutional Networks and Explainable AI for Real-Time and Interpretable Tea Leaf Disease Detection</div>
+        <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
+        <div class="pub-desc">Applied lightweight deep learning and explainable AI to real-time agricultural disease detection.</div>
       </div>
-    </div>
-
-    <div class="proj-card reveal">
-      <div class="proj-thumb" style="background:linear-gradient(135deg,#0f0c06,#251e08)">
-        <div class="proj-thumb-code">// HireHub — job board UI<br/>const filterJobs = (jobs, filters) =&gt; {<br/>  return jobs.filter(job =&gt;<br/>    (!filters.type || job.type === filters.type) &&<br/>    (!filters.location || job.location.includes(filters.location)) &&<br/>    job.salary &gt;= filters.minSalary<br/>  );<br/>};</div>
-        <span class="proj-emoji">💼</span>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - IDAA</div>
+        <div class="pub-title">CancerGuard: A Deep Learning Approach to Lung Cancer Detection</div>
+        <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
+        <div class="pub-desc">Healthcare-focused deep learning research on lung cancer detection under the CancerGuard study.</div>
       </div>
-      <div class="proj-body">
-        <div class="proj-top"><span class="proj-type">Web · Frontend</span><span class="proj-arrow">↗</span></div>
-        <div class="proj-title">HireHub — Job Board</div>
-        <div class="proj-desc">Full multi-section landing page. Responsive HTML/CSS, live filter UI, smooth micro-interactions, mobile-first layout system.</div>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Vanilla JS</span></div>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - IDAA</div>
+        <div class="pub-title">Improving Early Alzheimer Disease Diagnosis Using Machine Learning and Deep Learning Techniques</div>
+        <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
+        <div class="pub-desc">Co-authored study exploring early diagnosis workflows with machine learning and deep learning methods.</div>
       </div>
-    </div>
-
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - IDAA</div>
+        <div class="pub-title">Predicting Cardiovascular Disease Risk Using Machine Learning Models</div>
+        <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
+        <div class="pub-desc">Comparative evaluation of clinical and ECG-informed machine learning approaches for cardiovascular risk prediction.</div>
+      </div>
+      <div class="pub-card reveal">
+        <div class="pub-year">2025 - IDAA</div>
+        <div class="pub-title">A Comprehensive Study on Deep Learning Architectures for Robust Object Identification in UAV-based Thermal Imaging</div>
+        <div class="pub-meta">International Conference on Intelligent Data Analysis and Applications</div>
+        <div class="pub-desc">Research on deep learning architectures for robust object identification in thermal imaging scenarios.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -842,34 +993,42 @@ footer{
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
   <div class="section-flow">
-    <div class="sec-eyebrow reveal">git_log --oneline</div>
-    <h2 class="sec-title reveal">The commit history.</h2>
+    <div class="sec-eyebrow reveal">academic_timeline.log</div>
+    <h2 class="sec-title reveal">Education and leadership timeline.</h2>
 
     <div class="timeline">
-    <div class="tl-item reveal-left">
-      <div class="tl-year">2024 — present</div>
-      <div>
-        <div class="tl-role">FYDP Researcher</div>
-        <div class="tl-org">Daffodil International University — Dr. Md. Zahid Hasan</div>
-        <div class="tl-desc">Multimodal AI for TB + pneumonia diagnosis. Full pipeline: DICOM preprocessing → DenseNet121 feature extraction → CXR-BERT text encoding → cross-modal attention fusion → Grad-CAM explainability. IRB ethics clearance, DGHS hospital data approval, clinical validation at Shyamoli 250-Bed TB Hospital.</div>
+      <div class="tl-item reveal-left">
+        <div class="tl-year">2025 - 2026</div>
+        <div>
+          <div class="tl-role">Vice President of Research and Innovation</div>
+          <div class="tl-org">AR/VR &amp; Game Development Lab - Daffodil International University</div>
+          <div class="tl-desc">Contributed to professional and academic development, delivered sessions on research strategies and writing, and worked on affordable AR implementation and evaluation in a Bangladesh test-case context.</div>
+        </div>
       </div>
-    </div>
-    <div class="tl-item reveal-left">
-      <div class="tl-year">2022 — 2025</div>
-      <div>
-        <div class="tl-role">B.Sc. Computer Science & Engineering</div>
-        <div class="tl-org">Daffodil International University · Section 63_E1</div>
-        <div class="tl-desc">Algorithms, computer graphics (OpenGL/GLUT), mobile application design, database systems, networking fundamentals, software engineering. Strong practical emphasis — lab evaluations, project submissions, competition entries.</div>
+      <div class="tl-item reveal-left">
+        <div class="tl-year">2022 - Present</div>
+        <div>
+          <div class="tl-role">Bachelor of Science in Computer Science</div>
+          <div class="tl-org">Daffodil International University - CGPA 3.95</div>
+          <div class="tl-desc">Current undergraduate study with a thesis on CNN-Tokenized Compact Transformer with Capsule Routing for Brain Tumor Detection, supported by consistent merit-based academic performance.</div>
+        </div>
       </div>
-    </div>
-    <div class="tl-item reveal-left">
-      <div class="tl-year">2023</div>
-      <div>
-        <div class="tl-role">Freelance Web & App Developer</div>
-        <div class="tl-org">Independent</div>
-        <div class="tl-desc">Shipped landing pages, Flutter apps, and data tooling for clients and personal projects. Developed a reliable workflow for fast, clean production software — from first commit to deployed product.</div>
+      <div class="tl-item reveal-left">
+        <div class="tl-year">2019 - 2020</div>
+        <div>
+          <div class="tl-role">Higher Secondary School Certificate</div>
+          <div class="tl-org">Govt. Netrokona College - Science - GPA 5.00</div>
+          <div class="tl-desc">Completed higher secondary studies in the science track with top academic performance.</div>
+        </div>
       </div>
-    </div>
+      <div class="tl-item reveal-left">
+        <div class="tl-year">2017 - 2018</div>
+        <div>
+          <div class="tl-role">Secondary School Certificate</div>
+          <div class="tl-org">Anjuman Adarsha Govt High School - Science - GPA 4.89</div>
+          <div class="tl-desc">Built the academic foundation that later shaped my interest in engineering, problem-solving, and research.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -879,23 +1038,23 @@ footer{
   <div class="section-flow">
     <div class="contact-inner">
       <div class="sec-eyebrow reveal" style="justify-content:center">contact.init()</div>
-      <h2 class="contact-big reveal">Let's build something <span class="outline">real.</span></h2>
+      <h2 class="contact-big reveal">Let's connect for <span class="outline">research.</span></h2>
       <p class="contact-sub reveal">
-        Open to internships, research collaborations, and full-time roles.
-        If you're building something hard, I want in.
+        Open to research collaborations, academic opportunities, internships, and meaningful technical work.
+        Based in Daffodil Smart City, Savar, Dhaka. References available upon request.
       </p>
       <div class="contact-links reveal">
-        <a class="c-link" href="mailto:tanvir@example.com">
-          <span class="c-link-icon">✉</span> email
+        <a class="c-link" href="mailto:prottoy2205101490@diu.edu.bd">
+          <span class="c-link-icon">&#9993;</span> email
         </a>
-        <a class="c-link" href="https://github.com" target="_blank">
-          <span class="c-link-icon">⌥</span> github
+        <a class="c-link" href="tel:+8801621968792">
+          <span class="c-link-icon">&#9742;</span> phone
         </a>
-        <a class="c-link" href="https://linkedin.com" target="_blank">
-          <span class="c-link-icon">⬡</span> linkedin
+        <a class="c-link" href="https://www.google.com/maps/search/?api=1&query=Daffodil+Smart+City+Birulia+Savar+Dhaka+1216" target="_blank" rel="noreferrer">
+          <span class="c-link-icon">&#8982;</span> location
         </a>
-        <a class="c-link" href="#" download>
-          <span class="c-link-icon">↓</span> resume.pdf
+        <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download>
+          <span class="c-link-icon">&#8595;</span> cv.pdf
         </a>
       </div>
     </div>
@@ -903,8 +1062,8 @@ footer{
 </section>
 
 <footer>
-  <div class="foot-note">© 2025 <span>Md Shahriar Mannan Prottoy</span> — crafted with intent.</div>
-  <div class="foot-note">DIU · CSE · Dhaka · BD</div>
+  <div class="foot-note">&copy; 2025 <span>Md Shahriar Mannan Prottoy</span> - research portfolio.</div>
+  <div class="foot-note">Daffodil International University - Savar, Dhaka, Bangladesh</div>
 </footer>
 
 <script>
@@ -1080,11 +1239,11 @@ heroTl
 // TYPEWRITER — hero role
 // ═══════════════════════════════════════════════
 const roles = [
-  'CSE Final Year Student',
-  'AI / ML Researcher',
-  'Full-Stack Developer',
-  'Flutter App Builder',
-  'Canvas Game Maker',
+  'Research-Oriented CSE Undergraduate',
+  'Vice President, Research & Innovation',
+  'AI / Deep Learning Enthusiast',
+  'Computer Vision Researcher',
+  'NASA Space Apps 2025 Regional Champion',
 ];
 let rIdx = 0;
 const roleEl = document.getElementById('heroRole');
@@ -1112,7 +1271,7 @@ gsap.delayedCall(1.6, typeNext);
 // TERMINAL TYPING (about section)
 // ═══════════════════════════════════════════════
 const termEl = document.getElementById('termTyping');
-const termCmds = ['git status','ls -la models/','./deploy.sh --env prod'];
+const termCmds = ['ls publications/2025','python thesis_train.py --epochs 100','cat achievements.md'];
 let tIdx = 0;
 
 ScrollTrigger.create({
@@ -1225,6 +1384,7 @@ gsap.utils.toArray('.reveal-scale').forEach((el, i) => {
 // ═══════════════════════════════════════════════
 document.querySelectorAll('.stat-num').forEach(el => {
   const target = +el.dataset.target;
+  const decimals = +(el.dataset.decimals || 0);
   ScrollTrigger.create({
     trigger: el,
     start: 'top 85%',
@@ -1235,7 +1395,8 @@ document.querySelectorAll('.stat-num').forEach(el => {
         duration: 1.6,
         ease: 'power2.out',
         onUpdate: function() {
-          el.textContent = Math.round(this.targets()[0].val);
+          const value = this.targets()[0].val;
+          el.textContent = decimals ? value.toFixed(decimals) : Math.round(value);
         }
       });
     }
