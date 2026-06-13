@@ -1880,29 +1880,46 @@ function initSkillsMarquee() {
 
   document.querySelectorAll('.logo-marquee').forEach(row => {
     const tracks = row.querySelectorAll('.logo-marquee-track');
-    if (tracks.length < 2) return;
+    if (!tracks.length) return;
 
-    gsap.set(tracks, { clearProps: 'x' });
-
-    const baseWidth = tracks[0].offsetWidth;
+    const rowWidth = row.offsetWidth;
     const direction = row.dataset.marqueeDirection === 'right' ? 1 : -1;
     const speed = Number(row.dataset.marqueeSpeed || 24);
-    const duration = Math.max(baseWidth / speed, 16);
-    const startOffset = row.dataset.marqueeDirection === 'right'
-      ? -baseWidth * 0.62
-      : -baseWidth * 0.18;
+    const primaryTrack = tracks[0];
 
-    gsap.set(tracks[0], { x: startOffset });
-    gsap.set(tracks[1], { x: startOffset + baseWidth });
+    if (!row._baseMarkup) {
+      row._baseMarkup = primaryTrack.innerHTML;
+    }
 
-    const tween = gsap.to(tracks, {
-      x: `+=${direction * baseWidth}`,
+    tracks.forEach((track, index) => {
+      gsap.set(track, { clearProps: 'x' });
+      track.style.display = index === 0 ? 'flex' : 'none';
+    });
+
+    let singleLoopMarkup = row._baseMarkup;
+    primaryTrack.innerHTML = singleLoopMarkup;
+
+    let safety = 0;
+    while (primaryTrack.scrollWidth < rowWidth * 1.6 && safety < 16) {
+      singleLoopMarkup += row._baseMarkup;
+      primaryTrack.innerHTML = singleLoopMarkup;
+      safety += 1;
+    }
+
+    primaryTrack.innerHTML = singleLoopMarkup + singleLoopMarkup;
+
+    const segmentWidth = primaryTrack.scrollWidth / 2;
+    const duration = Math.max(segmentWidth / speed, 14);
+    const startX = direction === -1 ? 0 : -segmentWidth;
+    const endX = direction === -1 ? -segmentWidth : 0;
+
+    gsap.set(primaryTrack, { x: startX });
+
+    const tween = gsap.to(primaryTrack, {
+      x: endX,
       duration,
       ease: 'none',
-      repeat: -1,
-      modifiers: {
-        x: value => `${gsap.utils.wrap(-baseWidth, baseWidth, parseFloat(value))}px`
-      }
+      repeat: -1
     });
 
     marqueeTweens.push(tween);
