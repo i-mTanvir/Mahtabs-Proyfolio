@@ -535,6 +535,11 @@ nav.scrolled{
   object-fit:contain;
   filter:grayscale(0);
 }
+.logo-chip svg{
+  width:2.6rem;
+  height:2.6rem;
+  display:block;
+}
 .logo-chip span{
   font-family:var(--mono);
   font-size:.7rem;
@@ -818,7 +823,7 @@ footer{
   .stats-row{grid-template-columns:1fr}
   .logo-marquee::before,.logo-marquee::after{width:4rem}
   .logo-chip{min-width:9rem;padding:1rem .8rem .85rem}
-  .logo-chip img{width:2.15rem;height:2.15rem}
+  .logo-chip img,.logo-chip svg{width:2.15rem;height:2.15rem}
   .logo-chip span{font-size:.62rem}
   .tl-item{grid-template-columns:1fr;gap:.5rem}
   .tl-item::before,.tl-item::after{display:none}
@@ -1009,7 +1014,7 @@ footer{
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter Notebook logo"/><span>Jupyter Notebook</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="Google Colab logo"/><span>Google Colab</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="Kaggle logo"/><span>Kaggle</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel logo"/><span>Excel</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="LaTeX logo"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub logo"/><span>GitHub</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker logo"/><span>Docker</span></div>
@@ -1021,7 +1026,7 @@ footer{
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" aria-hidden="true"/><span>Jupyter Notebook</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="" aria-hidden="true"/><span>Google Colab</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="" aria-hidden="true"/><span>Kaggle</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" aria-hidden="true"/><span>Excel</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="" aria-hidden="true"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" aria-hidden="true"/><span>GitHub</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" aria-hidden="true"/><span>Docker</span></div>
