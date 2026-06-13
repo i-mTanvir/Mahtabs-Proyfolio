@@ -26,9 +26,36 @@
   --white:#e8eaf0;
   --muted:#4a4d6a;
   --muted2:#6b7099;
+  --nav-bg:rgba(5,5,8,.9);
+  --terminal-bg:#060609;
+  --terminal-bar-bg:#0f0f18;
+  --binary-opacity:.04;
+  --noise-opacity:.018;
+  --toggle-bg:rgba(79,142,247,.08);
+  --toggle-shadow:0 12px 40px rgba(0,0,0,.18);
   --mono:'JetBrains Mono',monospace;
   --display:'Space Grotesk',sans-serif;
   --body:'Inter',sans-serif;
+}
+body.light-theme{
+  --bg:#f4ecde;
+  --surface:#fbf4e9;
+  --surface2:#efe4d2;
+  --border:#d9c8b1;
+  --blue:#2f5fae;
+  --blue2:#244983;
+  --blue-glow:rgba(47,95,174,.12);
+  --cyan:#4b84b7;
+  --white:#18181b;
+  --muted:#9b8f7c;
+  --muted2:#5f564a;
+  --nav-bg:rgba(244,236,222,.88);
+  --terminal-bg:#f0e4d4;
+  --terminal-bar-bg:#e6d8c5;
+  --binary-opacity:.022;
+  --noise-opacity:.008;
+  --toggle-bg:rgba(47,95,174,.08);
+  --toggle-shadow:0 14px 38px rgba(92,68,31,.12);
 }
 html{scroll-behavior:smooth}
 body{
@@ -38,6 +65,29 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   cursor:none;
+  transition:background-color .45s ease,color .45s ease;
+}
+.section,
+nav,
+footer,
+.stat-item,
+.skill-card,
+.proj-card,
+.pub-card,
+.c-link,
+.tag,
+.proj-thumb,
+.proj-thumb-code,
+.hero-status,
+.hero-desc,
+.sec-sub,
+.tl-desc,
+.tl-org,
+.foot-note,
+.terminal-title,
+.t-line,
+.t-comment{
+  transition:background-color .45s ease,color .45s ease,border-color .45s ease,box-shadow .45s ease;
 }
 a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar{width:3px}
@@ -68,7 +118,8 @@ body:has(button:hover) #cursor-ring{
 /* ── BINARY RAIN CANVAS ─────────────────────── */
 #binaryCanvas{
   position:fixed;inset:0;z-index:0;
-  opacity:.04;pointer-events:none;
+  opacity:var(--binary-opacity);pointer-events:none;
+  transition:opacity .45s ease;
 }
 
 /* ── THREE.JS CANVAS ────────────────────────── */
@@ -84,9 +135,14 @@ nav{
   transition:all .4s;
 }
 nav.scrolled{
-  background:rgba(5,5,8,.9);
+  background:var(--nav-bg);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
+}
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:1rem;
 }
 .nav-logo{
   font-family:var(--mono);font-size:.82rem;
@@ -111,6 +167,46 @@ nav.scrolled{
 }
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{right:0}
+.theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  gap:.65rem;
+  padding:.55rem .85rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:var(--toggle-bg);
+  color:var(--white);
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:none;
+  box-shadow:var(--toggle-shadow);
+  transition:transform .25s ease,border-color .25s ease,background-color .25s ease,color .25s ease;
+}
+.theme-toggle:hover{
+  transform:translateY(-2px);
+  border-color:var(--blue);
+}
+.theme-toggle svg{
+  width:1rem;
+  height:1rem;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.theme-toggle-label{min-width:4.2rem;text-align:left}
+.theme-overlay{
+  position:fixed;
+  inset:0;
+  z-index:1200;
+  pointer-events:none;
+  opacity:0;
+  background:var(--bg);
+  clip-path:circle(0 at 50% 50%);
+}
 
 /* ── HERO ────────────────────────────────────── */
 #hero{
@@ -322,14 +418,16 @@ nav.scrolled{
 
 /* terminal block */
 .terminal{
-  background:#060609;border:1px solid var(--border);
+  background:var(--terminal-bg);border:1px solid var(--border);
   border-radius:8px;overflow:hidden;
   font-family:var(--mono);font-size:.75rem;
+  transition:background-color .45s ease,border-color .45s ease;
 }
 .terminal-bar{
-  background:#0f0f18;padding:.6rem 1rem;
+  background:var(--terminal-bar-bg);padding:.6rem 1rem;
   display:flex;align-items:center;gap:.5rem;
   border-bottom:1px solid var(--border);
+  transition:background-color .45s ease,border-color .45s ease;
 }
 .t-dot{width:10px;height:10px;border-radius:50%}
 .t-dot:nth-child(1){background:#ff5f57}
@@ -467,6 +565,12 @@ nav.scrolled{
 
 /* ── PROJECTS ────────────────────────────────── */
 #projects{background:var(--surface)}
+body.light-theme .proj-thumb{
+  background:linear-gradient(135deg,#eadcc8,#f7efe2) !important;
+}
+body.light-theme .proj-thumb-code{
+  color:rgba(47,95,174,.18);
+}
 .proj-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
@@ -623,7 +727,8 @@ nav.scrolled{
 body::after{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-  opacity:.018;pointer-events:none;z-index:9990;
+  opacity:var(--noise-opacity);pointer-events:none;z-index:9990;
+  transition:opacity .45s ease;
 }
 
 /* footer */
@@ -640,6 +745,9 @@ footer{
   .tl-item{grid-template-columns:1fr;gap:.5rem}
   .tl-item::before,.tl-item::after{display:none}
   nav .nav-links{display:none}
+  .nav-actions{gap:.75rem}
+  .theme-toggle{padding:.5rem .75rem}
+  .theme-toggle-label{min-width:auto}
   footer{flex-direction:column;gap:.6rem;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){
@@ -659,16 +767,26 @@ footer{
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-logo">prottoy.</div>
-  <ul class="nav-links">
-    <li><a href="#about">about</a></li>
-    <li><a href="#skills">stack</a></li>
-    <li><a href="#projects">work</a></li>
-    <li><a href="#achievements">awards</a></li>
-    <li><a href="#publications">papers</a></li>
-    <li><a href="#experience">timeline</a></li>
-    <li><a href="#contact">contact</a></li>
-  </ul>
+  <div class="nav-actions">
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">stack</a></li>
+      <li><a href="#projects">work</a></li>
+      <li><a href="#achievements">awards</a></li>
+      <li><a href="#publications">papers</a></li>
+      <li><a href="#experience">timeline</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode">
+      <svg id="themeToggleIcon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>
+      </svg>
+      <span class="theme-toggle-label" id="themeToggleLabel">light</span>
+    </button>
+  </div>
 </nav>
+
+<div class="theme-overlay" id="themeOverlay" aria-hidden="true"></div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1105,6 +1223,78 @@ footer{
 // ═══════════════════════════════════════════════
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleLabel = document.getElementById('themeToggleLabel');
+const themeToggleIcon = document.getElementById('themeToggleIcon');
+const themeOverlay = document.getElementById('themeOverlay');
+const THEME_STORAGE_KEY = 'prottoy-portfolio-theme';
+
+function setThemeToggleVisuals(mode) {
+  const showLightAction = mode === 'dark';
+  themeToggleLabel.textContent = showLightAction ? 'light' : 'dark';
+  themeToggle.setAttribute('aria-label', showLightAction ? 'Switch to light mode' : 'Switch to dark mode');
+  themeToggleIcon.innerHTML = showLightAction
+    ? '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5"></path><path d="M12 19.5V22"></path><path d="M4.93 4.93l1.77 1.77"></path><path d="M17.3 17.3l1.77 1.77"></path><path d="M2 12h2.5"></path><path d="M19.5 12H22"></path><path d="M4.93 19.07l1.77-1.77"></path><path d="M17.3 6.7l1.77-1.77"></path>'
+    : '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>';
+}
+
+function applyTheme(mode, persist = true) {
+  document.body.classList.toggle('light-theme', mode === 'light');
+  setThemeToggleVisuals(mode);
+  if (persist) localStorage.setItem(THEME_STORAGE_KEY, mode);
+}
+
+function runThemeTransition() {
+  const nextMode = document.body.classList.contains('light-theme') ? 'dark' : 'light';
+  const rect = themeToggle.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const radius = Math.hypot(Math.max(cx, window.innerWidth - cx), Math.max(cy, window.innerHeight - cy)) + 80;
+  const targetBg = nextMode === 'light' ? '#f4ecde' : '#050508';
+
+  themeToggle.disabled = true;
+  themeOverlay.style.background = targetBg;
+
+  gsap.killTweensOf(themeOverlay);
+  gsap.killTweensOf(themeToggle);
+
+  const tl = gsap.timeline({
+    defaults: { ease: 'power3.inOut' },
+    onComplete: () => {
+      gsap.set(themeOverlay, { opacity: 0, clipPath: 'circle(0px at 50% 50%)' });
+      themeToggle.disabled = false;
+    }
+  });
+
+  tl.set(themeOverlay, {
+    opacity: 1,
+    clipPath: `circle(0px at ${cx}px ${cy}px)`
+  });
+  tl.to(themeToggle, { y: -2, scale: 0.96, duration: 0.18 }, 0);
+  tl.to(themeOverlay, {
+    clipPath: `circle(${radius}px at ${cx}px ${cy}px)`,
+    duration: 0.72
+  }, 0);
+  tl.call(() => applyTheme(nextMode), [], 0.3);
+  tl.to(themeOverlay, { opacity: 0, duration: 0.26 }, 0.48);
+  tl.to(themeToggle, { y: 0, scale: 1, duration: 0.34, ease: 'power2.out' }, 0.26);
+}
+
+applyTheme(localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark', false);
+themeToggle.addEventListener('click', runThemeTransition);
+
+function hexToRgba(hex, alpha) {
+  const value = hex.replace('#', '');
+  const normalized = value.length === 3
+    ? value.split('').map(ch => ch + ch).join('')
+    : value;
+  const int = parseInt(normalized, 16);
+  const r = (int >> 16) & 255;
+  const g = (int >> 8) & 255;
+  const b = int & 255;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
 // ═══════════════════════════════════════════════
 // CUSTOM CURSOR
 // ═══════════════════════════════════════════════
@@ -1145,9 +1335,12 @@ document.addEventListener('mousemove', e => {
   window.addEventListener('resize', resize);
 
   function draw() {
-    ctx.fillStyle = 'rgba(5,5,8,0.04)';
+    const styles = getComputedStyle(document.body);
+    const bg = styles.getPropertyValue('--bg').trim();
+    const blue = styles.getPropertyValue('--blue').trim();
+    ctx.fillStyle = hexToRgba(bg, 0.05);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#4f8ef7';
+    ctx.fillStyle = blue;
     ctx.font = '13px JetBrains Mono, monospace';
 
     for (let i = 0; i < drops.length; i++) {
