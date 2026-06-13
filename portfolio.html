@@ -469,10 +469,79 @@ nav.scrolled{
 .stat-label span{font-size:.72rem;color:var(--muted2);line-height:1.6}
 
 /* â”€â”€ SKILLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-#skills .skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-  gap:1.2rem;margin-top:3.5rem;
+#skills{overflow:hidden}
+.skills-marquee{
+  margin-top:3.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.1rem;
+}
+.logo-marquee{
+  position:relative;
+  overflow:hidden;
+  padding:.35rem 0;
+  display:flex;
+  align-items:stretch;
+  flex-wrap:nowrap;
+}
+.logo-marquee::before,
+.logo-marquee::after{
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:10rem;
+  z-index:2;
+  pointer-events:none;
+}
+.logo-marquee::before{
+  left:0;
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(5,7,12,0) 100%);
+}
+.logo-marquee::after{
+  right:0;
+  background:linear-gradient(270deg,var(--bg) 0%,rgba(5,7,12,0) 100%);
+}
+.logo-marquee-track{
+  display:flex;
+  align-items:stretch;
+  width:max-content;
+  gap:1rem;
+  flex-shrink:0;
+  will-change:transform;
+}
+.logo-chip{
+  min-width:11.5rem;
+  padding:1.2rem 1.1rem 1rem;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+  border:1px solid var(--border);
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.8rem;
+  text-align:center;
+  transition:transform .25s ease,border-color .25s ease,background .25s ease;
+}
+.logo-chip:hover{
+  transform:translateY(-4px);
+  border-color:rgba(79,142,247,.4);
+  background:linear-gradient(180deg,rgba(79,142,247,.12),rgba(255,255,255,.02));
+}
+.logo-chip img{
+  width:2.6rem;
+  height:2.6rem;
+  object-fit:contain;
+  filter:grayscale(0);
+}
+.logo-chip span{
+  font-family:var(--mono);
+  font-size:.7rem;
+  line-height:1.5;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted2);
 }
 #achievements{background:var(--surface)}
 #achievements .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;margin-top:3.5rem}
@@ -747,6 +816,10 @@ footer{
 @media(max-width:768px){
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .stats-row{grid-template-columns:1fr}
+  .logo-marquee::before,.logo-marquee::after{width:4rem}
+  .logo-chip{min-width:9rem;padding:1rem .8rem .85rem}
+  .logo-chip img{width:2.15rem;height:2.15rem}
+  .logo-chip span{font-size:.62rem}
   .tl-item{grid-template-columns:1fr;gap:.5rem}
   .tl-item::before,.tl-item::after{display:none}
   nav .nav-links{display:none}
@@ -904,45 +977,58 @@ footer{
 <section id="skills" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">tech_stack.config</div>
-    <h2 class="sec-title reveal">What runs in my environment.</h2>
-    <p class="sec-sub reveal">Every card here is grounded in my academic CV, research workflow, and lab project experience.</p>
+    <h2 class="sec-title reveal">Skills and tools I work with.</h2>
+    <div class="skills-marquee">
+      <div class="logo-marquee reveal" data-marquee-speed="34" data-marquee-direction="left">
+        <div class="logo-marquee-track">
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow logo"/><span>TensorFlow</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch logo"/><span>PyTorch</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="Scikit-learn logo"/><span>Scikit-learn</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python logo"/><span>Python</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C plus plus logo"/><span>C++</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 logo"/><span>HTML</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS logo"/><span>CSS</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript logo"/><span>JavaScript</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/sqlite/003B57" alt="SQL logo"/><span>SQL</span></div>
+        </div>
+        <div class="logo-marquee-track" aria-hidden="true">
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="" aria-hidden="true"/><span>TensorFlow</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" aria-hidden="true"/><span>PyTorch</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="" aria-hidden="true"/><span>Scikit-learn</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/python/3776AB" alt="" aria-hidden="true"/><span>Python</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" aria-hidden="true"/><span>C++</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" aria-hidden="true"/><span>HTML</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/css/1572B6" alt="" aria-hidden="true"/><span>CSS</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" aria-hidden="true"/><span>JavaScript</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/sqlite/003B57" alt="" aria-hidden="true"/><span>SQL</span></div>
+        </div>
+      </div>
 
-    <div class="skills-grid">
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9.5 12.5l1.7 1.7 3.3-4.2"/></svg></span>
-        <div class="skill-name">AI / Machine Learning</div>
-        <div class="skill-desc">Research-led work in deep learning and computer vision for practical, interpretable systems.</div>
-        <div class="tags"><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span></div>
-      </div>
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>
-        <div class="skill-name">Programming Languages</div>
-        <div class="skill-desc">Solid academic and project foundation across core programming and web technologies.</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
-      </div>
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-3"/></svg></span>
-        <div class="skill-name">Research Tooling</div>
-        <div class="skill-desc">Daily workflow for experimentation, dataset work, notebooks, and structured analysis.</div>
-        <div class="tags"><span class="tag">Jupyter Notebook</span><span class="tag">Google Colab</span><span class="tag">Kaggle</span><span class="tag">Excel</span></div>
-      </div>
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4.5-1 9.2-9.2a2 2 0 0 0-2.8-2.8L5.7 16.2 4 20z"/><path d="M13.5 6.5l4 4"/></svg></span>
-        <div class="skill-name">Academic Writing</div>
-        <div class="skill-desc">Research strategy, technical writing, paper preparation, and publication-oriented documentation.</div>
-        <div class="tags"><span class="tag">LaTeX</span><span class="tag">Research Writing</span><span class="tag">Methodology</span></div>
-      </div>
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M8 4c-1.5 2-1.5 14 0 16"/><path d="M16 4c1.5 2 1.5 14 0 16"/></svg></span>
-        <div class="skill-name">Web & Product Foundations</div>
-        <div class="skill-desc">Built through web engineering, database, OOP, and mobile application coursework.</div>
-        <div class="tags"><span class="tag">Web Engineering</span><span class="tag">Database Systems</span><span class="tag">OOP</span><span class="tag">Mobile Apps</span></div>
-      </div>
-      <div class="skill-card reveal-scale">
-        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M7 7c2 1.6 8 1.6 10 0"/><path d="M7 17c2-1.6 8-1.6 10 0"/></svg></span>
-        <div class="skill-name">Languages</div>
-        <div class="skill-desc">Comfortable in multilingual academic and collaborative settings.</div>
-        <div class="tags"><span class="tag">Bengali</span><span class="tag">English IELTS 7.0</span><span class="tag">Hindi</span><span class="tag">Urdu</span></div>
+      <div class="logo-marquee reveal" data-marquee-speed="36" data-marquee-direction="right">
+        <div class="logo-marquee-track">
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter Notebook logo"/><span>Jupyter Notebook</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="Google Colab logo"/><span>Google Colab</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="Kaggle logo"/><span>Kaggle</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel logo"/><span>Excel</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="LaTeX logo"/><span>LaTeX</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub logo"/><span>GitHub</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker logo"/><span>Docker</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL logo"/><span>PostgreSQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/xampp/FB7A24" alt="XAMPP logo"/><span>XAMPP</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL logo"/><span>MySQL</span></div>
+        </div>
+        <div class="logo-marquee-track" aria-hidden="true">
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" aria-hidden="true"/><span>Jupyter Notebook</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="" aria-hidden="true"/><span>Google Colab</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="" aria-hidden="true"/><span>Kaggle</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" aria-hidden="true"/><span>Excel</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="" aria-hidden="true"/><span>LaTeX</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" aria-hidden="true"/><span>GitHub</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" aria-hidden="true"/><span>Docker</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" aria-hidden="true"/><span>PostgreSQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/xampp/FB7A24" alt="" aria-hidden="true"/><span>XAMPP</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="" aria-hidden="true"/><span>MySQL</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1783,6 +1869,50 @@ document.querySelectorAll('.skill-card').forEach(card => {
     card.style.setProperty('--mx', x + '%');
     card.style.setProperty('--my', y + '%');
   });
+});
+
+// SKILLS MARQUEE
+const marqueeTweens = [];
+
+function initSkillsMarquee() {
+  marqueeTweens.forEach(tween => tween.kill());
+  marqueeTweens.length = 0;
+
+  document.querySelectorAll('.logo-marquee').forEach(row => {
+    const tracks = row.querySelectorAll('.logo-marquee-track');
+    if (tracks.length < 2) return;
+
+    gsap.set(tracks, { clearProps: 'x' });
+
+    const baseWidth = tracks[0].offsetWidth;
+    const direction = row.dataset.marqueeDirection === 'right' ? 1 : -1;
+    const speed = Number(row.dataset.marqueeSpeed || 24);
+    const duration = Math.max(baseWidth / speed, 16);
+    const startOffset = row.dataset.marqueeDirection === 'right'
+      ? -baseWidth * 0.62
+      : -baseWidth * 0.18;
+
+    gsap.set(tracks[0], { x: startOffset });
+    gsap.set(tracks[1], { x: startOffset + baseWidth });
+
+    const tween = gsap.to(tracks, {
+      x: `+=${direction * baseWidth}`,
+      duration,
+      ease: 'none',
+      repeat: -1,
+      modifiers: {
+        x: value => `${gsap.utils.wrap(-baseWidth, baseWidth, parseFloat(value))}px`
+      }
+    });
+
+    marqueeTweens.push(tween);
+  });
+}
+
+initSkillsMarquee();
+window.addEventListener('resize', () => {
+  clearTimeout(window.skillsMarqueeResizeTimer);
+  window.skillsMarqueeResizeTimer = setTimeout(initSkillsMarquee, 180);
 });
 
 </script>
