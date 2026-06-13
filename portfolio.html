@@ -1033,6 +1033,74 @@ footer{
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+.cert-card {
+  width: 280px;
+  height: 190px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 142, 247, 0.4);
+  box-shadow: 0 12px 30px rgba(79, 142, 247, 0.08);
+}
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,5,8,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.lightbox-close:hover {
+  color: var(--blue);
+}
 </style>
 </head>
 <body>
@@ -1510,6 +1578,56 @@ footer{
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">certifications.md</div>
+    <h2 class="sec-title reveal">Professional Certifications.</h2>
+    <div class="skills-marquee" style="margin-top: 3.5rem;">
+      <div class="logo-marquee reveal" data-marquee-speed="22" data-marquee-direction="left">
+        <div class="logo-marquee-track">
+          <div class="cert-card"><img src="Certificates/0111.png" alt="Sigma Institute Certificate 0111" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/01112.png" alt="Sigma Institute Certificate 01112" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/AI.png" alt="Artificial Intelligence Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Basic computer science certificate.png" alt="Basic Computer Science Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certificate for Shahriar Mannan Prottoy   for _Sigma Institute of Engineer..._.png" alt="Sigma Institute Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/certificate_paper_113_Attention_Based_Hybrid_ViT_ResNet_Model_for.png" alt="RTIP2R Mango Classification Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification (1).png" alt="Certification 1" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification (2).png" alt="Certification 2" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification 3.png" alt="Certification 3" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification 4.png" alt="Certification 4" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/doc 1.jpg" alt="DIU Academic Activity doc 1" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/doc.jpg" alt="DIU Academic Activity doc" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10416.png" alt="ICCIT Lemon Disease Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10423 (1).png" alt="IDAA Tea Disease Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10504.png" alt="IDAA Lung Cancer Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Untitled-1 copy.jpg" alt="Certificate Image" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Web Accessibility Training_Course certificate -  Web Accessibility.png" alt="Web Accessibility Training Certificate" class="cert-img" /></div>
+        </div>
+        <div class="logo-marquee-track" aria-hidden="true">
+          <div class="cert-card"><img src="Certificates/0111.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/01112.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/AI.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Basic computer science certificate.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certificate for Shahriar Mannan Prottoy   for _Sigma Institute of Engineer..._.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/certificate_paper_113_Attention_Based_Hybrid_ViT_ResNet_Model_for.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification (1).png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification (2).png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification 3.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Certification 4.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/doc 1.jpg" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/doc.jpg" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10416.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10423 (1).png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Paper ID_ 10504.png" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Untitled-1 copy.jpg" alt="" class="cert-img" /></div>
+          <div class="cert-card"><img src="Certificates/Web Accessibility Training_Course certificate -  Web Accessibility.png" alt="" class="cert-img" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="section">
   <div class="section-flow">
@@ -1552,6 +1670,11 @@ footer{
 <footer>
   <div class="foot-note">&copy; 2026 <span>Md Shahriar Mannan Prottoy</span> - research portfolio.</div>
 </footer>
+
+<div class="lightbox" id="certLightbox" aria-hidden="true" role="dialog">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+  <img src="" alt="Certificate Lightbox" class="lightbox-content" id="lightboxImg" />
+</div>
 
 <script>
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
@@ -2240,6 +2363,43 @@ if (contactForm) {
     const message = document.getElementById('formMessage').value;
     const mailtoUrl = `mailto:prottoy2205101490@diu.edu.bd?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + email + "\n\n" + message)}`;
     window.location.href = mailtoUrl;
+  });
+}
+
+// Certifications Lightbox Handler
+const certLightbox = document.getElementById('certLightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+if (certLightbox && lightboxImg && lightboxClose) {
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('.cert-img');
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "Certificate Image";
+        certLightbox.classList.add('active');
+        certLightbox.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  const closeLightbox = () => {
+    certLightbox.classList.remove('active');
+    certLightbox.setAttribute('aria-hidden', 'true');
+    setTimeout(() => {
+      lightboxImg.src = '';
+    }, 300);
+  };
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  certLightbox.addEventListener('click', (e) => {
+    if (e.target === certLightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && certLightbox.classList.contains('active')) {
+      closeLightbox();
+    }
   });
 }
 
