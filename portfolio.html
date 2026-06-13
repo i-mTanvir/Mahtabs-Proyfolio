@@ -275,6 +275,7 @@ nav.scrolled{
 
 /* ── SECTIONS BASE ───────────────────────────── */
 .section{padding:8rem 5vw;position:relative}
+.section-flow{will-change:transform}
 .section+.section{border-top:1px solid var(--border)}
 .sec-eyebrow{
   font-family:var(--mono);font-size:.68rem;
@@ -634,57 +635,59 @@ footer{
 
 <!-- ABOUT -->
 <section id="about" class="section">
-  <div class="sec-eyebrow reveal">about_me.py</div>
-  <h2 class="sec-title reveal">Who compiles<br/>this code.</h2>
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">about_me.py</div>
+    <h2 class="sec-title reveal">Who compiles<br/>this code.</h2>
 
-  <div class="about-grid">
-    <div>
-      <div class="about-text reveal">
-        <p>I'm a <strong>Computer Science & Engineering</strong> student at Daffodil International University, deep in my final year and sharper than ever. My FYDP is a <span class="highlight">multimodal AI diagnostic system</span> — DenseNet121 + CXR-BERT with cross-modal attention, detecting pneumonia and TB from chest X-rays and radiology text.</p>
-        <p>Outside research: Flutter mobile apps, React frontends, Canvas game engines, and anything that moves on a screen. I write code the way I think — <strong>precise, intentional, no noise.</strong></p>
-        <p>Supervised by <strong>Dr. Md. Zahid Hasan</strong>. Partner: <strong>Nafis Al Rahman</strong>. Ethics clearance: <span class="highlight">REC-FSIT/DIU/2025/012</span>.</p>
+    <div class="about-grid">
+      <div>
+        <div class="about-text reveal">
+          <p>I'm a <strong>Computer Science & Engineering</strong> student at Daffodil International University, deep in my final year and sharper than ever. My FYDP is a <span class="highlight">multimodal AI diagnostic system</span> — DenseNet121 + CXR-BERT with cross-modal attention, detecting pneumonia and TB from chest X-rays and radiology text.</p>
+          <p>Outside research: Flutter mobile apps, React frontends, Canvas game engines, and anything that moves on a screen. I write code the way I think — <strong>precise, intentional, no noise.</strong></p>
+          <p>Supervised by <strong>Dr. Md. Zahid Hasan</strong>. Partner: <strong>Nafis Al Rahman</strong>. Ethics clearance: <span class="highlight">REC-FSIT/DIU/2025/012</span>.</p>
+        </div>
+
+        <div class="stats-row reveal">
+          <div class="stat-item">
+            <div class="stat-num" data-target="4">0</div>
+            <div class="stat-label"><strong>Years in CSE</strong><span>DIU · graduating 2025</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="12">0</div>
+            <div class="stat-label"><strong>Projects shipped</strong><span>web · mobile · AI · games</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="94">0</div>
+            <div class="stat-label"><strong>% FYDP accuracy</strong><span>TB + pneumonia detection</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="stats-row reveal">
-        <div class="stat-item">
-          <div class="stat-num" data-target="4">0</div>
-          <div class="stat-label"><strong>Years in CSE</strong><span>DIU · graduating 2025</span></div>
+      <div class="terminal reveal-right">
+        <div class="terminal-bar">
+          <div class="t-dot"></div>
+          <div class="t-dot"></div>
+          <div class="t-dot"></div>
+          <div class="terminal-title">tanvir@diu:~</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="12">0</div>
-          <div class="stat-label"><strong>Projects shipped</strong><span>web · mobile · AI · games</span></div>
+        <div class="terminal-body">
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat about.json</span></span>
+          <span class="t-line t-out blue">{</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"name": <span style="color:#86efac">"Md Shahriar Mannan Prottoy"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"CSE Final Year"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"university": <span style="color:#86efac">"DIU, Bangladesh"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"research": <span style="color:#86efac">"Multimodal AI Dx"</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"stack": [<span style="color:#fde68a">"PyTorch","Flutter","React"</span>],</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_work"</span></span>
+          <span class="t-line t-out blue">}</span>
+          <span class="t-line t-comment">&nbsp;</span>
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">python train.py --epochs 100</span></span>
+          <span class="t-line t-out green">Epoch 100/100 ━━━━━━━━━━ 100%</span>
+          <span class="t-line t-out green">val_acc: 0.9420 — val_loss: 0.087</span>
+          <span class="t-line t-out yellow">Model saved → checkpoints/best.pth</span>
+          <span class="t-line t-comment">&nbsp;</span>
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd" id="termTyping"></span><span class="type-cursor"></span></span>
         </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="94">0</div>
-          <div class="stat-label"><strong>% FYDP accuracy</strong><span>TB + pneumonia detection</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="terminal reveal-right">
-      <div class="terminal-bar">
-        <div class="t-dot"></div>
-        <div class="t-dot"></div>
-        <div class="t-dot"></div>
-        <div class="terminal-title">tanvir@diu:~</div>
-      </div>
-      <div class="terminal-body">
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat about.json</span></span>
-        <span class="t-line t-out blue">{</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"name": <span style="color:#86efac">"Md Shahriar Mannan Prottoy"</span>,</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"CSE Final Year"</span>,</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"university": <span style="color:#86efac">"DIU, Bangladesh"</span>,</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"research": <span style="color:#86efac">"Multimodal AI Dx"</span>,</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"stack": [<span style="color:#fde68a">"PyTorch","Flutter","React"</span>],</span>
-        <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_work"</span></span>
-        <span class="t-line t-out blue">}</span>
-        <span class="t-line t-comment">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">python train.py --epochs 100</span></span>
-        <span class="t-line t-out green">Epoch 100/100 ━━━━━━━━━━ 100%</span>
-        <span class="t-line t-out green">val_acc: 0.9420 — val_loss: 0.087</span>
-        <span class="t-line t-out yellow">Model saved → checkpoints/best.pth</span>
-        <span class="t-line t-comment">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd" id="termTyping"></span><span class="type-cursor"></span></span>
       </div>
     </div>
   </div>
@@ -692,11 +695,12 @@ footer{
 
 <!-- SKILLS -->
 <section id="skills" class="section">
-  <div class="sec-eyebrow reveal">tech_stack.config</div>
-  <h2 class="sec-title reveal">What runs<br/>in my environment.</h2>
-  <p class="sec-sub reveal">Built from real projects. No tutorial stack.</p>
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">tech_stack.config</div>
+    <h2 class="sec-title reveal">What runs<br/>in my environment.</h2>
+    <p class="sec-sub reveal">Built from real projects. No tutorial stack.</p>
 
-  <div class="skills-grid">
+    <div class="skills-grid">
     <div class="skill-card reveal-scale">
       <span class="skill-icon">🧠</span>
       <div class="skill-name">AI / Machine Learning</div>
@@ -733,15 +737,17 @@ footer{
       <div class="skill-desc">Academic writing, IRB ethics, dataset design, methodology, literature review.</div>
       <div class="tags"><span class="tag">LaTeX</span><span class="tag">IRB/Ethics</span><span class="tag">Methodology</span><span class="tag">DGHS Protocol</span></div>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
-  <div class="sec-eyebrow reveal">projects.ls</div>
-  <h2 class="sec-title reveal">Things I shipped.</h2>
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">projects.ls</div>
+    <h2 class="sec-title reveal">Things I shipped.</h2>
 
-  <div class="proj-grid">
+    <div class="proj-grid">
 
     <div class="proj-card reveal">
       <span class="proj-feat">FYDP</span>
@@ -822,15 +828,17 @@ footer{
       </div>
     </div>
 
+    </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
-  <div class="sec-eyebrow reveal">git_log --oneline</div>
-  <h2 class="sec-title reveal">The commit history.</h2>
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">git_log --oneline</div>
+    <h2 class="sec-title reveal">The commit history.</h2>
 
-  <div class="timeline">
+    <div class="timeline">
     <div class="tl-item reveal-left">
       <div class="tl-year">2024 — present</div>
       <div>
@@ -855,33 +863,36 @@ footer{
         <div class="tl-desc">Shipped landing pages, Flutter apps, and data tooling for clients and personal projects. Developed a reliable workflow for fast, clean production software — from first commit to deployed product.</div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <div class="contact-inner">
-    <div class="sec-eyebrow reveal" style="justify-content:center">contact.init()</div>
-    <h2 class="contact-big reveal">
-      Let's build<br/>something <span class="outline">real.</span>
-    </h2>
-    <p class="contact-sub reveal">
-      Open to internships, research collaborations, and full-time roles.
-      If you're building something hard, I want in.
-    </p>
-    <div class="contact-links reveal">
-      <a class="c-link" href="mailto:tanvir@example.com">
-        <span class="c-link-icon">✉</span> email
-      </a>
-      <a class="c-link" href="https://github.com" target="_blank">
-        <span class="c-link-icon">⌥</span> github
-      </a>
-      <a class="c-link" href="https://linkedin.com" target="_blank">
-        <span class="c-link-icon">⬡</span> linkedin
-      </a>
-      <a class="c-link" href="#" download>
-        <span class="c-link-icon">↓</span> resume.pdf
-      </a>
+  <div class="section-flow">
+    <div class="contact-inner">
+      <div class="sec-eyebrow reveal" style="justify-content:center">contact.init()</div>
+      <h2 class="contact-big reveal">
+        Let's build<br/>something <span class="outline">real.</span>
+      </h2>
+      <p class="contact-sub reveal">
+        Open to internships, research collaborations, and full-time roles.
+        If you're building something hard, I want in.
+      </p>
+      <div class="contact-links reveal">
+        <a class="c-link" href="mailto:tanvir@example.com">
+          <span class="c-link-icon">✉</span> email
+        </a>
+        <a class="c-link" href="https://github.com" target="_blank">
+          <span class="c-link-icon">⌥</span> github
+        </a>
+        <a class="c-link" href="https://linkedin.com" target="_blank">
+          <span class="c-link-icon">⬡</span> linkedin
+        </a>
+        <a class="c-link" href="#" download>
+          <span class="c-link-icon">↓</span> resume.pdf
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1266,25 +1277,43 @@ gsap.utils.toArray('.proj-card').forEach((card, i) => {
 // HORIZONTAL SCROLL HINT PARALLAX
 // ═══════════════════════════════════════════════
 gsap.to('.hero-content', {
-  y: -80,
+  y: -64,
+  ease: 'none',
+  force3D: true,
   scrollTrigger: {
     trigger: '#hero',
     start: 'top top',
-    end: 'bottom top',
-    scrub: 1,
+    end: 'bottom 35%',
+    scrub: 0.3,
   }
 });
 gsap.to('#heroCode', {
-  y: -80,
+  y: -72,
+  ease: 'none',
+  force3D: true,
   scrollTrigger: {
     trigger: '#hero',
     start: 'top top',
-    end: 'bottom top',
-    scrub: 1,
+    end: 'bottom 35%',
+    scrub: 0.3,
   }
 });
 
 // ═══════════════════════════════════════════════
+gsap.utils.toArray('.section-flow').forEach(flow => {
+  gsap.to(flow, {
+    y: -56,
+    ease: 'none',
+    force3D: true,
+    scrollTrigger: {
+      trigger: flow.parentElement,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: 0.35,
+    }
+  });
+});
+
 // SECTION TITLE SCRAMBLE on enter
 // ═══════════════════════════════════════════════
 const chars = '01アイウエオABCDEF!@#$%^';
