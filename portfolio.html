@@ -431,7 +431,26 @@ nav.scrolled{
 }
 .skill-card:hover::before{opacity:1}
 .skill-card:hover{border-color:rgba(79,142,247,.4);transform:translateY(-4px)}
-.skill-icon{font-size:1.6rem;margin-bottom:1rem;display:block}
+.skill-icon{
+  width:2.5rem;height:2.5rem;
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+  border:1px solid rgba(79,142,247,.25);
+  border-radius:999px;
+  background:rgba(79,142,247,.06);
+  color:var(--blue);
+  line-height:1;
+}
+.skill-icon svg,
+.proj-emoji svg{
+  width:1.2rem;
+  height:1.2rem;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
 .skill-name{
   font-family:var(--display);font-size:.95rem;
   font-weight:600;margin-bottom:.4rem;
@@ -479,7 +498,21 @@ nav.scrolled{
   word-break:break-all;letter-spacing:.02em;
   user-select:none;
 }
-.proj-emoji{position:relative;z-index:1;filter:drop-shadow(0 0 20px rgba(79,142,247,.4))}
+.proj-emoji{
+  position:relative;z-index:1;
+  width:4rem;height:4rem;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid rgba(79,142,247,.28);
+  border-radius:999px;
+  background:rgba(5,5,8,.32);
+  color:var(--blue);
+  line-height:1;
+  filter:drop-shadow(0 0 20px rgba(79,142,247,.25));
+}
+.proj-emoji svg{
+  width:1.6rem;
+  height:1.6rem;
+}
 .proj-body{padding:1.5rem}
 .proj-top{
   display:flex;align-items:center;
@@ -755,37 +788,37 @@ footer{
 
     <div class="skills-grid">
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#129504;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9.5 12.5l1.7 1.7 3.3-4.2"/></svg></span>
         <div class="skill-name">AI / Machine Learning</div>
         <div class="skill-desc">Research-led work in deep learning and computer vision for practical, interpretable systems.</div>
         <div class="tags"><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128187;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>
         <div class="skill-name">Programming Languages</div>
         <div class="skill-desc">Solid academic and project foundation across core programming and web technologies.</div>
         <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128202;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-3"/></svg></span>
         <div class="skill-name">Research Tooling</div>
         <div class="skill-desc">Daily workflow for experimentation, dataset work, notebooks, and structured analysis.</div>
         <div class="tags"><span class="tag">Jupyter Notebook</span><span class="tag">Google Colab</span><span class="tag">Kaggle</span><span class="tag">Excel</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128221;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4.5-1 9.2-9.2a2 2 0 0 0-2.8-2.8L5.7 16.2 4 20z"/><path d="M13.5 6.5l4 4"/></svg></span>
         <div class="skill-name">Academic Writing</div>
         <div class="skill-desc">Research strategy, technical writing, paper preparation, and publication-oriented documentation.</div>
         <div class="tags"><span class="tag">LaTeX</span><span class="tag">Research Writing</span><span class="tag">Methodology</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#127760;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M8 4c-1.5 2-1.5 14 0 16"/><path d="M16 4c1.5 2 1.5 14 0 16"/></svg></span>
         <div class="skill-name">Web & Product Foundations</div>
         <div class="skill-desc">Built through web engineering, database, OOP, and mobile application coursework.</div>
         <div class="tags"><span class="tag">Web Engineering</span><span class="tag">Database Systems</span><span class="tag">OOP</span><span class="tag">Mobile Apps</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#127891;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M7 7c2 1.6 8 1.6 10 0"/><path d="M7 17c2-1.6 8-1.6 10 0"/></svg></span>
         <div class="skill-name">Languages</div>
         <div class="skill-desc">Comfortable in multilingual academic and collaborative settings.</div>
         <div class="tags"><span class="tag">Bengali</span><span class="tag">English IELTS 7.0</span><span class="tag">Hindi</span><span class="tag">Urdu</span></div>
@@ -805,7 +838,7 @@ footer{
         <span class="proj-feat">THESIS</span>
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060d1f,#0d1f40)">
           <div class="proj-thumb-code">model = CNNTokenizedCompactTransformer()<br/>capsule = CapsuleRouting()<br/>scan = load_mri(image)<br/>features = model(scan)<br/>prediction = capsule(features)<br/>print(&quot;brain_tumor_detected&quot;)</div>
-          <span class="proj-emoji">&#129504;</span>
+          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"/><path d="M9 14c2-3 4-5 7-7"/></svg></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Research - AI</span><span class="proj-arrow">&gt;</span></div>
@@ -818,7 +851,7 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060f14,#0a2035)">
           <div class="proj-thumb-code">POST /voice-of-bangladesh<br/>share_opinion(topic, text)<br/>render_public_issue_feed()<br/>publish_awareness_campaign()</div>
-          <span class="proj-emoji">&#127760;</span>
+          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Web - Lab Project</span><span class="proj-arrow">&gt;</span></div>
@@ -831,7 +864,7 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#12060f,#2a0d20)">
           <div class="proj-thumb-code">class FoodDeliveryApp {<br/>  saveOrderLocally();<br/>  persistUserData();<br/>  trackDeliveryInfo();<br/>}</div>
-          <span class="proj-emoji">&#127828;</span>
+          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6h10"/><path d="M9 3v3"/><path d="M15 3v3"/><path d="M5 10h14"/><path d="M5 6l-1 12h16L19 6"/><path d="M9 14h.01"/><path d="M15 14h.01"/></svg></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Mobile - Flutter</span><span class="proj-arrow">&gt;</span></div>
@@ -844,7 +877,7 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060f0a,#0a2016)">
           <div class="proj-thumb-code">class BankSystem {<br/>  createAccount();<br/>  deposit(); withdraw();<br/>  handleTransactions();<br/>}</div>
-          <span class="proj-emoji">&#127974;</span>
+          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V8"/><path d="M18 20V8"/><path d="M6 11c0-2 2-4 6-4s6 2 6 4"/><path d="M9 14h6"/><path d="M9 17h6"/></svg></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">OOP - Java</span><span class="proj-arrow">&gt;</span></div>
@@ -857,7 +890,7 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0e06,#1c2408)">
           <div class="proj-thumb-code">rooms.reserve(customer)<br/>billing.generate(invoice)<br/>records.update(guest)<br/>db.commit()</div>
-          <span class="proj-emoji">&#127976;</span>
+          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10l7-5 7 5v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8z"/><path d="M9 14h6"/><path d="M9 17h4"/></svg></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Database - Lab Project</span><span class="proj-arrow">&gt;</span></div>
@@ -879,49 +912,49 @@ footer{
 
     <div class="skills-grid">
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128640;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2z"/></svg></span>
         <div class="skill-name">NASA Space Apps 2025</div>
         <div class="skill-desc">Regional Champion and Global Nominee in one of the world's most visible innovation hackathons.</div>
         <div class="tags"><span class="tag">NASA</span><span class="tag">2025</span><span class="tag">Global Nominee</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#127942;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20l-6-3.5V7.5L12 4l6 3.5v9L12 20z"/><path d="M9 12l2 2 4-4"/></svg></span>
         <div class="skill-name">Academic Waiver</div>
         <div class="skill-desc">Received merit-based academic waiver in all semesters for consistent academic performance at DIU.</div>
         <div class="tags"><span class="tag">Merit</span><span class="tag">All Semesters</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#11088;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg></span>
         <div class="skill-name">Honor Board Recognition</div>
         <div class="skill-desc">Featured as "Hero of the Hall" at Yunus Khan Scholar Garden-1 for academic excellence and discipline.</div>
         <div class="tags"><span class="tag">Honor Board</span><span class="tag">Discipline</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#9889;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16"/><path d="M4 12h16"/><path d="M6.5 6.5l11 11"/><path d="M17.5 6.5l-11 11"/></svg></span>
         <div class="skill-name">Prompt Battle 2025</div>
         <div class="skill-desc">Participated in a competitive AI prompting event centered on creativity, problem-solving, and prompt engineering.</div>
         <div class="tags"><span class="tag">AI</span><span class="tag">Prompt Engineering</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#129518;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"/><path d="M4 12h4"/><path d="M16 12h4"/><path d="M12 4v4"/><path d="M12 16v4"/></svg></span>
         <div class="skill-name">Unlock The Algorithm 2024</div>
         <div class="skill-desc">Competed in an algorithmic contest focused on logical thinking, efficiency, and computational skills.</div>
         <div class="tags"><span class="tag">Algorithms</span><span class="tag">Problem Solving</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#127756;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg></span>
         <div class="skill-name">NASA Space Apps 2024</div>
         <div class="skill-desc">Participated in the global innovation hackathon, building technology-driven solutions for space and Earth challenges.</div>
         <div class="tags"><span class="tag">Hackathon</span><span class="tag">Innovation</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128187;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/><path d="M5 5h14v14H5z"/></svg></span>
         <div class="skill-name">Take Off 2022</div>
         <div class="skill-desc">Joined a competitive programming contest focused on C programming and structured problem-solving.</div>
         <div class="tags"><span class="tag">C Programming</span><span class="tag">Contest</span></div>
       </div>
       <div class="skill-card reveal-scale">
-        <span class="skill-icon">&#128267;</span>
+        <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>
         <div class="skill-name">IoT Fest 2022</div>
         <div class="skill-desc">Participated in an IoT-centered technology festival showcasing smart systems and embedded ideas.</div>
         <div class="tags"><span class="tag">IoT</span><span class="tag">Innovation</span></div>
