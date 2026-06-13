@@ -754,7 +754,7 @@ body.light-theme .proj-thumb-code{
 }
 .proj-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:1.5rem;margin-top:3.5rem;
 }
 .proj-card{
@@ -771,7 +771,7 @@ body.light-theme .proj-thumb-code{
 }
 .proj-card:hover .proj-arrow{transform:translate(3px,-3px);color:var(--blue)}
 .proj-thumb{
-  height:190px;display:flex;align-items:center;
+  height:140px;display:flex;align-items:center;
   justify-content:center;font-size:3.5rem;
   position:relative;overflow:hidden;
 }
@@ -785,7 +785,7 @@ body.light-theme .proj-thumb-code{
 }
 .proj-emoji{
   position:relative;z-index:1;
-  width:4rem;height:4rem;
+  width:3.5rem;height:3.5rem;
   display:inline-flex;align-items:center;justify-content:center;
   border:1px solid rgba(79,142,247,.28);
   border-radius:999px;
@@ -793,10 +793,17 @@ body.light-theme .proj-thumb-code{
   color:var(--blue);
   line-height:1;
   filter:drop-shadow(0 0 20px rgba(79,142,247,.25));
+  overflow:hidden;
 }
 .proj-emoji svg{
-  width:1.6rem;
-  height:1.6rem;
+  width:1.4rem;
+  height:1.4rem;
+}
+.proj-emoji img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
 }
 .proj-body{padding:1.5rem}
 .proj-top{
@@ -1369,7 +1376,7 @@ footer{
     <h2 class="sec-title reveal">Research publications and dataset work.</h2>
 
     <div class="pub-grid">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
+      <a href="https://data.mendeley.com/datasets/m7w55sw88b/1" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
         <div class="pub-year">2024 - Dataset</div>
         <div class="pub-title">PMRAM: Bangladeshi Brain Cancer - MRI Dataset <span class="pub-link-icon">&#8599;</span></div>
         <div class="pub-meta">Mendeley Data, V1 - doi: 10.17632/m7w55sw88b.1</div>
@@ -1437,12 +1444,12 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060f14,#0a2035)">
           <div class="proj-thumb-code">POST /voice-of-bangladesh<br/>share_opinion(topic, text)<br/>render_public_issue_feed()<br/>publish_awareness_campaign()</div>
-          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></span>
+          <span class="proj-emoji"><img src="prottoys-protfolio/voice.png" alt="Voice of Bangladesh Logo"/></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Web - Lab Project</span><span class="proj-arrow">&gt;</span></div>
           <div class="proj-title">Voice Of Bangladesh</div>
-          <div class="proj-desc">Led the development of a web-based platform for a Web Engineering Lab project to promote social awareness, public opinion, and national issue discussion through an interactive online system.</div>
+          <div class="proj-desc">Web platform for social awareness, public opinion polls, and national issue discussion using a clean, interactive feed system.</div>
           <div class="tags"><span class="tag">Web Engineering</span><span class="tag">Social Platform</span><span class="tag">Team Lead</span></div>
         </div>
       </div>
@@ -1450,12 +1457,12 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#12060f,#2a0d20)">
           <div class="proj-thumb-code">class FoodDeliveryApp {<br/>  saveOrderLocally();<br/>  persistUserData();<br/>  trackDeliveryInfo();<br/>}</div>
-          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6h10"/><path d="M9 3v3"/><path d="M15 3v3"/><path d="M5 10h14"/><path d="M5 6l-1 12h16L19 6"/><path d="M9 14h.01"/><path d="M15 14h.01"/></svg></span>
+          <span class="proj-emoji"><img src="prottoys-protfolio/food.png" alt="Food Delivery App Logo"/></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Mobile - Flutter</span><span class="proj-arrow">&gt;</span></div>
           <div class="proj-title">Food Delivery App</div>
-          <div class="proj-desc">Led the development of a Flutter-based mobile application for the Mobile Application Design Lab, featuring local storage integration for orders, user data, and delivery information.</div>
+          <div class="proj-desc">Flutter-based mobile app featuring local storage integration for offline ordering, user data, and delivery tracking.</div>
           <div class="tags"><span class="tag">Flutter</span><span class="tag">Local Storage</span><span class="tag">Mobile App</span></div>
         </div>
       </div>
@@ -1463,12 +1470,12 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060f0a,#0a2016)">
           <div class="proj-thumb-code">class BankSystem {<br/>  createAccount();<br/>  deposit(); withdraw();<br/>  handleTransactions();<br/>}</div>
-          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V8"/><path d="M18 20V8"/><path d="M6 11c0-2 2-4 6-4s6 2 6 4"/><path d="M9 14h6"/><path d="M9 17h6"/></svg></span>
+          <span class="proj-emoji"><img src="prottoys-protfolio/bank.png" alt="Bank Management System Logo"/></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">OOP - Java</span><span class="proj-arrow">&gt;</span></div>
           <div class="proj-title">Bank Management System</div>
-          <div class="proj-desc">Led a team in designing and developing a Java-based Object-Oriented Programming project featuring account management, transaction handling, and customer banking operations.</div>
+          <div class="proj-desc">Java OOP application managing customer accounts, secure transaction handling, deposits, and core banking operations.</div>
           <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Team Lead</span></div>
         </div>
       </div>
@@ -1476,12 +1483,12 @@ footer{
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0c0e06,#1c2408)">
           <div class="proj-thumb-code">rooms.reserve(customer)<br/>billing.generate(invoice)<br/>records.update(guest)<br/>db.commit()</div>
-          <span class="proj-emoji"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10l7-5 7 5v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8z"/><path d="M9 14h6"/><path d="M9 17h4"/></svg></span>
+          <span class="proj-emoji"><img src="prottoys-protfolio/hotel.png" alt="Hotel Management System Logo"/></span>
         </div>
         <div class="proj-body">
           <div class="proj-top"><span class="proj-type">Database - Lab Project</span><span class="proj-arrow">&gt;</span></div>
           <div class="proj-title">Hotel Management System</div>
-          <div class="proj-desc">Led the development of a Database Management System Lab project for handling hotel reservations, customer records, room allocation, and billing operations efficiently.</div>
+          <div class="proj-desc">Database management system handling room reservations, guest allocations, billing details, and customer records.</div>
           <div class="tags"><span class="tag">DBMS</span><span class="tag">SQL</span><span class="tag">Reservations</span><span class="tag">Billing</span></div>
         </div>
       </div>
