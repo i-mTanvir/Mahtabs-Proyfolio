@@ -859,6 +859,26 @@ nav.scrolled{
   gap:1rem;
   flex-shrink:0;
   will-change:transform;
+  animation-duration:var(--marquee-duration, 36s);
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+}
+.logo-marquee[data-marquee-direction="left"] .logo-marquee-track{
+  animation-name:marquee-left;
+}
+.logo-marquee[data-marquee-direction="right"] .logo-marquee-track{
+  animation-name:marquee-right;
+}
+.logo-marquee:hover .logo-marquee-track{
+  animation-play-state:paused;
+}
+@keyframes marquee-left{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+@keyframes marquee-right{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(0)}
 }
 .logo-chip{
   min-width:11.5rem;
@@ -1873,7 +1893,7 @@ footer{
     <div class="sec-eyebrow reveal">tech_stack.config</div>
     <h2 class="sec-title reveal">Tools in my stack.</h2>
     <div class="skills-marquee">
-      <div class="logo-marquee reveal" data-marquee-speed="34" data-marquee-direction="left">
+      <div class="logo-marquee reveal" data-marquee-speed="42" data-marquee-direction="right">
         <div class="logo-marquee-track">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow logo"/><span>TensorFlow</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch logo"/><span>PyTorch</span></div>
@@ -1898,7 +1918,7 @@ footer{
         </div>
       </div>
 
-      <div class="logo-marquee reveal" data-marquee-speed="36" data-marquee-direction="right">
+      <div class="logo-marquee reveal" data-marquee-speed="40" data-marquee-direction="left">
         <div class="logo-marquee-track">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter Notebook logo"/><span>Jupyter Notebook</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code logo"/><span>VS Code</span></div>
@@ -2848,49 +2868,39 @@ function initSkillsMarquee() {
 
   document.querySelectorAll('.logo-marquee').forEach(row => {
     const tracks = row.querySelectorAll('.logo-marquee-track');
-    if (!tracks.length) return;
+    if (tracks.length < 2) return;
 
     const rowWidth = row.offsetWidth;
-    const direction = row.dataset.marqueeDirection === 'right' ? 1 : -1;
     const speed = Number(row.dataset.marqueeSpeed || 24);
     const primaryTrack = tracks[0];
+    const cloneTrack = tracks[1];
 
     if (!row._baseMarkup) {
       row._baseMarkup = primaryTrack.innerHTML;
     }
 
-    tracks.forEach((track, index) => {
-      gsap.set(track, { clearProps: 'x' });
-      track.style.display = index === 0 ? 'flex' : 'none';
+    tracks.forEach(track => {
+      track.style.display = 'flex';
+      track.innerHTML = row._baseMarkup;
+      gsap.set(track, { clearProps: 'transform,x' });
     });
 
-    let singleLoopMarkup = row._baseMarkup;
-    primaryTrack.innerHTML = singleLoopMarkup;
+    let loopMarkup = row._baseMarkup;
+    primaryTrack.innerHTML = loopMarkup;
 
     let safety = 0;
-    while (primaryTrack.scrollWidth < rowWidth * 1.6 && safety < 16) {
-      singleLoopMarkup += row._baseMarkup;
-      primaryTrack.innerHTML = singleLoopMarkup;
+    while (primaryTrack.scrollWidth < rowWidth * 1.25 && safety < 16) {
+      loopMarkup += row._baseMarkup;
+      primaryTrack.innerHTML = loopMarkup;
       safety += 1;
     }
 
-    primaryTrack.innerHTML = singleLoopMarkup + singleLoopMarkup;
+    primaryTrack.innerHTML = loopMarkup;
+    cloneTrack.innerHTML = loopMarkup;
 
-    const segmentWidth = primaryTrack.scrollWidth / 2;
-    const duration = Math.max(segmentWidth / speed, 14);
-    const startX = direction === -1 ? 0 : -segmentWidth;
-    const endX = direction === -1 ? -segmentWidth : 0;
-
-    gsap.set(primaryTrack, { x: startX });
-
-    const tween = gsap.to(primaryTrack, {
-      x: endX,
-      duration,
-      ease: 'none',
-      repeat: -1
-    });
-
-    marqueeTweens.push(tween);
+    const segmentWidth = primaryTrack.scrollWidth;
+    const duration = Math.max(segmentWidth / speed, 24);
+    row.style.setProperty('--marquee-duration', `${duration}s`);
   });
 }
 
