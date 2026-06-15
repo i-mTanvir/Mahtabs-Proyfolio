@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Mahtab Chowdhury â€” CSE Portfolio</title>
+<title>Mahtab Chowdhury - CSE Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -1183,10 +1183,15 @@ body{
 #cursor-dot,
 #cursor-ring,
 #binaryCanvas,
-#heroCanvas,
 .theme-toggle,
 .theme-overlay{
   display:none !important;
+}
+#heroCanvas{
+  display:block !important;
+  opacity:.32;
+  mix-blend-mode:multiply;
+  pointer-events:none;
 }
 nav{
   background:transparent;
@@ -1231,8 +1236,8 @@ nav.scrolled{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:1.15rem;
-  padding:7.5rem 5vw 5.5rem;
+  gap:.75rem;
+  padding:7rem 5vw 5rem;
   text-align:center;
 }
 .hero-content{
@@ -1275,8 +1280,8 @@ nav.scrolled{
   letter-spacing:0;
 }
 .hero-role-line{
-  font-size:clamp(.98rem,1.55vw,1.2rem);
-  margin-top:1.1rem;
+  font-size:clamp(.86rem,1.25vw,1rem);
+  margin-top:.75rem;
   text-align:center;
 }
 .hero-desc{
@@ -1284,7 +1289,8 @@ nav.scrolled{
 }
 .hero-ctas{
   justify-content:center;
-  margin-top:1.8rem;
+  margin-top:1.1rem;
+  gap:.8rem;
 }
 .c-link,
 .btn-primary,
@@ -1320,16 +1326,16 @@ nav.scrolled{
   width:100%;
 }
 .profile-frame{
-  width:clamp(112px,13vw,152px);
-  height:clamp(112px,13vw,152px);
-  border-radius:28px;
-  padding:5px;
+  width:clamp(92px,10vw,124px);
+  height:clamp(92px,10vw,124px);
+  border-radius:24px;
+  padding:4px;
   background:linear-gradient(180deg,#ffffff,#f8fafc);
   border:1px solid rgba(219,228,240,.9);
   box-shadow:0 18px 46px rgba(15,23,42,.08);
 }
 .profile-img{
-  border-radius:23px;
+  border-radius:20px;
   border:none;
   transform:none !important;
 }
@@ -1424,9 +1430,9 @@ footer{
 @media (max-width: 992px){
   #hero{
     min-height:100svh;
-    padding-top:7rem;
-    padding-bottom:5rem;
-    gap:1rem;
+    padding-top:6.5rem;
+    padding-bottom:4.5rem;
+    gap:.7rem;
   }
 }
 @media (max-width: 768px){
@@ -1439,18 +1445,18 @@ footer{
     column-gap:.18em;
   }
   .hero-role-line{
-    min-height:2.5em;
+    min-height:2.2em;
   }
   .hero-ctas{
     display:grid;
     grid-template-columns:1fr;
     max-width:none;
     width:min(100%,320px);
-    margin-top:1.4rem;
+    margin-top:1rem;
   }
   .profile-frame{
-    width:clamp(104px,30vw,138px);
-    height:clamp(104px,30vw,138px);
+    width:clamp(88px,24vw,116px);
+    height:clamp(88px,24vw,116px);
     max-width:none;
     max-height:none;
   }
@@ -1518,10 +1524,10 @@ footer{
 
 
     <div class="hero-ctas">
-      <a class="c-link" href="mailto:prottoy2205101490@diu.edu.bd"><span class="c-link-icon">&#9993;</span> email</a>
-      <a class="c-link" href="https://github.com/prottoy2205101490" target="_blank" rel="noreferrer"><span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></span> github</a>
-      <a class="c-link" href="https://www.linkedin.com/in/md-shahriar-mannan-prottoy-600b73260" target="_blank" rel="noreferrer"><span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span> linkedin</a>
-      <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download><span class="c-link-icon">&#8595;</span> resume</a>
+      <a class="c-link" href="mailto:chowdhury22205101076@diu.edu.bd"><span class="c-link-icon">&#9993;</span> email</a>
+      <a class="c-link" href="https://github.com/i-mTanvir" target="_blank" rel="noreferrer"><span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></span> github</a>
+      <a class="c-link" href="tel:+8801644605439"><span class="c-link-icon">&#9742;</span> phone</a>
+      <a class="c-link" href="Academic_CV__Mahtab.pdf" download><span class="c-link-icon">&#8595;</span> resume</a>
     </div>
   </div>
 
@@ -1540,9 +1546,9 @@ footer{
     <div class="about-grid">
       <div>
         <div class="about-text reveal">
-          <p>I’m a <strong>Computer Science undergraduate</strong> at Daffodil International University who likes turning ideas into clean, useful, and research-backed products. My focus sits between <span class="highlight">AI, deep learning, and computer vision</span>.</p>
-          <p>My thesis work explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>. I’m especially interested in projects that are accurate, interpretable, and practical enough to matter outside the lab.</p>
-          <p>Outside the classroom, I contribute to research and innovation work at the AR/VR &amp; Game Development Lab, where I help shape experiments, academic initiatives, and implementations that fit local realities.</p>
+          <p>I'm a <strong>Computer Science undergraduate</strong> at Daffodil International University with a strong interest in artificial intelligence, intelligent systems, and practical research-backed products. My focus sits between <span class="highlight">deep learning, computer vision, explainable AI, and intelligent healthcare technologies</span>.</p>
+          <p>My thesis work explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>. I care about models that are efficient, interpretable, and useful enough to support real-world medical imaging and disease prediction workflows.</p>
+          <p>Outside the classroom, I serve as Secretary of Research and Innovation at the AR/VR &amp; Game Development Lab, contributing to academic development, research strategy sessions, and affordable AR implementation for Bangladesh-focused test cases.</p>
         </div>
 
       </div>
@@ -1560,8 +1566,8 @@ footer{
           <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"AI Research Undergraduate"</span>,</span>
           <span class="t-line t-out">&nbsp;&nbsp;"university": <span style="color:#86efac">"DIU, Bangladesh"</span>,</span>
           <span class="t-line t-out">&nbsp;&nbsp;"thesis": <span style="color:#86efac">"Brain Tumor Detection"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"cgpa": <span style="color:#fde68a">3.94</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"focus": [<span style="color:#fde68a">"AI","Deep Learning","Computer Vision"</span>],</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"cgpa": <span style="color:#fde68a">3.92</span>,</span>
+          <span class="t-line t-out">&nbsp;&nbsp;"focus": [<span style="color:#fde68a">"AI","Deep Learning","Computer Vision","XAI"</span>],</span>
           <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_research"</span></span>
           <span class="t-line t-out blue">}</span>
           <span class="t-line t-comment">&nbsp;</span>
@@ -1576,11 +1582,11 @@ footer{
     </div>
     <div class="stats-row reveal">
       <div class="stat-item">
-        <div class="stat-num" data-target="7.0" data-decimals="1">0</div>
-        <div class="stat-label"><strong>IELTS Academic</strong><span>Overall band score</span></div>
+        <div class="stat-num" data-target="5.0" data-decimals="2">0</div>
+        <div class="stat-label"><strong>HSC &amp; SSC GPA</strong><span>Science background</span></div>
       </div>
       <div class="stat-item">
-        <div class="stat-num" data-target="3.94" data-decimals="2">0</div>
+        <div class="stat-num" data-target="3.92" data-decimals="2">0</div>
         <div class="stat-label"><strong>Current CGPA</strong><span>Daffodil International University</span></div>
       </div>
       <div class="stat-item">
@@ -1589,7 +1595,7 @@ footer{
       </div>
       <div class="stat-item">
         <div class="stat-num" data-target="5">0</div>
-        <div class="stat-label"><strong>Major competitions</strong><span>NASA | algorithms | AI events</span></div>
+        <div class="stat-label"><strong>Academic activities</strong><span>AI | algorithms | IoT events</span></div>
       </div>
     </div>
   </div>
@@ -1610,7 +1616,7 @@ footer{
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="C plus plus logo"/><span>C++</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 logo"/><span>HTML</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS logo"/><span>CSS</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript logo"/><span>JavaScript</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP logo"/><span>PHP</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/sqlite/003B57" alt="SQL logo"/><span>SQL</span></div>
         </div>
         <div class="logo-marquee-track" aria-hidden="true">
@@ -1621,7 +1627,7 @@ footer{
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/cplusplus/00599C" alt="" aria-hidden="true"/><span>C++</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" aria-hidden="true"/><span>HTML</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/css/1572B6" alt="" aria-hidden="true"/><span>CSS</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" aria-hidden="true"/><span>JavaScript</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="" aria-hidden="true"/><span>PHP</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/sqlite/003B57" alt="" aria-hidden="true"/><span>SQL</span></div>
         </div>
       </div>
@@ -1629,27 +1635,27 @@ footer{
       <div class="logo-marquee reveal" data-marquee-speed="36" data-marquee-direction="right">
         <div class="logo-marquee-track">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter Notebook logo"/><span>Jupyter Notebook</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="Google Colab logo"/><span>Google Colab</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="Kaggle logo"/><span>Kaggle</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code logo"/><span>VS Code</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI logo"/><span>Power BI</span></div>
           <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="LaTeX logo"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub logo"/><span>GitHub</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker logo"/><span>Docker</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL logo"/><span>PostgreSQL</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/xampp/FB7A24" alt="XAMPP logo"/><span>XAMPP</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL logo"/><span>MySQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/overleaf/47A141" alt="LaTeX workflow logo"/><span>LaTeX Workflow</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="SQL logo"/><span>SQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP logo"/><span>PHP</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel logo"/><span>Excel</span></div>
         </div>
         <div class="logo-marquee-track" aria-hidden="true">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" aria-hidden="true"/><span>Jupyter Notebook</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecolab/F9AB00" alt="" aria-hidden="true"/><span>Google Colab</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/kaggle/20BEFF" alt="" aria-hidden="true"/><span>Kaggle</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" aria-hidden="true"/><span>VS Code</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" aria-hidden="true"/><span>Power BI</span></div>
           <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="" aria-hidden="true"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" aria-hidden="true"/><span>GitHub</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" aria-hidden="true"/><span>Docker</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" aria-hidden="true"/><span>PostgreSQL</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/xampp/FB7A24" alt="" aria-hidden="true"/><span>XAMPP</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="" aria-hidden="true"/><span>MySQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/overleaf/47A141" alt="" aria-hidden="true"/><span>LaTeX Workflow</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="" aria-hidden="true"/><span>SQL</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="" aria-hidden="true"/><span>PHP</span></div>
+          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" aria-hidden="true"/><span>Excel</span></div>
         </div>
       </div>
     </div>
@@ -1756,14 +1762,14 @@ footer{
 
       <div class="proj-card reveal">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#060f0a,#0a2016)">
-          <div class="proj-thumb-code">class BankSystem {<br/>  createAccount();<br/>  deposit(); withdraw();<br/>  handleTransactions();<br/>}</div>
-          <span class="proj-emoji"><img src="prottoys-protfolio/bank.png" alt="Bank Management System Logo"/></span>
+          <div class="proj-thumb-code">class BloodManagement {<br/>  registerDonor();<br/>  matchBloodGroup();<br/>  requestEmergencyUnit();<br/>}</div>
+          <span class="proj-emoji"><img src="prottoys-protfolio/bank.png" alt="Blood Management System Logo"/></span>
         </div>
         <div class="proj-body">
-          <div class="proj-top"><span class="proj-type">OOP - Java</span><span class="proj-arrow">&gt;</span></div>
-          <div class="proj-title">Bank Management System</div>
-          <div class="proj-desc">Java OOP application managing customer accounts, secure transaction handling, deposits, and core banking operations.</div>
-          <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Team Lead</span></div>
+          <div class="proj-top"><span class="proj-type">Web - Database</span><span class="proj-arrow">&gt;</span></div>
+          <div class="proj-title">Blood Management System</div>
+          <div class="proj-desc">Donation and request management platform for donor records, blood group matching, and urgent availability tracking.</div>
+          <div class="tags"><span class="tag">PHP</span><span class="tag">SQL</span><span class="tag">Healthcare</span></div>
         </div>
       </div>
 
@@ -1794,7 +1800,7 @@ footer{
         <div class="tl-year">2022 - Present</div>
         <div>
           <div class="tl-role">Bachelor of Science in Computer Science</div>
-          <div class="tl-org">Daffodil International University - CGPA 3.94</div>
+          <div class="tl-org">Daffodil International University - CGPA 3.92</div>
           <div class="tl-desc">Current undergraduate study with a thesis on CNN-Tokenized Compact Transformer with Capsule Routing for Brain Tumor Detection, supported by consistent merit-based academic performance.</div>
         </div>
       </div>
@@ -1802,7 +1808,7 @@ footer{
         <div class="tl-year">2019 - 2020</div>
         <div>
           <div class="tl-role">Higher Secondary School Certificate</div>
-          <div class="tl-org">Govt. Netrokona College - Science - GPA 5.00</div>
+          <div class="tl-org">Chittagong Govt. Model School &amp; College - Science - GPA 5.00</div>
           <div class="tl-desc">Completed higher secondary studies in the science track with top academic performance.</div>
         </div>
       </div>
@@ -1810,7 +1816,7 @@ footer{
         <div class="tl-year">2017 - 2018</div>
         <div>
           <div class="tl-role">Secondary School Certificate</div>
-          <div class="tl-org">Anjuman Adarsha Govt High School - Science - GPA 4.89</div>
+          <div class="tl-org">Kazem Ali School &amp; College - Science - GPA 5.00</div>
           <div class="tl-desc">Built the academic foundation that later shaped my interest in engineering, problem-solving, and research.</div>
         </div>
       </div>
@@ -1827,83 +1833,25 @@ footer{
       <div class="tl-item reveal-left">
         <div class="tl-year">2025 - Present</div>
         <div>
-          <div class="tl-role">Founder and CEO</div>
-          <div class="tl-org">Techlystt LTD</div>
-          <div class="tl-desc">Leading a multinational tech company focused on building technology-driven products and services.</div>
+          <div class="tl-role">Secretary of Research and Innovation</div>
+          <div class="tl-org">AR/VR &amp; Game Development Lab - Daffodil International University</div>
+          <div class="tl-desc">Supporting professional and academic development, research strategy and writing sessions, and affordable AR implementation and evaluation for Bangladesh-focused test cases.</div>
         </div>
       </div>
       <div class="tl-item reveal-left">
         <div class="tl-year">2025 - Present</div>
         <div>
-          <div class="tl-role">Executive Member</div>
-          <div class="tl-org">Health Informatics &amp; Research Lab</div>
-          <div class="tl-desc">Contributing to health informatics and research initiatives through collaborative technical and academic work.</div>
+          <div class="tl-role">Undergraduate AI Researcher</div>
+          <div class="tl-org">Collaborative Academic Research</div>
+          <div class="tl-desc">Developing and evaluating AI-driven work across medical imaging, smart agriculture, UAV-based sensing, and disease prediction systems.</div>
         </div>
       </div>
       <div class="tl-item reveal-left">
         <div class="tl-year">2025 - 2026</div>
         <div>
-          <div class="tl-role">Vice President of Research and Innovation</div>
-          <div class="tl-org">AR/VR &amp; Game Development Lab - Daffodil International University</div>
-          <div class="tl-desc">Contributed to professional and academic development, delivered sessions on research strategies and writing, and worked on affordable AR implementation and evaluation in a Bangladesh test-case context.</div>
-        </div>
-      </div>
-      <div class="tl-item reveal-left">
-        <div class="tl-year">2024 - 2025</div>
-        <div>
-          <div class="tl-role">Project Manager</div>
-          <div class="tl-org">Enif IT</div>
-          <div class="tl-desc">Worked on technology solutions and digital services, helping manage project delivery and execution.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications" class="section">
-  <div class="section-flow">
-    <div class="sec-eyebrow reveal">certifications.md</div>
-    <h2 class="sec-title reveal">Certifications.</h2>
-    <div class="skills-marquee" style="margin-top: 3.5rem;">
-      <div class="logo-marquee reveal" data-marquee-speed="22" data-marquee-direction="left">
-        <div class="logo-marquee-track">
-          <div class="cert-card"><img src="Certificates/0111.png" alt="Sigma Institute Certificate 0111" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/01112.png" alt="Sigma Institute Certificate 01112" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/AI.png" alt="Artificial Intelligence Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Basic computer science certificate.png" alt="Basic Computer Science Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certificate for Shahriar Mannan Prottoy   for _Sigma Institute of Engineer..._.png" alt="Sigma Institute Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/certificate_paper_113_Attention_Based_Hybrid_ViT_ResNet_Model_for.png" alt="RTIP2R Mango Classification Paper Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification (1).png" alt="Certification 1" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification (2).png" alt="Certification 2" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification 3.png" alt="Certification 3" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification 4.png" alt="Certification 4" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/doc 1.jpg" alt="DIU Academic Activity doc 1" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/doc.jpg" alt="DIU Academic Activity doc" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10416.png" alt="ICCIT Lemon Disease Paper Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10423 (1).png" alt="IDAA Tea Disease Paper Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10504.png" alt="IDAA Lung Cancer Paper Certificate" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Untitled-1 copy.jpg" alt="Certificate Image" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Web Accessibility Training_Course certificate -  Web Accessibility.png" alt="Web Accessibility Training Certificate" class="cert-img" /></div>
-        </div>
-        <div class="logo-marquee-track" aria-hidden="true">
-          <div class="cert-card"><img src="Certificates/0111.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/01112.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/AI.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Basic computer science certificate.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certificate for Shahriar Mannan Prottoy   for _Sigma Institute of Engineer..._.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/certificate_paper_113_Attention_Based_Hybrid_ViT_ResNet_Model_for.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification (1).png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification (2).png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification 3.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Certification 4.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/doc 1.jpg" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/doc.jpg" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10416.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10423 (1).png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Paper ID_ 10504.png" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Untitled-1 copy.jpg" alt="" class="cert-img" /></div>
-          <div class="cert-card"><img src="Certificates/Web Accessibility Training_Course certificate -  Web Accessibility.png" alt="" class="cert-img" /></div>
+          <div class="tl-role">Research Publication Contributor</div>
+          <div class="tl-org">International Conference Collaborations</div>
+          <div class="tl-desc">Contributed to peer-reviewed research in deep learning, explainable AI, healthcare intelligence, thermal imaging, and smart agriculture.</div>
         </div>
       </div>
     </div>
@@ -1920,9 +1868,9 @@ footer{
     <div class="skills-grid">
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2z"/></svg></span>
-        <div class="skill-name">NASA Space Apps 2025</div>
-        <div class="skill-desc">Regional Champion and Global Nominee in one of the world's most visible innovation hackathons.</div>
-        <div class="tags"><span class="tag">NASA</span><span class="tag">2025</span><span class="tag">Global Nominee</span></div>
+        <div class="skill-name">Research Publications</div>
+        <div class="skill-desc">Contributed to collaborative research across medical imaging, smart agriculture, UAV-based sensing, and disease prediction.</div>
+        <div class="tags"><span class="tag">AI Research</span><span class="tag">2024-2025</span></div>
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20l-6-3.5V7.5L12 4l6 3.5v9L12 20z"/><path d="M9 12l2 2 4-4"/></svg></span>
@@ -1932,9 +1880,9 @@ footer{
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg></span>
-        <div class="skill-name">Honor Board Recognition</div>
-        <div class="skill-desc">Featured as "Hero of the Hall" at Yunus Khan Scholar Garden-1 for academic excellence and discipline.</div>
-        <div class="tags"><span class="tag">Honor Board</span><span class="tag">Discipline</span></div>
+        <div class="skill-name">Research &amp; Innovation Leadership</div>
+        <div class="skill-desc">Serving as Secretary of Research and Innovation at the AR/VR &amp; Game Development Lab, DIU.</div>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">AR/VR Lab</span></div>
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16"/><path d="M4 12h16"/><path d="M6.5 6.5l11 11"/><path d="M17.5 6.5l-11 11"/></svg></span>
@@ -1950,9 +1898,9 @@ footer{
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg></span>
-        <div class="skill-name">NASA Space Apps 2024</div>
-        <div class="skill-desc">Participated in the global innovation hackathon, building technology-driven solutions for space and Earth challenges.</div>
-        <div class="tags"><span class="tag">Hackathon</span><span class="tag">Innovation</span></div>
+        <div class="skill-name">IoT Fest 2022</div>
+        <div class="skill-desc">Took part in an IoT innovation event focused on smart technology, embedded systems, and real-world automation ideas.</div>
+        <div class="tags"><span class="tag">IoT</span><span class="tag">Embedded Systems</span></div>
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/><path d="M5 5h14v14H5z"/></svg></span>
@@ -1962,9 +1910,9 @@ footer{
       </div>
       <div class="skill-card reveal-scale">
         <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></span>
-        <div class="skill-name">IoT Fest 2022</div>
-        <div class="skill-desc">Participated in an IoT-centered technology festival showcasing smart systems and embedded ideas.</div>
-        <div class="tags"><span class="tag">IoT</span><span class="tag">Innovation</span></div>
+        <div class="skill-name">Practical Project Portfolio</div>
+        <div class="skill-desc">Built academic systems including Voice Of Bangladesh, Blood Management System, Hotel Management System, and Food Delivery App.</div>
+        <div class="tags"><span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">Database</span></div>
       </div>
     </div>
   </div>
@@ -1987,16 +1935,16 @@ footer{
         </button>
       </form>
       <div class="contact-links reveal">
-        <a class="c-link" href="mailto:prottoy2205101490@diu.edu.bd">
+        <a class="c-link" href="mailto:chowdhury22205101076@diu.edu.bd">
           <span class="c-link-icon">&#9993;</span> email
         </a>
-        <a class="c-link" href="tel:+8801621968792">
+        <a class="c-link" href="tel:+8801644605439">
           <span class="c-link-icon">&#9742;</span> phone
         </a>
-        <a class="c-link" href="https://github.com/prottoy2205101490" target="_blank" rel="noreferrer">
+        <a class="c-link" href="https://github.com/i-mTanvir" target="_blank" rel="noreferrer">
           <span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></span> github
         </a>
-        <a class="c-link" href="Academic_CV__prottoy%20(3)%20(1).pdf" download>
+        <a class="c-link" href="Academic_CV__Mahtab.pdf" download>
           <span class="c-link-icon">&#8595;</span> resume
         </a>
       </div>
@@ -2079,6 +2027,7 @@ document.addEventListener('mousemove', e => {
 }
 
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
+if (false) {
 // BINARY RAIN CANVAS
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 (function binaryRain() {
@@ -2115,83 +2064,88 @@ document.addEventListener('mousemove', e => {
 })();
 
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
-// THREE.JS â€” PARTICLE NETWORK (HERO)
-// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
-(function heroParticles() {
+}
+// HERO MATRIX BACKGROUND
+(function heroMatrix() {
   const canvas = document.getElementById('heroCanvas');
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const hero = document.getElementById('hero');
+  if (!canvas || !hero) return;
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
-  camera.position.z = 5;
+  const ctx = canvas.getContext('2d');
+  const tokens = ['0', '1', '01', 'AI', 'ML', 'CSE', 'DS', '{}'];
+  let columns = [];
+  let cell = 28;
+  let width = 0;
+  let height = 0;
 
   function resize() {
-    const hero = document.getElementById('hero');
-    const w = hero.clientWidth, h = hero.clientHeight;
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+    const rect = hero.getBoundingClientRect();
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    width = Math.max(1, Math.floor(rect.width));
+    height = Math.max(1, Math.floor(rect.height));
+    canvas.width = Math.floor(width * ratio);
+    canvas.height = Math.floor(height * ratio);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    cell = window.innerWidth < 640 ? 34 : 30;
+    const count = Math.ceil(width / cell) + 1;
+    columns = Array.from({ length: count }, (_, i) => ({
+      x: i * cell,
+      y: Math.random() * height,
+      speed: 0.22 + Math.random() * 0.45,
+      token: tokens[Math.floor(Math.random() * tokens.length)],
+      alpha: 0.08 + Math.random() * 0.12,
+      glyphs: Array.from({ length: 18 }, () => Math.random() > 0.5 ? '1' : '0')
+    }));
   }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.font = '700 13px JetBrains Mono, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    columns.forEach(col => {
+      const rows = Math.ceil(height / cell) + 2;
+      for (let i = 0; i < rows; i++) {
+        const y = (col.y + i * cell) % (height + cell) - cell;
+        const depth = 1 - Math.abs((y / height) - 0.5) * 1.4;
+        const alpha = Math.max(0.045, col.alpha * depth);
+        const isAccent = i % 9 === 0;
+        ctx.fillStyle = isAccent
+          ? 'rgba(47, 95, 174, ' + Math.min(alpha + 0.08, 0.24) + ')'
+          : 'rgba(89, 101, 121, ' + alpha + ')';
+        ctx.fillText(isAccent ? col.token : col.glyphs[i % col.glyphs.length], col.x, y);
+      }
+      col.y += col.speed;
+      if (Math.random() > 0.992) col.token = tokens[Math.floor(Math.random() * tokens.length)];
+      if (col.y > height + cell) col.y = 0;
+    });
+
+    requestAnimationFrame(draw);
+  }
+
   resize();
   window.addEventListener('resize', resize);
-
-  // Particles
-  const count = 280;
-  const positions = new Float32Array(count * 3);
-  const velocities = [];
-
-  for (let i = 0; i < count; i++) {
-    positions[i*3]   = (Math.random() - 0.5) * 14;
-    positions[i*3+1] = (Math.random() - 0.5) * 8;
-    positions[i*3+2] = (Math.random() - 0.5) * 4;
-    velocities.push({
-      x: (Math.random() - 0.5) * 0.004,
-      y: (Math.random() - 0.5) * 0.004,
-      z: 0
+  hero.addEventListener('mousemove', e => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    gsap.to(canvas, {
+      x: x * 18,
+      y: y * 12,
+      scale: 1.025,
+      duration: 0.8,
+      ease: 'power3.out'
     });
-  }
-
-  const geom = new THREE.BufferGeometry();
-  geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-  const mat = new THREE.PointsMaterial({
-    color: 0x4f8ef7,
-    size: 0.032,
-    transparent: true,
-    opacity: 0.7,
   });
-
-  const points = new THREE.Points(geom, mat);
-  scene.add(points);
-
-  // Mouse parallax
-  let mx = 0, my = 0;
-  document.addEventListener('mousemove', e => {
-    mx = (e.clientX / window.innerWidth  - 0.5) * 0.6;
-    my = (e.clientY / window.innerHeight - 0.5) * 0.6;
+  hero.addEventListener('mouseleave', () => {
+    gsap.to(canvas, { x: 0, y: 0, scale: 1, duration: 1, ease: 'power3.out' });
   });
-
-  function animate() {
-    requestAnimationFrame(animate);
-    const pos = geom.attributes.position.array;
-
-    for (let i = 0; i < count; i++) {
-      pos[i*3]   += velocities[i].x;
-      pos[i*3+1] += velocities[i].y;
-      if (pos[i*3]   >  7) pos[i*3]   = -7;
-      if (pos[i*3]   < -7) pos[i*3]   =  7;
-      if (pos[i*3+1] >  4) pos[i*3+1] = -4;
-      if (pos[i*3+1] < -4) pos[i*3+1] =  4;
-    }
-    geom.attributes.position.needsUpdate = true;
-
-    points.rotation.y += (mx - points.rotation.y) * 0.04;
-    points.rotation.x += (-my - points.rotation.x) * 0.04;
-
-    renderer.render(scene, camera);
-  }
-  animate();
+  gsap.fromTo(canvas, { opacity: 0 }, { opacity: 0.32, duration: 1.2, ease: 'power2.out', delay: 0.2 });
+  draw();
 })();
 
 // ════════════════════════════════════════════════════════════════════════════════
@@ -2612,7 +2566,7 @@ if (contactForm) {
     const email = document.getElementById('formEmail').value;
     const subject = document.getElementById('formSubject').value;
     const message = document.getElementById('formMessage').value;
-    const mailtoUrl = `mailto:prottoy2205101490@diu.edu.bd?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + email + "\n\n" + message)}`;
+    const mailtoUrl = `mailto:chowdhury22205101076@diu.edu.bd?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + email + "\n\n" + message)}`;
     window.location.href = mailtoUrl;
   });
 }
