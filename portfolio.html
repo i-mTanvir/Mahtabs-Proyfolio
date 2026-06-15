@@ -551,6 +551,266 @@ nav.scrolled{
 .stat-label strong{display:block;color:var(--white);font-size:.8rem;margin-bottom:.2rem}
 .stat-label span{font-size:.72rem;color:var(--muted2);line-height:1.6}
 
+.about-shell{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.9fr);
+  gap:1.4rem;
+  margin-top:2rem;
+  align-items:stretch;
+}
+.about-copy-card,
+.cs-board{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:28px;
+  background:linear-gradient(145deg,#ffffff 0%,#fbfdff 54%,#f3f7fd 100%);
+  box-shadow:0 28px 80px rgba(15,23,42,.07);
+}
+.about-copy-card{
+  padding:clamp(1.2rem,2.4vw,1.85rem);
+}
+.about-copy-card::before{
+  content:'';
+  position:absolute;
+  inset:1rem auto auto 1rem;
+  width:82px;
+  height:82px;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(47,95,174,.12),rgba(104,163,255,.06));
+  transform:rotate(12deg);
+}
+.about-kicker{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.85rem;
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+.about-kicker::before{
+  content:'';
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 6px rgba(47,95,174,.1);
+}
+.about-lead{
+  position:relative;
+  font-family:var(--display);
+  font-size:clamp(1.35rem,2.2vw,2.15rem);
+  line-height:1.12;
+  letter-spacing:-.035em;
+  color:#111827;
+  max-width:520px;
+  margin-bottom:1rem;
+}
+.about-lead span{
+  color:var(--blue);
+}
+.about-text.compact p{
+  position:relative;
+  max-width:740px;
+  margin-bottom:.85rem;
+}
+.cse-path{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.75rem;
+  margin-top:1.5rem;
+}
+.path-card{
+  position:relative;
+  padding:1rem;
+  min-height:138px;
+  border:1px solid rgba(206,218,235,.9);
+  border-radius:20px;
+  background:rgba(255,255,255,.72);
+  box-shadow:0 16px 34px rgba(15,23,42,.045);
+}
+.path-index{
+  display:inline-grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:10px;
+  background:#edf4ff;
+  color:var(--blue);
+  font-family:var(--mono);
+  font-size:.7rem;
+  margin-bottom:1rem;
+}
+.path-card strong{
+  display:block;
+  color:#111827;
+  font-size:.92rem;
+  margin-bottom:.35rem;
+}
+.path-card span{
+  color:var(--muted2);
+  font-size:.74rem;
+  line-height:1.65;
+}
+.cs-board{
+  min-height:430px;
+  padding:1.2rem;
+  isolation:isolate;
+}
+.cs-board::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(47,95,174,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(47,95,174,.055) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(circle at 50% 45%,#000 0 58%,transparent 78%);
+  opacity:.9;
+}
+.cs-board::after{
+  content:'';
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(47,95,174,.12),transparent 66%);
+  z-index:-1;
+}
+.board-top{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  z-index:2;
+}
+.board-label{
+  font-family:var(--mono);
+  color:var(--blue);
+  font-size:.68rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.board-status{
+  font-family:var(--mono);
+  font-size:.62rem;
+  color:#1f7a4c;
+  background:#edfdf4;
+  border:1px solid #c8f5da;
+  padding:.45rem .65rem;
+  border-radius:999px;
+}
+.board-core{
+  position:absolute;
+  left:50%;
+  top:48%;
+  width:150px;
+  height:150px;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ffffff,#eef5ff);
+  border:1px solid rgba(190,210,236,.9);
+  box-shadow:0 24px 60px rgba(47,95,174,.14);
+  z-index:2;
+}
+.board-core span{
+  font-family:var(--mono);
+  color:var(--muted2);
+  font-size:.58rem;
+  letter-spacing:.14em;
+}
+.board-core strong{
+  display:block;
+  color:#111827;
+  font-size:1.12rem;
+  letter-spacing:-.04em;
+  margin-top:.2rem;
+}
+.orbit-ring{
+  position:absolute;
+  left:50%;
+  top:48%;
+  border:1px dashed rgba(47,95,174,.24);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+.orbit-ring.one{width:260px;height:260px}
+.orbit-ring.two{width:390px;height:390px}
+.orbit-node{
+  position:absolute;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  padding:.58rem .72rem;
+  border:1px solid rgba(202,216,235,.9);
+  border-radius:999px;
+  background:rgba(255,255,255,.88);
+  color:#334155;
+  font-family:var(--mono);
+  font-size:.66rem;
+  box-shadow:0 16px 34px rgba(15,23,42,.065);
+}
+.orbit-node::before{
+  content:'';
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--blue);
+}
+.orbit-node.n1{left:9%;top:27%}
+.orbit-node.n2{right:10%;top:23%}
+.orbit-node.n3{left:12%;bottom:25%}
+.orbit-node.n4{right:8%;bottom:22%}
+.orbit-node.n5{left:50%;bottom:9%;transform:translateX(-50%)}
+.board-code{
+  position:absolute;
+  left:1.2rem;
+  top:4.5rem;
+  z-index:2;
+  font-family:var(--mono);
+  color:rgba(89,101,121,.42);
+  font-size:.64rem;
+  line-height:1.9;
+}
+@media (max-width: 1100px){
+  .about-shell{
+    grid-template-columns:1fr;
+  }
+  .cs-board{min-height:430px}
+}
+@media (max-width: 760px){
+  .about-shell{
+    margin-top:1.5rem;
+  }
+  .cse-path{
+    grid-template-columns:1fr;
+  }
+  .cs-board{min-height:430px}
+  .orbit-ring.two{
+    width:310px;
+    height:310px;
+  }
+  .orbit-ring.one{
+    width:210px;
+    height:210px;
+  }
+  .orbit-node.n1{left:5%;top:25%}
+  .orbit-node.n2{right:4%;top:25%}
+  .orbit-node.n3{left:5%;bottom:31%}
+  .orbit-node.n4{right:4%;bottom:31%}
+}
+
 /* â”€â”€ SKILLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #skills{overflow:hidden}
 .skills-marquee{
@@ -1543,41 +1803,41 @@ footer{
     <div class="sec-eyebrow reveal">about_me.md</div>
     <h2 class="sec-title reveal">About Mahtab.</h2>
 
-    <div class="about-grid">
-      <div>
-        <div class="about-text reveal">
-          <p>I'm a <strong>Computer Science undergraduate</strong> at Daffodil International University with a strong interest in artificial intelligence, intelligent systems, and practical research-backed products. My focus sits between <span class="highlight">deep learning, computer vision, explainable AI, and intelligent healthcare technologies</span>.</p>
-          <p>My thesis work explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>. I care about models that are efficient, interpretable, and useful enough to support real-world medical imaging and disease prediction workflows.</p>
-          <p>Outside the classroom, I serve as Secretary of Research and Innovation at the AR/VR &amp; Game Development Lab, contributing to academic development, research strategy sessions, and affordable AR implementation for Bangladesh-focused test cases.</p>
+    <div class="about-shell">
+      <div class="about-copy-card reveal-left">
+        <div class="about-kicker">CSE identity map</div>
+        <div class="about-lead">CSE student focused on <span>AI research</span>.</div>
+        <div class="about-text compact">
+          <p>I'm a <strong>Computer Science undergraduate</strong> at Daffodil International University with a strong interest in artificial intelligence, intelligent systems, and practical research-backed products.</p>
+          <p>My thesis explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>, with attention to efficient and interpretable medical imaging workflows.</p>
+          <p>Outside class, I serve as Secretary of Research and Innovation at the AR/VR &amp; Game Development Lab, contributing to academic development, research strategy sessions, and Bangladesh-focused AR implementation.</p>
         </div>
-
       </div>
-      <div class="terminal reveal-right">
-        <div class="terminal-bar">
-          <div class="t-dot"></div>
-          <div class="t-dot"></div>
-          <div class="t-dot"></div>
-          <div class="terminal-title">mahtab@diu:~</div>
+
+      <div class="cs-board reveal-right" data-tilt-card>
+        <div class="board-top">
+          <span class="board-label">systems-thinking.board</span>
+          <span class="board-status">research mode active</span>
         </div>
-        <div class="terminal-body">
-          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat academic_profile.json</span></span>
-          <span class="t-line t-out blue">{</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"name": <span style="color:#86efac">"Mahtab Chowdhury"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"role": <span style="color:#86efac">"AI Research Undergraduate"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"university": <span style="color:#86efac">"DIU, Bangladesh"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"thesis": <span style="color:#86efac">"Brain Tumor Detection"</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"cgpa": <span style="color:#fde68a">3.92</span>,</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"focus": [<span style="color:#fde68a">"AI","Deep Learning","Computer Vision","XAI"</span>],</span>
-          <span class="t-line t-out">&nbsp;&nbsp;"status": <span style="color:#86efac">"open_to_research"</span></span>
-          <span class="t-line t-out blue">}</span>
-          <span class="t-line t-comment">&nbsp;</span>
-          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">python thesis_train.py --model ctc-transformer</span></span>
-          <span class="t-line t-out green">training_brain_tumor_model 100%</span>
-          <span class="t-line t-out green">research_focus: medical_imaging + interpretability</span>
-          <span class="t-line t-out yellow">papers_indexed -> publications/2025/</span>
-          <span class="t-line t-comment">&nbsp;</span>
-          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd" id="termTyping"></span><span class="type-cursor"></span></span>
+        <div class="board-code">
+          input: medical_imaging<br/>
+          model: capsule_routing<br/>
+          output: interpretable_AI<br/>
+          deploy: real_world_context
         </div>
+        <div class="orbit-ring one"></div>
+        <div class="orbit-ring two"></div>
+        <div class="board-core">
+          <div>
+            <span>student_node</span>
+            <strong>Mahtab</strong>
+          </div>
+        </div>
+        <div class="orbit-node n1">Python</div>
+        <div class="orbit-node n2">TensorFlow</div>
+        <div class="orbit-node n3">Computer Vision</div>
+        <div class="orbit-node n4">XAI</div>
+        <div class="orbit-node n5">Research</div>
       </div>
     </div>
     <div class="stats-row reveal">
@@ -2342,6 +2602,72 @@ gsap.utils.toArray('.reveal-scale').forEach((el, i) => {
     }
   );
 });
+
+// ABOUT: unique CSE board motion
+if (document.querySelector('.cs-board')) {
+  gsap.fromTo('.path-card',
+    { opacity: 0, y: 22, rotate: -1 },
+    {
+      opacity: 1,
+      y: 0,
+      rotate: 0,
+      stagger: 0.12,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.cse-path', start: 'top 86%', once: true }
+    }
+  );
+
+  gsap.to('.orbit-ring.one', {
+    rotate: 360,
+    duration: 36,
+    repeat: -1,
+    ease: 'none'
+  });
+
+  gsap.to('.orbit-ring.two', {
+    rotate: -360,
+    duration: 52,
+    repeat: -1,
+    ease: 'none'
+  });
+
+  gsap.utils.toArray('.orbit-node').forEach((node, i) => {
+    gsap.to(node, {
+      y: i % 2 ? 10 : -10,
+      x: i % 3 === 0 ? 8 : -6,
+      duration: 2.6 + i * 0.24,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+  });
+
+  const board = document.querySelector('[data-tilt-card]');
+  board.addEventListener('mousemove', e => {
+    const rect = board.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    gsap.to(board, {
+      rotateY: x * 5,
+      rotateX: -y * 5,
+      transformPerspective: 900,
+      duration: 0.55,
+      ease: 'power3.out'
+    });
+    gsap.to('.board-core', {
+      x: x * 14,
+      y: y * 14,
+      duration: 0.55,
+      ease: 'power3.out'
+    });
+  });
+
+  board.addEventListener('mouseleave', () => {
+    gsap.to(board, { rotateX: 0, rotateY: 0, duration: 0.8, ease: 'power3.out' });
+    gsap.to('.board-core', { x: 0, y: 0, duration: 0.8, ease: 'power3.out' });
+  });
+}
 
 // COUNTER ANIMATION
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
