@@ -536,7 +536,7 @@ nav.scrolled{
   margin-top:2rem;
 }
 .stat-item{
-  display:flex;align-items:center;gap:1.4rem;
+  display:flex;align-items:center;gap:1.65rem;
   padding:1.2rem 1.4rem;
   background:var(--surface2);border:1px solid var(--border);
   border-radius:6px;transition:border-color .25s,transform .2s;
@@ -546,7 +546,13 @@ nav.scrolled{
 .stat-num{
   font-family:var(--display);font-size:1.95rem;
   font-weight:700;color:var(--blue);
-  min-width:2.5rem;line-height:1;
+  min-width:4.35rem;
+  flex:0 0 4.35rem;
+  line-height:1;
+  text-align:left;
+}
+.stat-label{
+  min-width:0;
 }
 .stat-label strong{display:block;color:var(--white);font-size:.8rem;margin-bottom:.2rem}
 .stat-label span{font-size:.72rem;color:var(--muted2);line-height:1.6}
@@ -569,16 +575,6 @@ nav.scrolled{
 }
 .about-copy-card{
   padding:clamp(1.2rem,2.4vw,1.85rem);
-}
-.about-copy-card::before{
-  content:'';
-  position:absolute;
-  inset:1rem auto auto 1rem;
-  width:82px;
-  height:82px;
-  border-radius:24px;
-  background:linear-gradient(135deg,rgba(47,95,174,.12),rgba(104,163,255,.06));
-  transform:rotate(12deg);
 }
 .about-kicker{
   position:relative;
@@ -1741,19 +1737,26 @@ footer{
     text-align:center;
   }
   .hero-name{
-    font-size:clamp(1.95rem,9.4vw,3.35rem);
+    font-size:clamp(1.55rem,7.2vw,2.45rem);
     line-height:1;
-    column-gap:.18em;
+    column-gap:.14em;
   }
   .hero-role-line{
     min-height:2.2em;
   }
   .hero-ctas{
     display:grid;
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
     max-width:none;
-    width:min(100%,320px);
+    width:min(100%,430px);
     margin-top:1rem;
+    gap:.75rem;
+  }
+  .hero-ctas .c-link{
+    min-width:0;
+    justify-content:center;
+    padding:.8rem .65rem;
+    font-size:.66rem;
   }
   .profile-frame{
     width:clamp(88px,24vw,116px);
