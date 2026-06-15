@@ -711,17 +711,24 @@ nav.scrolled{
 .board-core{
   position:absolute;
   left:50%;
-  top:48%;
+  top:50%;
   width:150px;
   height:150px;
-  transform:translate(-50%,-50%);
   display:grid;
   place-items:center;
+  text-align:center;
   border-radius:50%;
   background:linear-gradient(145deg,#ffffff,#eef5ff);
   border:1px solid rgba(190,210,236,.9);
   box-shadow:0 24px 60px rgba(47,95,174,.14);
   z-index:2;
+}
+.board-core > div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
 }
 .board-core span{
   font-family:var(--mono);
@@ -739,7 +746,7 @@ nav.scrolled{
 .orbit-ring{
   position:absolute;
   left:50%;
-  top:48%;
+  top:50%;
   border:1px dashed rgba(47,95,174,.24);
   border-radius:50%;
   transform:translate(-50%,-50%);
@@ -1806,7 +1813,6 @@ footer{
     <div class="about-shell">
       <div class="about-copy-card reveal-left">
         <div class="about-kicker">CSE identity map</div>
-        <div class="about-lead">CSE student focused on <span>AI research</span>.</div>
         <div class="about-text compact">
           <p>I'm a <strong>Computer Science undergraduate</strong> at Daffodil International University with a strong interest in artificial intelligence, intelligent systems, and practical research-backed products.</p>
           <p>My thesis explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>, with attention to efficient and interpretable medical imaging workflows.</p>
@@ -2605,6 +2611,8 @@ gsap.utils.toArray('.reveal-scale').forEach((el, i) => {
 
 // ABOUT: unique CSE board motion
 if (document.querySelector('.cs-board')) {
+  gsap.set('.board-core', { xPercent: -50, yPercent: -50 });
+
   gsap.fromTo('.path-card',
     { opacity: 0, y: 22, rotate: -1 },
     {
@@ -2656,6 +2664,8 @@ if (document.querySelector('.cs-board')) {
       ease: 'power3.out'
     });
     gsap.to('.board-core', {
+      xPercent: -50,
+      yPercent: -50,
       x: x * 14,
       y: y * 14,
       duration: 0.55,
@@ -2665,7 +2675,7 @@ if (document.querySelector('.cs-board')) {
 
   board.addEventListener('mouseleave', () => {
     gsap.to(board, { rotateX: 0, rotateY: 0, duration: 0.8, ease: 'power3.out' });
-    gsap.to('.board-core', { x: 0, y: 0, duration: 0.8, ease: 'power3.out' });
+    gsap.to('.board-core', { xPercent: -50, yPercent: -50, x: 0, y: 0, duration: 0.8, ease: 'power3.out' });
   });
 }
 
