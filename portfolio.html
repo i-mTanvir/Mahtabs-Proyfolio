@@ -36,18 +36,18 @@
   --body:'Inter',sans-serif;
 }
 body.light-theme{
-  --bg:#f4ecde;
-  --surface:#fbf4e9;
-  --surface2:#efe4d2;
-  --border:#d9c8b1;
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface2:#f8fafc;
+  --border:#dbe4f0;
   --blue:#2f5fae;
   --blue2:#244983;
   --blue-glow:rgba(47,95,174,.12);
   --cyan:#4b84b7;
   --white:#18181b;
-  --muted:#9b8f7c;
-  --muted2:#5f564a;
-  --nav-bg:rgba(244,236,222,.88);
+  --muted:#94a3b8;
+  --muted2:#64748b;
+  --nav-bg:rgba(255,255,255,.88);
   --binary-opacity:.022;
   --noise-opacity:.008;
   --toggle-bg:transparent;
@@ -747,7 +747,7 @@ nav.scrolled{
 /* â”€â”€ PROJECTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #projects{background:var(--surface)}
 body.light-theme .proj-thumb{
-  background:linear-gradient(135deg,#eadcc8,#f7efe2) !important;
+  background:linear-gradient(135deg,#f9fbfd,#eef3f8) !important;
 }
 body.light-theme .proj-thumb-code{
   color:rgba(47,95,174,.18);
@@ -992,8 +992,7 @@ footer{
   }
 }
 @media(max-width:768px){
-  .hero-status,
-  #heroCode,
+  .hero-status,
   #scrollInd{display:none !important}
   .hero-content{
     text-align:center;
@@ -1156,6 +1155,311 @@ footer{
     right: 1rem;
   }
 }
+
+/* LIGHT-ONLY MAHTAB OVERRIDE */
+:root{
+  --bg:#ffffff;
+  --surface:#ffffff;
+  --surface2:#fbfdff;
+  --border:#dbe4f0;
+  --blue:#2f5fae;
+  --blue2:#234b8c;
+  --blue-glow:rgba(47,95,174,.09);
+  --cyan:#5d7fb8;
+  --white:#111827;
+  --muted:#8c96a8;
+  --muted2:#596579;
+  --nav-bg:rgba(255,255,255,.86);
+  --binary-opacity:0;
+  --noise-opacity:.024;
+  --toggle-bg:transparent;
+  --toggle-shadow:none;
+}
+html,body{background:var(--bg);color:var(--white)}
+body{
+  cursor:auto;
+  font-family:var(--body);
+}
+#cursor-dot,
+#cursor-ring,
+#binaryCanvas,
+#heroCanvas,
+.theme-toggle,
+.theme-overlay{
+  display:none !important;
+}
+nav{
+  background:transparent;
+  backdrop-filter:saturate(140%);
+}
+nav.scrolled{
+  background:var(--nav-bg);
+  box-shadow:0 10px 34px rgba(15,23,42,.06);
+}
+.nav-logo,
+.nav-links a,
+.hero-status,
+.hero-role-line,
+.hero-desc,
+.sec-eyebrow,
+.terminal-title,
+.t-line,
+.t-comment,
+.stat-label span,
+.pub-meta,
+.pub-desc,
+.skill-desc,
+.tl-year,
+.tl-desc,
+.foot-note,
+.contact-big,
+.form-input{
+  color:var(--muted2);
+}
+#hero{
+  background:
+    linear-gradient(180deg,#ffffff 0%,#fcfdff 52%,#f6f8fb 100%);
+}
+#hero::before,
+#hero::after{
+  display:none;
+}
+#hero{
+  min-height:100svh;
+  height:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.15rem;
+  padding:7.5rem 5vw 5.5rem;
+  text-align:center;
+}
+.hero-content{
+  max-width:980px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.hero-status{
+  display:inline-flex;
+  padding:.55rem .95rem;
+  background:rgba(255,255,255,.7);
+  border:1px solid var(--border);
+  border-radius:999px;
+  box-shadow:0 8px 24px rgba(15,23,42,.04);
+  letter-spacing:.14em;
+}
+.hero-name{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  flex-wrap:nowrap;
+  column-gap:.28em;
+  row-gap:0;
+  font-size:clamp(2.35rem,5.2vw,4.55rem);
+  line-height:.96;
+  letter-spacing:0;
+  text-align:center;
+  white-space:nowrap;
+}
+.hero-name .name-first{
+  color:#101318;
+  font-weight:800;
+}
+.hero-name .blue-word{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--blue);
+  font-weight:600;
+  font-style:italic;
+  letter-spacing:0;
+}
+.hero-role-line{
+  font-size:clamp(.98rem,1.55vw,1.2rem);
+  margin-top:1.1rem;
+  text-align:center;
+}
+.hero-desc{
+  max-width:32rem;
+}
+.hero-ctas{
+  justify-content:center;
+  margin-top:1.8rem;
+}
+.c-link,
+.btn-primary,
+.btn-ghost,
+.form-input,
+.stat-item,
+.skill-card,
+.proj-card,
+.pub-card,
+.terminal,
+.logo-chip,
+.contact-form,
+.lightbox-content{
+  background:var(--surface);
+  border-color:var(--border);
+  box-shadow:0 16px 42px rgba(15,23,42,.05);
+}
+.btn-primary,
+.form-btn{
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  color:#fff;
+}
+.btn-ghost:hover,
+.c-link:hover,
+.pub-card:hover,
+.proj-card:hover,
+.skill-card:hover,
+.stat-item:hover{
+  box-shadow:0 20px 60px rgba(47,95,174,.08);
+}
+.hero-profile{
+  justify-content:center;
+  width:100%;
+}
+.profile-frame{
+  width:clamp(112px,13vw,152px);
+  height:clamp(112px,13vw,152px);
+  border-radius:28px;
+  padding:5px;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  border:1px solid rgba(219,228,240,.9);
+  box-shadow:0 18px 46px rgba(15,23,42,.08);
+}
+.profile-img{
+  border-radius:23px;
+  border:none;
+  transform:none !important;
+}
+.hero-corner-code{
+  background:rgba(255,255,255,.72);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:1rem 1.1rem;
+  box-shadow:0 18px 44px rgba(15,23,42,.05);
+}
+.section{
+  padding:7rem 5vw;
+}
+.section+.section{
+  border-top:1px solid rgba(219,228,240,.8);
+}
+.section-flow{
+  max-width:1240px;
+  margin:0 auto;
+}
+.sec-title{
+  color:#0f172a;
+  letter-spacing:-.04em;
+}
+.sec-sub{
+  max-width:520px;
+}
+.about-grid,
+.pub-grid,
+.proj-grid,
+.stats-row{
+  gap:1.25rem;
+}
+.terminal-bar{
+  background:#ffffff;
+}
+.terminal{
+  border-radius:20px;
+}
+.terminal-body{
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+}
+.logo-chip{
+  border-radius:18px;
+  background:linear-gradient(180deg,#fff,#f7f9fc);
+}
+.logo-chip span,
+.tag{
+  color:var(--blue2);
+}
+.logo-marquee::before{
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(248,250,252,0) 100%);
+}
+.logo-marquee::after{
+  background:linear-gradient(270deg,var(--bg) 0%,rgba(248,250,252,0) 100%);
+}
+.pub-card,
+.proj-card,
+.skill-card,
+.stat-item{
+  border-radius:20px;
+}
+.pub-card:hover .pub-title,
+.proj-card:hover .proj-title{
+  color:var(--blue);
+}
+.skill-card::before{
+  background:radial-gradient(circle at 50% 50%, rgba(47,95,174,.08), transparent 62%);
+}
+.proj-thumb{
+  background:linear-gradient(135deg,#edf2f8,#f8fbff);
+}
+.proj-thumb-code{
+  color:rgba(47,95,174,.1);
+}
+.proj-emoji{
+  background:rgba(255,255,255,.72);
+}
+.contact-form{
+  padding:1rem;
+  border-radius:20px;
+}
+.form-input{
+  border-radius:14px;
+}
+.contact-big .outline{
+  -webkit-text-stroke:1px var(--blue);
+}
+footer{
+  background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.6));
+}
+@media (max-width: 992px){
+  #hero{
+    min-height:100svh;
+    padding-top:7rem;
+    padding-bottom:5rem;
+    gap:1rem;
+  }
+}
+@media (max-width: 768px){
+  .hero-content{
+    text-align:center;
+  }
+  .hero-name{
+    font-size:clamp(1.95rem,9.4vw,3.35rem);
+    line-height:1;
+    column-gap:.18em;
+  }
+  .hero-role-line{
+    min-height:2.5em;
+  }
+  .hero-ctas{
+    display:grid;
+    grid-template-columns:1fr;
+    max-width:none;
+    width:min(100%,320px);
+    margin-top:1.4rem;
+  }
+  .profile-frame{
+    width:clamp(104px,30vw,138px);
+    height:clamp(104px,30vw,138px);
+    max-width:none;
+    max-height:none;
+  }
+}
+@media (max-width: 420px){
+  .hero-name{
+    font-size:clamp(1.72rem,8.6vw,2.35rem);
+  }
+}
 </style>
 </head>
 <body>
@@ -1169,7 +1473,7 @@ footer{
 
 <!-- NAV -->
 <nav id="mainNav">
-  <div class="nav-logo">prottoy.engineer</div>
+  <div class="nav-logo">mahtab.chowdhury</div>
   <div class="nav-actions">
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
@@ -1194,19 +1498,16 @@ footer{
 <section id="hero">
   <canvas id="heroCanvas"></canvas>
 
-  <div class="hero-content">
-    <div class="hero-status">
-      <span class="hero-status-dot"></span>
-      <span>OPEN TO RESEARCH &amp; ACADEMIC OPPORTUNITIES - DHAKA, BANGLADESH</span>
+  <div class="hero-profile" id="heroProfileContainer">
+    <div class="profile-frame" id="heroProfileFrame">
+      <img src="Profile.png" alt="Mahtab Chowdhury" class="profile-img" />
     </div>
+  </div>
 
+  <div class="hero-content">
     <div class="hero-name-wrap">
       <h1 class="hero-name" id="heroName">
-        <span class="glitch" data-text="Mahtab">Mahtab</span>
-      </h1>
-    </div>
-    <div class="hero-name-wrap">
-      <h1 class="hero-name">
+        <span class="name-first glitch" data-text="Mahtab">Mahtab</span>
         <span class="blue-word" id="blueWord">Chowdhury</span>
       </h1>
     </div>
@@ -1224,20 +1525,6 @@ footer{
     </div>
   </div>
 
-  <div class="hero-profile" id="heroProfileContainer">
-    <div class="profile-frame" id="heroProfileFrame">
-      <img src="Profile.png" alt="Mahtab Chowdhury" class="profile-img" />
-    </div>
-  </div>
-
-  <div class="hero-corner-code" id="heroCode">
-    <span>// thesis project</span><br/>
-    <em>BrainTumorNet</em> <span>v1.0</span><br/>
-    <span>cnn_tokenized_transformer</span><br/>
-    <span>capsule_routing: </span><em>enabled</em><br/>
-    <span>cgpa: </span><em>3.94</em>
-  </div>
-
   <div class="scroll-ind" id="scrollInd">
     <div class="scroll-track"><div class="scroll-fill" id="scrollFill"></div></div>
     <span>scroll</span>
@@ -1247,15 +1534,15 @@ footer{
 <!-- ABOUT -->
 <section id="about" class="section">
   <div class="section-flow">
-    <div class="sec-eyebrow reveal">about_me.py</div>
-    <h2 class="sec-title reveal">Who compiles this code.</h2>
+    <div class="sec-eyebrow reveal">about_me.md</div>
+    <h2 class="sec-title reveal">About Mahtab.</h2>
 
     <div class="about-grid">
       <div>
         <div class="about-text reveal">
-          <p>I'm a <strong>research-oriented Computer Science undergraduate</strong> at Daffodil International University with a strong focus on <span class="highlight">Artificial Intelligence, Deep Learning, and Computer Vision</span>. I enjoy building practical machine learning systems that move research ideas toward real-world impact.</p>
-          <p>My current thesis is <strong>CNN-Tokenized Compact Transformer with Capsule Routing for Brain Tumor Detection</strong>. I work across healthcare research and intelligent automation, with hands-on interest in reliable, interpretable, and academically grounded AI systems.</p>
-          <p>I also serve as <strong>Vice President of Research and Innovation</strong> at the AR/VR &amp; Game Development Lab, contributing to research strategy sessions, academic development, and affordable AR implementation and evaluation in the Bangladesh context.</p>
+          <p>I’m a <strong>Computer Science undergraduate</strong> at Daffodil International University who likes turning ideas into clean, useful, and research-backed products. My focus sits between <span class="highlight">AI, deep learning, and computer vision</span>.</p>
+          <p>My thesis work explores <strong>CNN-tokenized compact transformers with capsule routing for brain tumor detection</strong>. I’m especially interested in projects that are accurate, interpretable, and practical enough to matter outside the lab.</p>
+          <p>Outside the classroom, I contribute to research and innovation work at the AR/VR &amp; Game Development Lab, where I help shape experiments, academic initiatives, and implementations that fit local realities.</p>
         </div>
 
       </div>
@@ -1312,7 +1599,7 @@ footer{
 <section id="skills" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">tech_stack.config</div>
-    <h2 class="sec-title reveal">Skills and tools I work with.</h2>
+    <h2 class="sec-title reveal">Tools in my stack.</h2>
     <div class="skills-marquee">
       <div class="logo-marquee reveal" data-marquee-speed="34" data-marquee-direction="left">
         <div class="logo-marquee-track">
@@ -1373,7 +1660,7 @@ footer{
 <section id="publications" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">publications.bib</div>
-    <h2 class="sec-title reveal">Research publications and dataset work.</h2>
+    <h2 class="sec-title reveal">Selected research.</h2>
 
     <div class="pub-grid">
       <a href="https://data.mendeley.com/datasets/m7w55sw88b/1" target="_blank" rel="noopener noreferrer" class="pub-card reveal">
@@ -1438,7 +1725,7 @@ footer{
 <section id="projects" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">projects.ls</div>
-    <h2 class="sec-title reveal">Projects from coursework.</h2>
+    <h2 class="sec-title reveal">Course projects.</h2>
 
     <div class="proj-grid">
       <div class="proj-card reveal">
@@ -1534,7 +1821,7 @@ footer{
 <section id="work" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">work_experience.log</div>
-    <h2 class="sec-title reveal">Work experience and leadership.</h2>
+    <h2 class="sec-title reveal">Leadership &amp; experience.</h2>
 
     <div class="timeline">
       <div class="tl-item reveal-left">
@@ -1577,7 +1864,7 @@ footer{
 <section id="certifications" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">certifications.md</div>
-    <h2 class="sec-title reveal">Professional Certifications.</h2>
+    <h2 class="sec-title reveal">Certifications.</h2>
     <div class="skills-marquee" style="margin-top: 3.5rem;">
       <div class="logo-marquee reveal" data-marquee-speed="22" data-marquee-direction="left">
         <div class="logo-marquee-track">
@@ -1627,7 +1914,7 @@ footer{
 <section id="achievements" class="section">
   <div class="section-flow">
     <div class="sec-eyebrow reveal">achievements.md</div>
-    <h2 class="sec-title reveal">Recognition, competitions, and milestones.</h2>
+    <h2 class="sec-title reveal">Milestones and recognition.</h2>
     <p class="sec-sub reveal">Academic progress, competitive participation, and recognition that reflect how I grow beyond coursework.</p>
 
     <div class="skills-grid">
@@ -1746,61 +2033,14 @@ const themeToggleLabel = document.getElementById('themeToggleLabel');
 const themeToggleIcon = document.getElementById('themeToggleIcon');
 const themeOverlay = document.getElementById('themeOverlay');
 const backToTop = document.getElementById('backToTop');
-const THEME_STORAGE_KEY = 'prottoy-portfolio-theme';
-
-function setThemeToggleVisuals(mode) {
-  const showLightAction = mode === 'dark';
-  themeToggleLabel.textContent = showLightAction ? 'light' : 'dark';
-  themeToggle.setAttribute('aria-label', showLightAction ? 'Switch to light mode' : 'Switch to dark mode');
-  themeToggleIcon.innerHTML = showLightAction
-    ? '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5"></path><path d="M12 19.5V22"></path><path d="M4.93 4.93l1.77 1.77"></path><path d="M17.3 17.3l1.77 1.77"></path><path d="M2 12h2.5"></path><path d="M19.5 12H22"></path><path d="M4.93 19.07l1.77-1.77"></path><path d="M17.3 6.7l1.77-1.77"></path>'
-    : '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>';
-}
-
-function applyTheme(mode, persist = true) {
-  document.body.classList.toggle('light-theme', mode === 'light');
-  setThemeToggleVisuals(mode);
-  if (persist) localStorage.setItem(THEME_STORAGE_KEY, mode);
-}
-
-function runThemeTransition() {
-  const nextMode = document.body.classList.contains('light-theme') ? 'dark' : 'light';
-  const rect = themeToggle.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const cy = rect.top + rect.height / 2;
-  const radius = Math.hypot(Math.max(cx, window.innerWidth - cx), Math.max(cy, window.innerHeight - cy)) + 80;
-  const targetBg = nextMode === 'light' ? '#f4ecde' : '#050508';
-
+document.body.classList.add('light-theme');
+if (themeToggle) {
+  themeToggle.style.display = 'none';
   themeToggle.disabled = true;
-  themeOverlay.style.background = targetBg;
-
-  gsap.killTweensOf(themeOverlay);
-  gsap.killTweensOf(themeToggle);
-
-  const tl = gsap.timeline({
-    defaults: { ease: 'power3.inOut' },
-    onComplete: () => {
-      gsap.set(themeOverlay, { opacity: 0, clipPath: 'circle(0px at 50% 50%)' });
-      themeToggle.disabled = false;
-    }
-  });
-
-  tl.set(themeOverlay, {
-    opacity: 1,
-    clipPath: `circle(0px at ${cx}px ${cy}px)`
-  });
-  tl.to(themeToggle, { y: -2, scale: 0.96, duration: 0.18 }, 0);
-  tl.to(themeOverlay, {
-    clipPath: `circle(${radius}px at ${cx}px ${cy}px)`,
-    duration: 0.72
-  }, 0);
-  tl.call(() => applyTheme(nextMode), [], 0.3);
-  tl.to(themeOverlay, { opacity: 0, duration: 0.26 }, 0.48);
-  tl.to(themeToggle, { y: 0, scale: 1, duration: 0.34, ease: 'power2.out' }, 0.26);
 }
-
-applyTheme(localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark', false);
-themeToggle.addEventListener('click', runThemeTransition);
+if (themeToggleLabel) themeToggleLabel.textContent = 'light';
+if (themeToggleIcon) themeToggleIcon.innerHTML = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>';
+if (themeOverlay) themeOverlay.remove();
 
 function hexToRgba(hex, alpha) {
   const value = hex.replace('#', '');
@@ -1815,6 +2055,7 @@ function hexToRgba(hex, alpha) {
 }
 
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
+if (false) {
 // CUSTOM CURSOR
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 const dot  = document.getElementById('cursor-dot');
@@ -1835,6 +2076,7 @@ document.addEventListener('mousemove', e => {
   ring.style.top  = ringY + 'px';
   requestAnimationFrame(animateRing);
 })();
+}
 
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // BINARY RAIN CANVAS
@@ -1953,43 +2195,40 @@ document.addEventListener('mousemove', e => {
 })();
 
 // ════════════════════════════════════════════════════════════════════════════════
-// HERO ENTRANCE ─ GSAP TIMELINE
-// ════════════════════════════════════════════════════════════════════════════════
-gsap.set(['.hero-status','.hero-role-line','.hero-ctas','#heroCode','#scrollInd'], 
-  { opacity: 0, y: 20 });
-gsap.set('#heroName', { opacity: 0, y: 60, skewY: 4 });
-gsap.set('.blue-word', { opacity: 0, y: 60, skewY: 4 });
-// Entrance timeline runs with a clean fade/scale entry for the image frame
-gsap.set('#heroProfileFrame', { opacity: 0, scale: 0.85, y: 30 });
+gsap.set(['.hero-role-line','.hero-ctas','#scrollInd'], 
+  { opacity: 0, y: 24 });
+gsap.set('#heroName', { opacity: 0, y: 36 });
+gsap.set('.blue-word', { opacity: 0, y: 28 });
+gsap.set('#heroProfileFrame', { opacity: 0, scale: 0.92, y: 22, rotate: 2 });
+gsap.set('#hero', { opacity: 0, clipPath: 'inset(0 0 16% 0 round 0)' });
 
 const blueWordEl = document.getElementById('blueWord');
 if (blueWordEl) {
   blueWordEl.innerHTML = Array.from(blueWordEl.textContent).map(ch => {
     if (ch === ' ') return '<span class="blue-space">&nbsp;</span>';
-    return `<span class="blue-letter">${ch}</span>`;
+    return '<span class="blue-letter">' + ch + '</span>';
   }).join('');
 }
 
-const heroTl = gsap.timeline({ delay: 0.2 });
+const heroTl = gsap.timeline({ delay: 0.15 });
 heroTl
-  .to('.hero-status',       { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-  .to('#heroName',          { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.2')
-  .to('.blue-word',         { opacity: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power3.out' }, '-=0.65')
-  .to('#heroProfileFrame',  { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'back.out(1.2)' }, '-=0.8')
-  .to('.hero-role-line',    { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.6')
-  .to('.hero-ctas',         { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-  .to('#heroCode',          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.4')
-  .to('#scrollInd',         { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3');
+  .to('#hero',             { opacity: 1, clipPath: 'inset(0 0 0% 0 round 0)', duration: 0.8, ease: 'power2.out' })
+  .to('#heroName',         { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' }, '-=0.15')
+  .to('.blue-word',        { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' }, '-=0.45')
+  .to('#blueWord .blue-letter', { y: 0, opacity: 1, duration: 0.6, stagger: 0.03, ease: 'power3.out' }, '-=0.3')
+  .to('#heroProfileFrame', { opacity: 1, scale: 1, y: 0, rotate: 0, duration: 0.95, ease: 'expo.out' }, '-=0.55')
+  .to('.hero-role-line',   { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, '-=0.5')
+  .to('.hero-ctas',        { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, '-=0.3')
+  .to('#scrollInd',        { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' }, '-=0.25');
 
-// â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 // TYPEWRITER â€” hero role
 // â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 const roles = [
-  'Research-Oriented CSE Undergraduate',
-  'Vice President, Research & Innovation',
-  'AI / Deep Learning Enthusiast',
-  'Computer Vision Researcher',
-  'NASA Space Apps 2025 Regional Champion',
+  'AI / Computer Vision Builder',
+  'Research-minded CSE Undergraduate',
+  'Turning ideas into usable systems',
+  'Focused on clean experiments and clear writing',
+  'Open to thoughtful collaborations',
 ];
 let rIdx = 0;
 const roleEl = document.getElementById('heroRole');
@@ -2101,28 +2340,23 @@ gsap.to('#scrollFill', {
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // REVEAL ANIMATIONS (scroll-triggered)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-gsap.utils.toArray('.reveal').forEach((el, i) => {
+gsap.utils.toArray('.reveal').forEach((el) => {
   gsap.fromTo(el,
-    { opacity: 0, y: 50 },
+    { opacity: 0, y: 28, filter: 'blur(6px)' },
     {
-      opacity: 1, y: 0,
+      opacity: 1, y: 0, filter: 'blur(0px)',
       duration: 0.8,
       ease: 'power3.out',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 88%',
-        once: true,
-      }
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
     }
   );
 });
 
 gsap.utils.toArray('.reveal-left').forEach(el => {
   gsap.fromTo(el,
-    { opacity: 0, x: -50 },
+    { opacity: 0, x: -32, filter: 'blur(4px)' },
     {
-      opacity: 1, x: 0,
+      opacity: 1, x: 0, filter: 'blur(0px)',
       duration: 0.8,
       ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 85%', once: true }
@@ -2132,9 +2366,9 @@ gsap.utils.toArray('.reveal-left').forEach(el => {
 
 gsap.utils.toArray('.reveal-right').forEach(el => {
   gsap.fromTo(el,
-    { opacity: 0, x: 50 },
+    { opacity: 0, x: 32, filter: 'blur(4px)' },
     {
-      opacity: 1, x: 0,
+      opacity: 1, x: 0, filter: 'blur(0px)',
       duration: 0.8,
       ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 85%', once: true }
@@ -2144,18 +2378,17 @@ gsap.utils.toArray('.reveal-right').forEach(el => {
 
 gsap.utils.toArray('.reveal-scale').forEach((el, i) => {
   gsap.fromTo(el,
-    { opacity: 0, scale: 0.88, y: 30 },
+    { opacity: 0, scale: 0.94, y: 18 },
     {
       opacity: 1, scale: 1, y: 0,
-      duration: 0.7,
-      delay: (i % 3) * 0.1,
-      ease: 'back.out(1.6)',
+      duration: 0.65,
+      delay: (i % 4) * 0.05,
+      ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 88%', once: true }
     }
   );
 });
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // COUNTER ANIMATION
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 document.querySelectorAll('.stat-num').forEach(el => {
@@ -2180,75 +2413,48 @@ document.querySelectorAll('.stat-num').forEach(el => {
 });
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// PROJECT CARDS â€” stagger on scroll
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 gsap.utils.toArray('.proj-card').forEach((card, i) => {
   gsap.fromTo(card,
-    { opacity: 0, y: 60 },
+    { opacity: 0, y: 42, scale: 0.98 },
     {
-      opacity: 1, y: 0,
-      duration: 0.75,
-      delay: (i % 3) * 0.12,
+      opacity: 1, y: 0, scale: 1,
+      duration: 0.7,
+      delay: (i % 3) * 0.08,
       ease: 'power3.out',
       scrollTrigger: { trigger: card, start: 'top 88%', once: true }
     }
   );
 
-  // hover tilt
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width  - 0.5;
-    const y = (e.clientY - r.top)  / r.height - 0.5;
-    gsap.to(card, {
-      rotateY: x * 8,
-      rotateX: -y * 5,
-      transformPerspective: 800,
-      duration: 0.4,
-      ease: 'power1.out'
-    });
+  card.addEventListener('mouseenter', () => {
+    gsap.to(card, { y: -6, boxShadow: '0 24px 60px rgba(47,95,174,.1)', duration: 0.25, ease: 'power2.out' });
   });
   card.addEventListener('mouseleave', () => {
-    gsap.to(card, {
-      rotateY: 0, rotateX: 0,
-      duration: 0.6, ease: 'elastic.out(1, 0.5)'
-    });
+    gsap.to(card, { y: 0, boxShadow: '0 16px 42px rgba(15,23,42,.05)', duration: 0.35, ease: 'power2.out' });
   });
 });
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // HORIZONTAL SCROLL HINT PARALLAX
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 gsap.to('.hero-content', {
-  y: -64,
+  y: -24,
   ease: 'none',
   force3D: true,
   scrollTrigger: {
     trigger: '#hero',
     start: 'top top',
     end: 'bottom 35%',
-    scrub: 0.3,
+    scrub: 0.25,
   }
 });
 gsap.to('#heroProfileContainer', {
-  y: -80,
+  y: -40,
   ease: 'none',
   force3D: true,
   scrollTrigger: {
     trigger: '#hero',
     start: 'top top',
     end: 'bottom 35%',
-    scrub: 0.3,
-  }
-});
-gsap.to('#heroCode', {
-  y: -72,
-  ease: 'none',
-  force3D: true,
-  scrollTrigger: {
-    trigger: '#hero',
-    start: 'top top',
-    end: 'bottom 35%',
-    scrub: 0.3,
+    scrub: 0.25,
   }
 });
 
@@ -2267,52 +2473,38 @@ gsap.utils.toArray('.section-flow').forEach(flow => {
   });
 });
 
-// SECTION TITLE SCRAMBLE on enter
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-const chars = '01ã‚¢ã‚¤ã‚¦ã‚¨ã‚ªABCDEF!@#$%^';
-function scramble(el, final, duration = 900) {
-  let frame = 0;
-  const totalFrames = duration / 30;
-  if (el._scrambleIv) clearInterval(el._scrambleIv);
-  el._scrambleIv = setInterval(() => {
-    el.innerHTML = final.split('').map((ch, i) => {
-      if (ch === '\n') return '<br/>';
-      if (ch === ' ') return ' ';
-      if (frame / totalFrames > i / final.length) return ch;
-      return chars[Math.floor(Math.random() * chars.length)];
-    }).join('');
-    frame++;
-    if (frame >= totalFrames) {
-      el.innerHTML = final.replace(/\n/g, '<br/>');
-      clearInterval(el._scrambleIv);
-      el._scrambleIv = null;
-    }
-  }, 30);
+function splitTitleWords(el) {
+  if (el.dataset.titleSplit === '1') return;
+  const text = el.textContent.trim();
+  el.dataset.originalTitle = text;
+  el.innerHTML = text
+    .split(/\s+/)
+    .map(word => '<span class="title-word">' + word + '</span>')
+    .join(' ');
+  el.dataset.titleSplit = '1';
 }
 
 document.querySelectorAll('.sec-title').forEach(el => {
-  // Store original as plain text with \n for newlines
-  const original = el.innerHTML
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<[^>]+>/g, '');
-  el.dataset.original = original;
+  splitTitleWords(el);
+  const words = el.querySelectorAll('.title-word');
+  const revealWords = () => {
+    gsap.fromTo(words,
+      { opacity: 0, y: 18, filter: 'blur(8px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, stagger: 0.06, ease: 'power3.out' }
+    );
+  };
 
-  // First-time scroll trigger
   ScrollTrigger.create({
     trigger: el,
     start: 'top 85%',
     once: true,
-    onEnter: () => scramble(el, original, 800)
+    onEnter: revealWords
   });
 
-  // Hover re-trigger (same effect every time)
   el.style.cursor = 'default';
-  el.addEventListener('mouseenter', () => {
-    scramble(el, original, 700);
-  });
+  el.addEventListener('mouseenter', revealWords);
 });
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // TIMELINE ITEMS â€” staggered
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 gsap.utils.toArray('.tl-item').forEach((item, i) => {
