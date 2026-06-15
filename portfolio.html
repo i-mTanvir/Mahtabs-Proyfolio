@@ -617,6 +617,8 @@ nav.scrolled{
   position:relative;
   max-width:740px;
   margin-bottom:.85rem;
+  text-align:justify;
+  text-justify:inter-word;
 }
 .cse-path{
   display:grid;
@@ -1327,11 +1329,11 @@ footer{
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 .cert-card {
-  width: 240px;
-  height: 165px;
-  background: var(--surface2);
+  width: clamp(260px, 22vw, 360px);
+  height: clamp(175px, 15vw, 245px);
+  background: linear-gradient(180deg,#ffffff,#f8fbff);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1344,19 +1346,19 @@ footer{
 .cert-card:hover {
   transform: translateY(-4px);
   border-color: rgba(79, 142, 247, 0.4);
-  box-shadow: 0 12px 30px rgba(79, 142, 247, 0.08);
+  box-shadow: 0 20px 54px rgba(47, 95, 174, 0.1);
 }
 .cert-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 0.5rem;
+  padding: 0.85rem;
 }
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(5,5,8,0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(248,250,252,0.86);
+  backdrop-filter: blur(18px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -1372,8 +1374,10 @@ footer{
 .lightbox-content {
   max-width: 90%;
   max-height: 85vh;
-  border-radius: 8px;
-  box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+  border-radius: 18px;
+  background:#fff;
+  border:1px solid rgba(207,220,238,.95);
+  box-shadow: 0 28px 90px rgba(15,23,42,0.16);
   transform: scale(0.95);
   transition: transform 0.3s ease;
 }
@@ -1384,23 +1388,32 @@ footer{
   position: absolute;
   top: 2rem;
   right: 2rem;
-  background: transparent;
-  border: none;
-  color: var(--white);
-  font-size: 2rem;
+  width:3rem;
+  height:3rem;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(207,220,238,.95);
+  border-radius:50%;
+  color: #172033;
+  font-size: 1.7rem;
   cursor: pointer;
-  transition: color 0.2s;
+  box-shadow:0 14px 34px rgba(15,23,42,.09);
+  transition: all 0.2s;
 }
 .lightbox-close:hover {
-  color: var(--blue);
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+  transform:translateY(-2px);
 }
 .lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(15,15,24,0.6);
-  border: 1px solid rgba(79,142,247,0.25);
-  color: var(--white);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(207,220,238,.95);
+  color: #172033;
   font-size: 2rem;
   width: 3.5rem;
   height: 3.5rem;
@@ -1409,6 +1422,7 @@ footer{
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow:0 18px 44px rgba(15,23,42,.11);
   transition: all 0.25s cubic-bezier(0.25,1,0.5,1);
   user-select: none;
   z-index: 2010;
@@ -1813,7 +1827,7 @@ footer{
     <div class="hero-ctas">
       <a class="c-link" href="mailto:chowdhury22205101076@diu.edu.bd"><span class="c-link-icon">&#9993;</span> email</a>
       <a class="c-link" href="https://github.com/i-mTanvir" target="_blank" rel="noreferrer"><span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></span> github</a>
-      <a class="c-link" href="tel:+8801644605439"><span class="c-link-icon">&#9742;</span> phone</a>
+      <a class="c-link" href="https://www.linkedin.com/in/mahtab-chowdhury-40420a334" target="_blank" rel="noreferrer"><span class="c-link-icon" style="display: inline-flex; align-items: center; width: 12px; height: 12px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 100%; height: 100%;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span> linkedin</a>
       <a class="c-link" href="Academic_CV__Mahtab.pdf" download><span class="c-link-icon">&#8595;</span> resume</a>
     </div>
   </div>
@@ -1868,7 +1882,7 @@ footer{
     </div>
     <div class="stats-row reveal">
       <div class="stat-item">
-        <div class="stat-num" data-target="3.92" data-decimals="2">0</div>
+        <div class="stat-num" data-target="3.91" data-decimals="2">0</div>
         <div class="stat-label"><strong>Current CGPA</strong><span>Daffodil International University</span></div>
       </div>
       <div class="stat-item">
@@ -1921,27 +1935,25 @@ footer{
       <div class="logo-marquee reveal" data-marquee-speed="40" data-marquee-direction="left">
         <div class="logo-marquee-track">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="Jupyter Notebook logo"/><span>Jupyter Notebook</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code logo"/><span>VS Code</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI logo"/><span>Power BI</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><path fill="#007ACC" d="M20.8 3.8v16.4L16.6 22 6.9 14.7 3.8 17.2 2 16.3V7.7l1.8-.9 3.1 2.5L16.6 2l4.2 1.8z"/><path fill="#1F9CF0" d="M16.6 7.6l-5.8 4.4 5.8 4.4V7.6z"/><path fill="#fff" opacity=".2" d="M16.6 2v20l4.2-1.8V3.8L16.6 2z"/></svg><span>VS Code</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><rect x="3" y="12" width="3.8" height="8" rx="1.1" fill="#F2C811"/><rect x="8.4" y="8" width="3.8" height="12" rx="1.1" fill="#E9B400"/><rect x="13.8" y="4" width="3.8" height="16" rx="1.1" fill="#DFA000"/><path fill="#C78A00" d="M19.2 6.5h1.2c.9 0 1.6.7 1.6 1.6v10.3c0 .9-.7 1.6-1.6 1.6h-1.2V6.5z"/></svg><span>Power BI</span></div>
           <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true" role="img"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="LaTeX logo"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub logo"/><span>GitHub</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/overleaf/47A141" alt="LaTeX workflow logo"/><span>LaTeX Workflow</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="SQL logo"/><span>SQL</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP logo"/><span>PHP</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel logo"/><span>Excel</span></div>
         </div>
         <div class="logo-marquee-track" aria-hidden="true">
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" aria-hidden="true"/><span>Jupyter Notebook</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" aria-hidden="true"/><span>VS Code</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="" aria-hidden="true"/><span>Power BI</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#007ACC" d="M20.8 3.8v16.4L16.6 22 6.9 14.7 3.8 17.2 2 16.3V7.7l1.8-.9 3.1 2.5L16.6 2l4.2 1.8z"/><path fill="#1F9CF0" d="M16.6 7.6l-5.8 4.4 5.8 4.4V7.6z"/><path fill="#fff" opacity=".2" d="M16.6 2v20l4.2-1.8V3.8L16.6 2z"/></svg><span>VS Code</span></div>
+          <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="3.8" height="8" rx="1.1" fill="#F2C811"/><rect x="8.4" y="8" width="3.8" height="12" rx="1.1" fill="#E9B400"/><rect x="13.8" y="4" width="3.8" height="16" rx="1.1" fill="#DFA000"/><path fill="#C78A00" d="M19.2 6.5h1.2c.9 0 1.6.7 1.6 1.6v10.3c0 .9-.7 1.6-1.6 1.6h-1.2V6.5z"/></svg><span>Power BI</span></div>
           <div class="logo-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#217346" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8l6-4V8l-6-6z"/><path fill="#1D6F42" d="M14 2v6h6z"/><path fill="#185C37" d="M2 7.5h10v9H2z"/><path fill="#fff" d="M4.3 14.9l1.9-3-1.8-2.8H6l.9 1.7.2.5.2-.5 1-1.7h1.4L8 11.9l1.9 3H8.4l-1-1.8-.2-.4-.2.4-1 1.8z"/></svg><span>Excel</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/latex/008080" alt="" aria-hidden="true"/><span>LaTeX</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" aria-hidden="true"/><span>GitHub</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/overleaf/47A141" alt="" aria-hidden="true"/><span>LaTeX Workflow</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="" aria-hidden="true"/><span>SQL</span></div>
           <div class="logo-chip"><img src="https://cdn.simpleicons.org/php/777BB4" alt="" aria-hidden="true"/><span>PHP</span></div>
-          <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="" aria-hidden="true"/><span>Excel</span></div>
         </div>
       </div>
     </div>
@@ -2086,7 +2098,7 @@ footer{
         <div class="tl-year">2022 - Present</div>
         <div>
           <div class="tl-role">Bachelor of Science in Computer Science</div>
-          <div class="tl-org">Daffodil International University - CGPA 3.92</div>
+          <div class="tl-org">Daffodil International University - CGPA 3.91</div>
           <div class="tl-desc">Current undergraduate study with a thesis on CNN-Tokenized Compact Transformer with Capsule Routing for Brain Tumor Detection, supported by consistent merit-based academic performance.</div>
         </div>
       </div>
@@ -2204,6 +2216,36 @@ footer{
   </div>
 </section>
 
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+  <div class="section-flow">
+    <div class="sec-eyebrow reveal">certifications.md</div>
+    <h2 class="sec-title reveal">Professional Certifications.</h2>
+    <p class="sec-sub reveal">A moving archive of certificates, academic activities, and research-related recognitions.</p>
+
+    <div class="skills-marquee" style="margin-top: 3.2rem;">
+      <div class="logo-marquee reveal" data-marquee-speed="34" data-marquee-direction="left">
+        <div class="logo-marquee-track">
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/AI.png" alt="Artificial Intelligence Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Basic computer science certificate.png" alt="Basic Computer Science Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/certificate_paper_113_Attention_Based_Hybrid_ViT_ResNet_Model_for.png" alt="RTIP2R Mango Classification Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Paper ID_ 10416.png" alt="ICCIT Lemon Disease Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Paper ID_ 10423 (1).png" alt="IDAA Tea Disease Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Paper ID_ 10504.png" alt="IDAA Lung Cancer Paper Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Web Accessibility Training_Course certificate -  Web Accessibility.png" alt="Web Accessibility Training Certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Certification (1).png" alt="Certification 1" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Certification (2).png" alt="Certification 2" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Certification 3.png" alt="Certification 3" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/Certification 4.png" alt="Certification 4" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/doc.jpg" alt="Academic activity certificate" class="cert-img" /></div>
+          <div class="cert-card"><img src="prottoys-protfolio/Certificates/doc 1.jpg" alt="Academic activity certificate 2" class="cert-img" /></div>
+        </div>
+        <div class="logo-marquee-track" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- CONTACT -->
